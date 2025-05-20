@@ -1,0 +1,5 @@
+- [ ] Integrate google reviews on rotating carousel
+- [ ] Integrate google maps on footer and about page
+- [ ] Add CTA buttons to header when user scrolls
+- [ ] Mobile Friendliness
+- [ ] Include photos on projects page 

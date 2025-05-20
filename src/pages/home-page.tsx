@@ -1,142 +1,120 @@
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { Button } from '@/components/ui/button'
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle
-} from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { useIsMobile } from '@/hooks/use-mobile'
 import { Link } from '@tanstack/react-router'
 import {
   ArrowRight,
   CheckCircle2,
+  ChevronDown,
   Phone,
-  Sparkles
+  Sparkles,
 } from 'lucide-react'
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
+import { toast } from 'sonner'
+
+const VIDEOS = [
+  '/videos/4941363-hd_1920_1080_25fps.mp4',
+  '/videos/4941457-hd_1920_1080_25fps.mp4',
+  '/videos/4315553-uhd_3840_2160_30fps.mp4',
+  '/videos/13053713_3840_2160_50fps.mp4',
+]
 
 export function HomePage() {
-  const [showAnnouncement, setShowAnnouncement] = useState(false)
-  const videoRef = useRef<HTMLVideoElement>(null)
-  
-  // Use just one video for now - the smallest one
-  const videoSrc = '/videos/4941457-hd_1920_1080_25fps.mp4'
-
-  // Play video when component mounts
+  const [activeIndex, setActiveIndex] = useState(0)
+  const isMobile = useIsMobile()
   useEffect(() => {
-    const videoElement = videoRef.current
-    
-    if (videoElement) {
-      console.log('Attempting to play video:', videoSrc)
-      
-      // Add event listeners for debugging
-      const onPlaying = () => console.log('Video is playing')
-      const onError = (e: Event) => console.error('Video error:', e)
-      const onWaiting = () => console.log('Video is waiting for data')
-      
-      videoElement.addEventListener('playing', onPlaying)
-      videoElement.addEventListener('error', onError)
-      videoElement.addEventListener('waiting', onWaiting)
-      
-      // Try to play the video
-      const playPromise = videoElement.play()
-      
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => console.log('Video playback started successfully'))
-          .catch(error => console.error('Error playing video:', error))
-      }
-      
-      // Cleanup
-      return () => {
-        videoElement.removeEventListener('playing', onPlaying)
-        videoElement.removeEventListener('error', onError)
-        videoElement.removeEventListener('waiting', onWaiting)
-      }
-    }
-  }, [videoSrc])
-
-  // Show the "66 years of excellence" announcement after a brief delay
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowAnnouncement(true)
-    }, 1500)
-
-    return () => clearTimeout(timer)
+    const timer = setInterval(() => {
+      setActiveIndex((i) => (i + 1) % VIDEOS.length)
+    }, 5000)
+    return () => clearInterval(timer)
   }, [])
+
+  useEffect(() => {
+    if (!isMobile) {
+      toast(
+        <div className="flex flex-col gap-1">
+          <div className="flex items-center gap-2 font-bold">
+            <Sparkles className="h-5 w-5" />
+            {new Date().getFullYear() - 1960} Years of Excellence in Victoria
+          </div>
+          <p className="text-sm">
+            Providing industry-leading welding, fabrication, and engineering
+            solutions since 1960.
+          </p>
+        </div>,
+        {
+          duration: 10000,
+        },
+      )
+    }
+  }, [isMobile])
 
   return (
     <div className="flex flex-col">
-      {/* Full-screen Hero Section with Direct Video */}
-      <section className="relative h-screen w-full overflow-hidden">
+      {/* Hero Section */}
+      <section className="relative h-screen w-full">
         {/* Video Background */}
-        <div className="absolute inset-0 w-full h-full">
-          <video
-            ref={videoRef}
-            className="absolute inset-0 w-full h-full object-cover"
-            src={videoSrc}
-            muted
-            loop
-            playsInline
-            autoPlay
-            poster="/images/hero-fallback.jpg"
-            style={{ filter: 'blur(2.5px)' }}
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-        </div>
-        
-        {/* Content */}
-        <div className="relative z-10 flex flex-col items-center justify-center h-full w-full px-4 text-center text-white">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 tracking-tight max-w-4xl">
-            <span className="block mb-2">Trusted Since 1960.</span>
-            <span className="text-2xl sm:text-3xl md:text-4xl font-medium opacity-90">
-              Victoria's most experienced welding and machining shop
-            </span>
-          </h1>
-
-          <p className="text-xl md:text-2xl mb-8 max-w-2xl">
-            Serving industries across Vancouver Island with precision
-            engineering, quality craftsmanship, and unmatched expertise.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 mt-4">
-            <Button
-              asChild
-              size="lg"
-              className="bg-red-600 hover:bg-red-700 text-white min-w-[160px] text-lg h-12"
-            >
-              <Link to="/contact">
-                Get a Quote <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="bg-transparent hover:bg-white/10 text-white border-white min-w-[160px] text-lg h-12"
-            >
-              <a href="tel:2504752400">
-                <Phone className="mr-2 h-5 w-5" /> Call Now
-              </a>
-            </Button>
-          </div>
+        <div className="absolute inset-0">
+          {VIDEOS.map((video, index) => (
+            <video
+              key={video}
+              src={video}
+              className="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000"
+              style={{ opacity: index === activeIndex ? 1 : 0 }}
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+          ))}
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black/50" />
         </div>
 
-        {/* Announcement popup - Fixed text color by adding text-white to all elements */}
-        {showAnnouncement && (
-          <div className="fixed bottom-6 right-6 z-50 max-w-sm transform transition-all duration-500 ease-in-out animate-slide-in-bottom">
-            <Alert className="bg-red-600 border-none shadow-lg">
-              <AlertTitle className="text-lg font-bold tracking-tight flex items-center text-white">
-                <Sparkles className="h-5 w-5 mr-2 text-white" />
-                {new Date().getFullYear() - 1960} Years of Excellence in Victoria
-              </AlertTitle>
-              <AlertDescription className="mt-2 text-white">
-                Providing industry-leading welding, fabrication, and engineering
-                solutions since 1960.
-              </AlertDescription>
-            </Alert>
+        {/* Hero Content */}
+        <div className="relative flex h-full items-center justify-center px-4 text-center">
+          <div className="max-w-4xl">
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+              <span className="block">Trusted Since 1960.</span>
+              <span className="mt-2 block text-2xl font-medium text-white/90 sm:text-3xl md:text-4xl">
+                Victoria's most experienced welding and machining shop
+              </span>
+            </h1>
+
+            <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80 sm:text-xl md:text-2xl">
+              Serving industries across Vancouver Island with precision
+              engineering, quality craftsmanship, and unmatched expertise.
+            </p>
+
+            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <Button
+                asChild
+                size="lg"
+                className="min-w-[200px] px-8 py-7 text-xl font-semibold text-white bg-red-600 hover:bg-red-700"
+              >
+                <Link to="/contact" className="flex items-center gap-2">
+                  Get a Quote <ArrowRight className="h-6 w-6" />
+                </Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="min-w-[200px] px-8 py-7 text-xl font-semibold border-2 border-white bg-transparent text-white hover:bg-white/10 hover:text-white"
+              >
+                <a href="tel:2504752400" className="flex items-center gap-2">
+                  <Phone className="h-6 w-6" /> Call Now
+                </a>
+              </Button>
+            </div>
           </div>
-        )}
+
+          {/* Learn More Indicator */}
+          <div className="absolute bottom-32 left-1/2 -translate-x-1/2 text-white flex flex-col items-center animate-bounce">
+            <span className="text-lg font-medium mb-2">Learn More</span>
+            <ChevronDown className="h-6 w-6" />
+          </div>
+        </div>
       </section>
 
       <div className="container mx-auto px-4 py-16 space-y-20">
@@ -249,7 +227,7 @@ export function HomePage() {
         {/* Testimonials Section */}
         <section>
           <h2 className="text-3xl font-bold text-center mb-10">
-            What Our Clients Say
+            What Our Clients Say (Placeholder for Google Reviews)
           </h2>
           <Card className="shadow-lg border-none bg-gradient-to-br from-gray-100 to-gray-200">
             <CardContent className="p-8">
@@ -261,7 +239,7 @@ export function HomePage() {
                   detail and expertise made all the difference.
                 </p>
                 <div className="mt-4">
-                  <p className="font-semibold text-lg">John Smithson</p>
+                  <p className="font-semibold text-lg">Notta Realperson</p>
                   <p className="text-gray-600">Victoria Harbor Authority</p>
                 </div>
                 <div className="flex mt-4 justify-center gap-1">

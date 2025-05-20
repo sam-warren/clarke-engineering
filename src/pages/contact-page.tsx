@@ -1,31 +1,22 @@
+import { Button } from '@/components/ui/button'
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+} from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+import { Clock, Mail, MapPin, Phone } from 'lucide-react'
 
 export function ContactPage() {
   return (
-    <div className="container mx-auto py-12 px-4">
+    <div className="space-y-8 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
       <h1 className="text-4xl font-bold text-center mb-6">Contact Us</h1>
       <p className="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-        Have a project in mind or need our expertise? Get in touch with Clarke Engineering & Welding Ltd. today.
+        Have a project in mind or need our expertise? Get in touch with Clarke
+        Engineering & Welding Ltd. today.
       </p>
 
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -34,7 +25,8 @@ export function ContactPage() {
             <CardHeader>
               <CardTitle className="text-2xl">Send Us a Message</CardTitle>
               <CardDescription>
-                Fill out the form below and we'll get back to you as soon as possible.
+                Fill out the form below and we'll get back to you as soon as
+                possible.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -50,7 +42,11 @@ export function ContactPage() {
                     <label htmlFor="email" className="text-sm font-medium">
                       Email
                     </label>
-                    <Input id="email" type="email" placeholder="john@example.com" />
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="john@example.com"
+                    />
                   </div>
                 </div>
 
@@ -80,7 +76,10 @@ export function ContactPage() {
                   />
                 </div>
 
-                <Button type="submit" className="w-full bg-red-600 hover:bg-red-700">
+                <Button
+                  type="submit"
+                  className="w-full bg-red-600 hover:bg-red-700"
+                >
                   Send Message
                 </Button>
               </form>
@@ -145,7 +144,9 @@ export function ContactPage() {
               <CardContent>
                 <div className="bg-gray-200 h-[300px] rounded-md flex items-center justify-center">
                   <p className="text-gray-500">Map Placeholder</p>
-                  <p className="text-sm">(Google Maps will be integrated here)</p>
+                  <p className="text-sm">
+                    (Google Maps will be integrated here)
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -153,5 +154,5 @@ export function ContactPage() {
         </div>
       </div>
     </div>
-  );
-} 
+  )
+}
