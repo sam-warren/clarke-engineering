@@ -1,0 +1,574 @@
+You are building a web application using React.js, Shadcn (shadcn@latest), TailwindCSS, Vite, and Tanstack Router. 
+
+Below is the braindump non-technical notes for the project:
+----------------------------------------------------------
+Sam’s Contact Info:
+sam@junctiontech.ca
+(250) 858 2268
+
+Logan’s contact info:
+loganedgar91@gmail.com
+(250) 884 2175
+
+Project Timeline:
+Sometime in the next 2 weeks
+Non-urgent
+
+Web App Pages:
+Media page (image gallery / carousel?) - bottom of “About Us”?
+Press releases from Times Colonist / CTV
+Our history / our stories
+
+Updates from Sam
+2025-05-02: Called with Logan to get initial site requirements clarified, agreed upon first pass skeleton site with navigation, styling, placeholder text. ETA mid-week (2025-05-07).
+
+Updates from Logan
+May 12 2025. Let’s forget about the restaurant angle and let’s instead get our core target audience locked down:
+-Heavy Duty Equipment Repairs 
+-Elevator and Crane Repairs 
+-Truck and Automotive repair 
+-Construction projects
+-Public / Municipal / Government projects 
+-Marine Engineering projects 
+
+Let’s have tiles for each of these categories from the main landing page.
+
+The vibe: 
+To make a non-boring, awesome website that radiates energy and keeps people engaged, you need to nail five core elements:
+
+1. 
+Voice & Vibe: Be Human
+Speak directly to the visitor. Drop the corporate tone. Be playful, bold, confident—whatever suits your brand.
+
+
+Example: Instead of “We provide quality service,” say “We fix your mess before it becomes a disaster.”
+
+
+Welding gun icon with caption, 👨‍🏭 “ fastest guns in the West” 
+
+2. 
+Visual Energy: Design with Personality
+Colors: Use bold, unexpected color combos (but keep it readable).
+
+
+Fonts: Choose modern, expressive typography—not the same old Arial or Times.
+
+
+Movement: Subtle animations, hover effects, or microinteractions add life.
+
+
+Images/Videos: Use real, high-quality visuals with people, action, or emotion.
+
+
+
+3. 
+Structure: Guide, Don’t Bore
+Break the mold of standard layouts. Try asymmetry, scroll effects, or unexpected transitions.
+
+
+Use sections with punchy headlines, fast scannable chunks, and clear calls to action.
+
+
+Keep the homepage lean. Don’t try to say everything—make people want to click deeper.
+
+
+
+4. 
+Content: Make It Fun to Read
+Write like you’re telling a story at a bar, not delivering a PowerPoint.
+
+
+Use humor, confidence, or even a little rebellion—depending on your brand.
+
+
+Include interactive elements (polls, quizzes, sliders, before/after reveals, etc.)
+
+
+
+5. 
+Speed & Mobile: Performance is Sexy
+A fast site with snappy transitions feels exciting.
+
+
+Make sure it’s optimized for mobile—most people are visiting on their phones.
+
+
+
+Bonus Ideas:
+Sticky callouts or messages that follow as you scroll.
+
+
+Custom cursor or click effects that react to the user.
+
+
+Live chat or chatbot that fits the brand voice (quirky, honest, sarcastic, etc.).
+
+
+A splash of mystery: “What’s behind this?” interactions can encourage exploration.
+Concept:
+The website should feel fast, like woosh, everything is faster than normal website, hovering over something for a second will instantly flash to the next screen. Background features like Sam has on his website will woosh by. We’re a fast repair service and our website should give an impression of speed. 
+
+Reference sites:
+https://clarke.islandnet.com 
+
+Sites I found that are trying to achieve a similar presence. Under each site put features to add/copy from
+https://www.lditechs.com
+
+
+https://www.keyfood.ca 
+
+
+https://imperialwelding.com
+
+
+https://www.greatwestwelding.com 
+ 
+https://www.junctiontech.ca/
+
+New direction based on how Sam has made his website with clean uncluttered layout and use of Icons:
+
+
+
+Logo idea for the sub-pages, just ‘Clarke’ in the fire truck red oval with white around the outside. It would need to be centered better. Like ‘Coke’ or ‘Mack’.
+
+
+
+
+
+
+
+
+Call notes 16/4/2025
+
+Let’s copy the icons from Great West using reserve search. Let’s use these Icons to say what we do without needing wordy sentences. Example Hydraulic Repairs (Icon picture of Hydraulic fluid drip or whatever if you have a better idea)
+
+icons/buttons:
+-elevator repairs odne
+
+
+
+-crane repairs 
+
+
+-heavy duty cylinder repairs
+
+
+
+-line boring repairs
+
+
+-hydraulic repairs
+
+
+-bearing and pulley repairs 
+
+
+
+-truck repairs
+-tanker repairs
+-paving equipment repairs
+-
+
+Excavators repairs 
+• Bulldozers repairs
+• Wheel loaders repairs
+• Backhoes repairs
+• Skid steer loaders repairs 
+• Graders repairs 
+• Trenchers repairs 
+• Dump trucks (off-highway) repairs 
+Material Handling repairs 
+• Forklifts (especially large or rough-terrain) repairs 
+• Telehandlers repairs 
+• Cranes (tower, mobile, overhead) repairs 
+• Hoists and winches repairs 
+
+Roadwork & Paving
+• Asphalt pavers repairs 
+• Compactors / Rollers repairs 
+• Cold planers (milling machines) repairs 
+
+
+
+Other association badges for Footer:
+-Red seal badge.
+-BBB better business bureau badge
+-CWB badge:
+-Island Equipment Operators Association Member badge: 
+-Canadian Federation of Independent Buisness member badge: https://www.cfib-fcei.ca/en/
+
+
+Let’s use real photos from local work done completed like:
+- Bastion Square Arch
+
+Let’s have ‘66 years of excellence in Victoria’ pop up as soon as the page loads like Keyfood has
+
+Let’s use Google review plug-in for more trust on the reviews and Let’s use a Google map plug-in to show where we are. 
+
+Let’s remove the wordy sentence at the top of the landing page. 
+
+Please put call to action phone and email address and business address at the top of every page and floating.Let’s make the call to action button sticky aka floating, it should stay on the page as you scroll through the website, ‘call now: 250 475 2400’ + ‘email now: Clarke@islandnet.com’ 
+
+
+Notes April 17th 2025:
+Lets register these domains:
+Victoriawelding.com
+Victoriametalwork.com
+Victoriasteelwork.com
+Victoria
+VictoriaBCheavy.com
+Victoriaretaurantweld.com 
+Clarke.islandnet.com 
+Victoriaheavyduty.com
+
+It’s called URL forwarding 
+
+Then, let’s use Domain Forwarding for sending those clicks to our new page. 
+
+Can we use this domain? 
+
+
+Our first niche, Clarke Restaurant Repairs and Service:  
+
+
+
+
+
+Why niche:
+
+
+
+Link to marketing plan:
+
+Clarke_Restaurant_Repairs_Marketing_Plan.pdf
+
+
+Possible URL(site) names:
+clarkewelding.ca/restaurant-repairs
+ClarkeEng.com/restaurant-repairs
+VictoriaMetalwork.com/restaurant-repairs
+
+
+
+
+Site features to consider:
+
+Online booking/set up a phone call time
+
+Client testimonials
+
+Meet the team
+
+Email capture for signing up to a newsletter
+
+‘About us’ section to contain a long form interview of Graham and I explaining who we are and what we do. 
+
+
+
+
+Site content:
+
+Contact info
+Store hours
+Location
+Pricing? And tiered pricing packages for recurring revenue like, ‘annual restaurant gold / silver / bronze maintenance service package’ 
+Services, food trucks
+Experience
+Equipment
+Qualifications
+Customer testimonials 
+Live chat to the office (video chat is an option) 
+
+New direction, let’s call it Victoria Restaurant Repairs & Welding. It will be a division of Clarke Engineering and Welding Ltd. It doesn’t need its own website. Website brief: 
+
+
+WEBSITE BUILD ONE-PAGER
+Brand Name: Victoria Restaurant Repairs & Welding
+Division of / Powered by: Clarke Engineering & Welding Ltd
+Established: Clarke has served Victoria since 1960
+Website Purpose: To position Victoria Restaurant Repairs & Welding as Victoria’s go-to specialist for welding, repair, and maintenance services for restaurants, food trucks, and hospitality businesses—while reinforcing Clarke Engineering & Welding’s 60+ year legacy.
+
+Key Messaging:
+Local. Fast. Reliable.
+
+
+Commercial Kitchen & Restaurant Welding Repairs – Since 1960.
+
+
+We Can Fix Anything.
+
+
+
+Target Audience:
+Restaurant owners & managers
+
+
+Food truck operators
+
+
+Café and brewery owners
+
+
+Commercial kitchen contractors
+
+
+Hospitality groups
+
+
+
+Services Offered:
+On-site welding repairs (stainless, chrome, aluminum, mild steel)
+
+
+Pipe welding
+
+
+Grease trap installations & repairs
+
+
+Stainless steel kitchen modifications
+
+
+Custom railings, signage frames, table & bar repairs
+
+
+Handicap washroom retrofits
+
+
+Staircases, shelving, wall-mounted systems
+
+
+Food truck outfitting and welding repairs
+
+
+Project management with budget tracking
+
+
+Red Seal Welders & Machinists
+
+
+Fast response time with clear pricing
+
+
+We can fix anything.
+
+
+
+Key Features:
+10% discount for pre-paid service
+
+
+Guaranteed timeline delivery or discount applied
+
+
+Real-time budget tracking on larger projects
+
+
+6,000 sq. ft. welding and machining shop with full capacity
+
+
+Specialists in stainless & chrome
+
+
+
+Design & Branding Notes:
+Color Theme: Fire Truck Red to match main website
+
+
+Typography: Use the same font family as Clarke Engineering & Welding Ltd for brand consistency
+
+
+Brand Badge/Header Example:
+
+ Victoria Restaurant Repairs & Welding
+
+ Powered by [insert Clarke logo/badge here]
+
+
+Clarke logo should be clearly visible at the top of each page
+
+
+Consistent branding with Clarke, but localized messaging and images tailored to restaurant operators
+
+
+
+Functional Elements:
+Mobile-optimized
+
+
+“Call Now” and “Request a Quote” buttons
+
+
+Before/after photo gallery
+
+
+Google review feed integration
+
+
+Testimonials & logos from satisfied customers
+
+
+Backed by Clarke Engineering & Welding Ltd section
+
+
+Quarterly newsletter sign-up: The Grease Drip
+
+
+
+Clarke Engineering & Welding Ltd – Website Structure & Copy Guide
+
+Top of Page:
+Logo: Clarke Engineering & Welding Ltd (top left)
+
+
+Navigation Menu (right-aligned):
+
+
+About
+
+
+Services
+
+
+Shop Capabilities
+
+
+Projects
+
+
+Contact
+
+
+
+Hero Banner Section:
+Headline:
+Trusted Since 1960.
+Subhead:
+Victoria’s most experienced welding and machining shop — serving industries across Vancouver Island.
+Call-to-Action Buttons (Firetruck Red / Clarke Red):
+Get a Quote
+
+
+Call Now
+
+
+Note from Sam: We can add behaviour such that when the user scrolls past the call to action buttons in the hero section, the CTA buttons pop into the sticky site header / banner.
+
+Service Divisions (Grid of Large Buttons or Cards):
+Explore Our Specialized Divisions: need pics for each button
+Note from Sam: Do you want a separate page for each of these? I.e. ClarkeEng.ca/heavy-duty-equipment-repairs, ClarkeEng.ca/elevators-cranes - each of the cards would navigate the user to a different page with service-specific information? What information (text & images) would you like on each of these pages? I can take a first pass design with Lorem Ipsum placeholder text and see how you like it.
+Heavy-Duty Equipment Repairs
+
+ Mobile and shop-based repairs for construction equipment and commercial machinery.
+
+
+Elevators & Cranes
+
+ Welding, modification, and inspection support for lifting equipment and structural components.
+
+
+Restaurants
+
+ Fast-response commercial kitchen and hospitality welding through
+
+ Victoria Restaurant Repairs & Welding (a Clarke division).
+
+
+Commercial
+
+ Custom welding and fabrication for businesses, storefronts, and institutions.
+
+
+Residential
+
+ Handrails, gates, custom furniture, staircases, and in-home modifications.
+
+
+Marine
+
+ Welding and repairs for vessels, docks, and marine infrastructure.
+
+
+Automotive & Trucking
+
+ Frame repairs, modifications, trailers, and custom exhaust or aluminum welding.
+Why Choose Clarke:
+Red Seal Welders & Machinists
+
+
+Trusted by generations of Victoria businesses since 1960
+
+
+Fast turnaround and transparent job tracking
+
+
+Full-service machine shop (6,000 sq ft facility)
+
+
+A fleet of 6 fully equipped work trucks and welding rigs for mobile jobs
+
+
+Onsite welding, custom fabrication, and project management
+
+
+
+How many testimonials-  one at a time rotating, let’s take the 5 star ones from Google in the immediate term. All of them. 
+
+Under the services tab let’s put a ‘packages’ section which will include Gold, Silver and Bronze packages, these will be annual subscriptions maintenance packages, Bronze will be booked-annual grease trap cleaning $500.00. Silver will be quality grease trap cleaning $1,000.00. Gold will be on call 24/7 call out, limited to 10 customers max and quarterly grease trap cleaning $1,500.00 and stainless steel polish. 
+^^This is the concept for setting up the packages for recurring revenue, we’ll dial in the pricing and services after we understand the market better.
+
+
+
+Photos: Ideas: 
+Under the ‘about us’ section I want us to do a high level drone shot from the street of the front of the building with all 6 work trucks, 2 fork lifts and 1 crane all lined up, clean and shiny to show off our capability. 
+
+Also some cool photos of the guys machining/working with the Clarke logos promoinant & visible on the overalls and hats 
+For the photos, possibly shot in black and white but with the red Clarke logo in full colour so it pops
+Also a map in the footer which shows Uptown and downtown with a little Star ⭐️ showing our location
+
+
+Fiver updates:
+Order placed
+
+---------------------------------------------------------- End non-technical notes ----------------------------------------------------------
+
+You are going to build this site to the following technical specifications:
+
+- Use React.js - Already installed and configured
+- Use Shadcn (shadcn@latest) - All components are already installed and ready to use in src/components/ui
+- Use TailwindCSS - Already installed and configured
+- Use Vite - Already installed and configured
+- Use Tanstack Router - Already installed and configured
+
+Do not go overboard. This is a fairly simple site that is used for marketing purposes. It should be visually beautiful and appealing first, and make the user want to stay on the site and learn more about Clarke Engineering & Welding Ltd.
+
+Use beautiful animations and transitions. The hero section should have videos playing in the background which I have added to public/videos folder.
+
+Make it fun, playful, and beautiful.
+
+All route files should go in the routes/ directory and follow the latest best practices for Tanstack Router.
+
+All components should go in the src/components directory and be named like example-component.tsx unless otherwise specified.
+
+All new pages should go in the src/app directory and be named like example-page.tsx unless otherwise specified.
+
+The src/components/ui directory is reserved for Shadcn components only and should not be used for any other components.
+
+The src/lib directory is reserved for utility functions only.
+
+The src/types directory is reserved for TypeScript types only.
+
+Styling should be done inline within the component files.
+
+Do not use any external CSS files.
+
+Do not use any external JavaScript files.
+
+Do not use any external libraries.
+
+Do not use any external APIs.
+
+Do not use any external services.
+
+
+Confirm your understanding of the above requirements in a new file called confirmation.txt which details the technical impelementation plan and website specifications and structure before changing any code.

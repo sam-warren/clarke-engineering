@@ -1,15 +1,21 @@
 import { Outlet, createRootRoute } from '@tanstack/react-router'
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
-
-import Header from '../components/Header'
+import { Header } from '../components/layout/header'
+import { Footer } from '../components/layout/footer'
+// import { TanStackRouterDevtools } from '@tanstack/router-devtools' // Optional: for development
 
 export const Route = createRootRoute({
-  component: () => (
-    <>
-      <Header />
-
-      <Outlet />
-      <TanStackRouterDevtools />
-    </>
-  ),
+  component: RootComponent,
 })
+
+function RootComponent() {
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <main className="flex-grow container mx-auto p-4">
+        <Outlet />
+      </main>
+      <Footer />
+      {/* <TanStackRouterDevtools position="bottom-right" /> */}
+    </div>
+  )
+}

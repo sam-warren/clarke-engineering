@@ -1,0 +1,157 @@
+# Confirmation of Technical Implementation Plan & Website Specifications
+
+## 1. Project Overview
+- **Client:** Clarke Engineering & Welding Ltd.
+- **Objective:** Build a visually appealing, engaging marketing website to showcase Clarke's services, expertise, and legacy. The site should radiate energy, speed, and trustworthiness.
+- **Secondary Objective (Restaurant Niche):** Incorporate "Victoria Restaurant Repairs & Welding" as a division, with tailored messaging and services.
+
+## 2. Technical Stack
+- **Frontend Framework:** React.js (existing setup)
+- **UI Components:** Shadcn (latest, existing setup in `src/components/ui`)
+- **Styling:** TailwindCSS (existing setup, inline styles within components)
+- **Build Tool:** Vite (existing setup)
+- **Routing:** Tanstack Router (existing setup, latest best practices)
+- **Video Assets:** Provided in `public/videos` for hero section background.
+
+## 3. File & Directory Structure
+- **Routes:** `routes/` (e.g., `index.tsx`, `about.tsx`, `services.tsx`, etc.)
+- **Pages/Views:** `src/app/` (e.g., `home-page.tsx`, `about-page.tsx`)
+- **Reusable Components:** `src/components/` (e.g., `hero-section.tsx`, `service-card.tsx`)
+- **Shadcn UI Components:** `src/components/ui/` (strictly for Shadcn components)
+- **Utility Functions:** `src/lib/`
+- **TypeScript Types:** `src/types/`
+- **Public Assets:** `public/` (e.g., `public/videos/`, `public/images/`) - (Note: `initial-prompt.txt` mentions `public/videos`, will assume other assets like images go here too).
+
+## 4. Website Structure & Pages
+
+### 4.1. Global Elements:
+- **Header:**
+    - Logo: Clarke Engineering & Welding Ltd (top left)
+    - Navigation Menu (right-aligned): About, Services, Shop Capabilities, Projects, Contact
+    - Sticky Call to Action (CTA): "Call Now: 250 475 2400" + "Email Now: Clarke@islandnet.com". This CTA becomes sticky/floating after scrolling past the hero section's initial CTAs.
+- **Footer:**
+    - Association Badges: Red Seal, BBB, CWB, Island Equipment Operators Association, CFIB.
+    - Map: Visual showing location (Uptown/Downtown with a star).
+    - Contact Info.
+- **Favicon/Logo:** "Clarke" in a red oval with white outline (similar to Coke/Mack) for sub-pages/branding.
+
+### 4.2. Main Pages (accessible via navigation):
+
+**A. Homepage (`/`)**
+   - **Hero Banner Section:**
+     - Headline: "Trusted Since 1960."
+     - Subhead: "Victoria's most experienced welding and machining shop — serving industries across Vancouver Island."
+     - Background: Videos from `public/videos` playing.
+     - Call-to-Action Buttons (Firetruck Red / Clarke Red): "Get a Quote", "Call Now". (These trigger the sticky header CTAs on scroll).
+     - "66 years of excellence in Victoria" pop-up on page load (like Keyfood).
+   - **Service Divisions Section:**
+     - Headline: "Explore Our Specialized Divisions"
+     - Grid of large buttons/cards, each with a picture. Each card links to a dedicated page (e.g., `/heavy-duty-equipment-repairs`).
+       - Heavy-Duty Equipment Repairs: Mobile and shop-based repairs.
+       - Elevators & Cranes: Welding, modification, inspection support.
+       - Restaurants: Via "Victoria Restaurant Repairs & Welding" division.
+       - Commercial: Custom welding for businesses.
+       - Residential: Handrails, gates, custom furniture.
+       - Marine: Vessel, dock, marine infrastructure repairs.
+       - Automotive & Trucking: Frame repairs, modifications, trailers.
+   - **Why Choose Clarke Section:**
+     - Red Seal Welders & Machinists
+     - Trusted since 1960
+     - Fast turnaround & transparent job tracking
+     - Full-service machine shop (6,000 sq ft)
+     - 6 fully equipped work trucks
+     - Onsite welding, custom fabrication, project management
+   - **Testimonials Section:**
+     - Rotating 5-star Google reviews (all of them, one at a time).
+   - **Content Vibe:** Engaging, story-telling, avoid corporate jargon. "Fastest guns in the West" with welding gun icon.
+
+**B. About Page (`/about`)**
+   - "Our History / Our Stories"
+   - Long-form interview with Graham & [Sam/Logan?] explaining who they are and what they do.
+   - Drone shot of the front of the building with trucks, forklifts, crane lined up.
+   - Photos of technicians working (Clarke logos prominent), possibly B&W with red logo pop.
+   - Media mentions (Times Colonist / CTV press releases if available).
+
+**C. Services Page (`/services`)**
+   - Details of general services offered.
+   - **"Packages" Section (specifically for Restaurant division initially, can expand):**
+     - Concept: Annual subscription maintenance packages.
+     - Bronze: Booked annual grease trap cleaning ($500).
+     - Silver: Quality grease trap cleaning ($1000).
+     - Gold: On-call 24/7 (10 customers max), quarterly grease trap cleaning, stainless steel polish ($1500).
+     - *Pricing and specific services to be dialed in later.*
+   - Individual Service Division Pages (linked from Homepage cards):
+     - Example: `/heavy-duty-equipment-repairs`, `/elevators-cranes`, etc.
+     - Content: Service-specific information, text, and images (placeholder Lorem Ipsum initially for design approval).
+     - **Restaurant Repairs Sub-Page (`/restaurant-repairs` or similar, linked from its division card):**
+       - Brand Name: Victoria Restaurant Repairs & Welding
+       - Powered by: Clarke Engineering & Welding Ltd (logo visible)
+       - Key Messaging: Local. Fast. Reliable. / Commercial Kitchen & Restaurant Welding Repairs – Since 1960. / We Can Fix Anything.
+       - Target Audience: Restaurant owners, food truck operators, etc.
+       - Services Offered (specific to restaurants): On-site welding, pipe welding, grease traps, stainless steel mods, custom railings, etc.
+       - Key Features: 10% discount for pre-paid, guaranteed timeline, budget tracking, 6000 sq ft shop, specialists in stainless & chrome.
+       - Design: Fire Truck Red theme, consistent typography with main Clarke site.
+       - Functional Elements: "Call Now", "Request a Quote" buttons, before/after gallery, testimonials, "Backed by Clarke" section, "The Grease Drip" quarterly newsletter sign-up.
+
+**D. Shop Capabilities Page (`/shop-capabilities`)**
+   - Details about the 6,000 sq. ft. welding and machining shop.
+   - Equipment, capacity, technologies used.
+   - Photos of the shop and equipment.
+
+**E. Projects Page (`/projects`)**
+   - Showcase of completed work.
+   - Example: Bastion Square Arch.
+   - Before/after photo gallery for various projects if applicable.
+
+**F. Contact Page (`/contact`)**
+   - Contact Form.
+   - Phone number: (250) 475 2400
+   - Email: Clarke@islandnet.com
+   - Business Address.
+   - Google Map integration (visual representation of location).
+   - Store hours.
+
+## 5. Design & UX ("Vibe")
+- **Overall Feel:** Non-boring, awesome, radiates energy, keeps people engaged, fast, modern.
+- **Voice & Tone:** Human, direct, playful, bold, confident. Avoid corporate speak.
+- **Visual Energy:**
+    - Colors: Bold, unexpected combos (readable). Fire Truck Red prominent.
+    - Fonts: Modern, expressive typography.
+    - Movement: Subtle animations, hover effects, microinteractions. Fast transitions ("woosh" effect).
+    - Images/Videos: Real, high-quality visuals (people, action, emotion). Background videos in hero.
+- **Structure:** Break standard layouts (asymmetry, scroll effects, unexpected transitions). Punchy headlines, scannable chunks, clear CTAs. Lean homepage.
+- **Content:** Storytelling, humor, confidence.
+- **Performance:** Fast site, snappy transitions, mobile-optimized.
+- **Icons:** Use icons effectively to convey services (e.g., similar to Great West Welding's use of icons).
+    - Specific icons mentioned: elevator repairs, crane repairs, heavy-duty cylinder repairs, line boring, hydraulic repairs, bearing/pulley repairs, truck repairs, tanker repairs, paving equipment, excavators, bulldozers, etc.
+- **Custom Cursor/Click Effects:** Consider for enhanced interaction.
+- **Sticky Callouts/Messages:** As user scrolls.
+
+## 6. Styling & Implementation Details
+- **Styling:** Inline TailwindCSS within component files. No external CSS files.
+- **No external JS files** (unless for specific, approved integrations like a chat widget, which seems contradictory to "no external libraries/APIs" - see section 8).
+- **Animations & Transitions:** Prioritize beauty and smoothness.
+- **Mobile Optimization:** Crucial.
+
+## 7. Development Process Notes
+- Start with a skeleton site: navigation, styling, placeholder text.
+- Iterative development, especially for service division pages (Lorem Ipsum first).
+- Focus on visual appeal and user engagement first.
+
+## 8. Specific Component/Feature Notes & Constraints
+- **Shadcn Components:** Use `pnpx shadcn@latest add <component>` to install new components.
+- **"66 years of excellence" pop-up:** Implement on homepage load.
+- **Video Background:** Hero section, using files from `public/videos`.
+- **Testimonials:** Rotating, sourced from Google Reviews.
+- **Icons for Services:** Reverse search for inspiration from Great West Welding or create/find suitable ones.
+- **Google Review Plug-in / Google Map Plug-in:** The prompt mentions these but also states "Do not use any external APIs" and "Do not use any external services." This is a contradiction.
+    - **Clarification Needed:** Can we use iframe embeds for Google Maps and a third-party widget for reviews (which might involve external JS/API)? Or should these be static representations (e.g., an image for the map, manually curated testimonials)?
+    - **Assumption for now:** Will aim for solutions that minimize external dependencies. For maps, a static image or a very lightweight JS library that doesn't call external APIs might be an option if a true "plug-in" is out. For reviews, they will be manually added and rotated.
+- **Live Chat:** Mentioned as a "Bonus Idea" (quirky, honest, sarcastic). Also potentially an external service. Decision needed.
+- **Online Booking/Newsletter Signup:** "Victoria Restaurant Repairs" section mentions "Request a Quote" buttons and "The Grease Drip" newsletter signup. This might imply backend or third-party service integration (e.g., for email capture).
+    - **Clarification Needed:** How should these be implemented without external services/APIs? A simple `mailto:` link for quotes? For newsletter, is a simple form that does nothing (placeholder) acceptable, or is there a specific non-external method in mind?
+- **Domain Forwarding:** Not directly part of the site build, but noted for client information.
+- **No external libraries/APIs/services:** This is a strong constraint and will guide implementation choices for features like maps, reviews, chat, and forms.
+
+## 9. Understanding Confirmation
+This document serves as confirmation of understanding the requirements outlined in `initial-prompt.txt`. Development will proceed based on this plan once any necessary clarifications (especially regarding external service integrations) are addressed. The primary goal is a visually stunning, fast, and engaging website for Clarke Engineering & Welding Ltd. and its "Victoria Restaurant Repairs & Welding" division. 
