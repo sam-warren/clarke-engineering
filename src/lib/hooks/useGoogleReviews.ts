@@ -1,5 +1,4 @@
 import { useQuery } from '@tanstack/react-query'
-import { useEffect, useState } from 'react'
 
 // Define our interfaces to match Google Maps API types
 export interface GoogleReview {
