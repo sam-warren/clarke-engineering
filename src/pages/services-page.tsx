@@ -9,7 +9,10 @@ import {
 export function ServicesPage() {
   return (
     <div className="space-y-8 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
-      <h1 className="text-4xl font-bold text-center mb-10">Our Services</h1>
+      <h1 className="text-4xl font-bold text-center mb-6">Our Services</h1>
+      <p className="text-xl text-center text-gray-600 mb-10">
+        We offer a wide range of services to meet your needs.
+      </p>
 
       <Card className="shadow-lg">
         <CardHeader>

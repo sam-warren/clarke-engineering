@@ -54,8 +54,8 @@ const projectsData: Project[] = [
 export function ProjectsPage() {
   return (
     <div className="space-y-8 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
-      <h1 className="text-4xl font-bold text-center mb-10">Our Projects</h1>
-      <p className="text-xl text-center text-gray-600 mb-12">
+      <h1 className="text-4xl font-bold text-center mb-6">Our Projects</h1>
+      <p className="text-xl text-center text-gray-600 mb-10">
         Showcasing a selection of our diverse and successfully completed work
         across various sectors.
       </p>

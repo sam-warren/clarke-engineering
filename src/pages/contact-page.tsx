@@ -9,6 +9,7 @@ import {
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Clock, Mail, MapPin, Phone } from 'lucide-react'
+import { GoogleMapComponent } from '@/components/google-integration/google-map'
 
 export function ContactPage() {
   return (
@@ -120,7 +121,9 @@ export function ContactPage() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Address</p>
-                    <p className="font-medium">[Your Business Address]</p>
+                    <p className="font-medium">
+                      3364 Burns Ave, Victoria, BC V8Z 3P2
+                    </p>
                   </div>
                 </div>
 
@@ -130,7 +133,7 @@ export function ContactPage() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Business Hours</p>
-                    <p className="font-medium">Monday - Friday: 8am - 5pm</p>
+                    <p className="font-medium">Monday - Friday: 7am - 5:30pm</p>
                     <p className="font-medium">Saturday - Sunday: Closed</p>
                   </div>
                 </div>
@@ -142,12 +145,12 @@ export function ContactPage() {
                 <CardTitle className="text-xl">Location</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="bg-gray-200 h-[300px] rounded-md flex items-center justify-center">
-                  <p className="text-gray-500">Map Placeholder</p>
-                  <p className="text-sm">
-                    (Google Maps will be integrated here)
-                  </p>
-                </div>
+                <GoogleMapComponent
+                  height="300px"
+                  className="rounded-md"
+                  showMarker={true}
+                  address="Clarke Engineering & Welding Ltd."
+                />
               </CardContent>
             </Card>
           </div>

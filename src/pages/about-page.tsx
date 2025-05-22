@@ -1,10 +1,14 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
+import { GoogleMapComponent } from '@/components/google-integration/google-map'
 
 export function AboutPage() {
   return (
     <div className="space-y-8 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
-      <h1 className="text-4xl font-bold text-center mb-10">About Us</h1>
+      <h1 className="text-4xl font-bold text-center mb-6">About Us</h1>
+      <p className="text-xl text-center text-gray-600 mb-10">
+        Learn more about our company and the people who make it great.
+      </p>
 
       <Card className="shadow-lg">
         <CardHeader>
@@ -14,8 +18,8 @@ export function AboutPage() {
         </CardHeader>
         <CardContent>
           <p className="mb-3 text-lg">
-            Placeholder for long-form interview with Graham & [Sam/Logan?]
-            explaining who they are and what they do.
+            Placeholder for long-form interview with Graham & Logan explaining
+            who they are and what they do.
           </p>
           <p className="text-gray-700">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
@@ -40,6 +44,15 @@ export function AboutPage() {
             <Skeleton className="w-full h-72 rounded-md bg-gray-300 flex items-center justify-center text-gray-500">
               [Drone Shot Placeholder]
             </Skeleton>
+          </div>
+          <div>
+            <p className="mb-3 text-lg">Our Location</p>
+            <GoogleMapComponent
+              height="400px"
+              className="w-full rounded-md mb-6"
+              showMarker={true}
+              address="Clarke Engineering & Welding Ltd."
+            />
           </div>
           <div>
             <p className="mb-3 text-lg">

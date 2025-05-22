@@ -9,10 +9,10 @@ import { Link } from '@tanstack/react-router'
 
 export function Header() {
   const navLinks = [
-    { to: '/about', label: 'About' },
     { to: '/services', label: 'Services' },
     { to: '/shop-capabilities', label: 'Shop Capabilities' },
     { to: '/projects', label: 'Projects' },
+    { to: '/about', label: 'About' },
     { to: '/contact', label: 'Contact' },
   ]
 
@@ -28,8 +28,8 @@ export function Header() {
             className="h-20 w-auto"
           />
           <div className="flex flex-col py-2">
-            <span className="bg-gradient-to-r from-red-600/90 to-red-500/90 bg-clip-text text-2xl font-extrabold leading-relaxed tracking-tight text-transparent sm:text-3xl">
-              Engineering & Welding Ltd.
+            <span className="bg-gradient-to-r from-red-600/90 to-red-500/90 bg-clip-text text-xl font-extrabold leading-relaxed tracking-tight text-transparent sm:text-2xl font-family-michroma">
+              ENGINEERING & WELDING
             </span>
           </div>
         </Link>

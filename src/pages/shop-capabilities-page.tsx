@@ -4,9 +4,11 @@ import { Skeleton } from '@/components/ui/skeleton'
 export function ShopCapabilitiesPage() {
   return (
     <div className="space-y-8 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
-      <h1 className="text-4xl font-bold text-center mb-10">
-        Shop Capabilities
-      </h1>
+      <h1 className="text-4xl font-bold text-center mb-6">Shop Capabilities</h1>
+      <p className="text-xl text-center text-gray-600 mb-10">
+        Our 6,000 sq ft facility is equipped with the latest welding and
+        machining equipment, allowing us to handle a wide range of projects.
+      </p>
 
       <Card className="shadow-lg">
         <CardHeader>
