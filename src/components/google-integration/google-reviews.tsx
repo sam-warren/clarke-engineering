@@ -1,4 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
 import {
   Carousel,
   CarouselContent,
@@ -6,11 +7,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel'
-import { Star, StarHalf } from 'lucide-react'
-import { useGoogleReviews } from '@/lib/hooks/useGoogleReviews'
 import type { GoogleReview } from '@/lib/hooks/useGoogleReviews'
+import { useGoogleReviews } from '@/lib/hooks/useGoogleReviews'
+import { Star, StarHalf } from 'lucide-react'
 import { useState } from 'react'
-import { Button } from '@/components/ui/button'
 
 export function GoogleReviews() {
   const { data, isLoading, error } = useGoogleReviews()
