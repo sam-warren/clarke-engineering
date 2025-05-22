@@ -6,7 +6,7 @@ export interface GoogleReview {
     rating: number
     relative_time_description: string
     text: string
-    time: number // Unix timestamp
+    time: number
 }
 
 export interface PlaceDetails {
@@ -17,30 +17,18 @@ export interface PlaceDetails {
 
 const fetchGoogleReviews = async (): Promise<PlaceDetails> => {
     try {
-        console.log('Fetching reviews with:', {
-            placeId: import.meta.env.VITE_GOOGLE_PLACE_ID,
-            apiKey: import.meta.env.VITE_GOOGLE_PLACES_API_KEY?.slice(0, 5) + '...'
-        })
-
-        // Get all available reviews (max 5 per request)
+        // Using Vite's proxy to avoid CORS issues
         const response = await fetch(
             `/api/google-places/place/details/json?place_id=${import.meta.env.VITE_GOOGLE_PLACE_ID}&fields=rating,user_ratings_total,reviews&reviews_sort=newest&key=${import.meta.env.VITE_GOOGLE_PLACES_API_KEY}`
         )
 
         if (!response.ok) {
-            const errorText = await response.text()
-            console.error('Google Places API error:', {
-                status: response.status,
-                statusText: response.statusText,
-                error: errorText
-            })
-            throw new Error(`Failed to fetch reviews: ${response.statusText}`)
+            throw new Error('Failed to fetch reviews')
         }
 
         const data = await response.json()
 
         if (!data.result) {
-            console.error('No result in response:', data)
             throw new Error('No reviews data in response')
         }
 
@@ -50,7 +38,7 @@ const fetchGoogleReviews = async (): Promise<PlaceDetails> => {
             const reviewDate = review.time * 1000 // Convert to milliseconds
             return reviewDate > oneYearAgo &&
                 review.rating >= 4 &&
-                review.text.trim().length > 0 // Only include reviews with text
+                review.text.trim().length > 0
         })
 
         return {
@@ -59,7 +47,7 @@ const fetchGoogleReviews = async (): Promise<PlaceDetails> => {
             reviews: filteredReviews
         }
     } catch (error) {
-        console.error('Error in fetchGoogleReviews:', error)
+        console.error('Error fetching reviews:', error)
         throw error
     }
 }
@@ -70,6 +58,6 @@ export function useGoogleReviews() {
         queryFn: fetchGoogleReviews,
         staleTime: 1000 * 60 * 5, // Consider data stale after 5 minutes
         refetchOnWindowFocus: false,
-        retry: 1, // Only retry once on failure
+        retry: 1,
     })
 } 
