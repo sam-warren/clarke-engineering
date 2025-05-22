@@ -1,12 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
+import { useEffect, useState } from 'react'
 
-declare global {
-    interface Window {
-        googlePlacesApiLoaded?: boolean;
-        google: any;
-    }
-}
-
+// Define our interfaces to match Google Maps API types
 export interface GoogleReview {
     author_name: string
     profile_photo_url: string
@@ -22,56 +17,80 @@ export interface PlaceDetails {
     reviews: GoogleReview[]
 }
 
-const waitForGoogleApi = (): Promise<void> => {
-    return new Promise((resolve) => {
-        if (window.googlePlacesApiLoaded) {
-            resolve();
-            return;
-        }
+// Add Google Maps types
+declare global {
+    interface Window {
+        google: {
+            maps: {
+                places: {
+                    PlacesService: any;
+                    PlacesServiceStatus: {
+                        OK: string;
+                        [key: string]: string;
+                    };
+                };
+            };
+        };
+    }
+}
 
-        const checkInterval = setInterval(() => {
-            if (window.googlePlacesApiLoaded) {
-                clearInterval(checkInterval);
-                resolve();
-            }
-        }, 100);
+// Load Google Maps JavaScript API
+const loadGoogleMapsAPI = () => {
+    if (window.google?.maps) return Promise.resolve();
+
+    return new Promise<void>((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = `https://maps.googleapis.com/maps/api/js?key=${import.meta.env.VITE_GOOGLE_PLACES_API_KEY}&libraries=places`;
+        script.async = true;
+        script.defer = true;
+        script.onload = () => resolve();
+        script.onerror = () => reject(new Error('Failed to load Google Maps API'));
+        document.head.appendChild(script);
     });
 };
 
+// Fetch reviews using browser-based Places API
 const fetchGoogleReviews = async (): Promise<PlaceDetails> => {
     try {
-        await waitForGoogleApi();
+        await loadGoogleMapsAPI();
 
         return new Promise((resolve, reject) => {
-            const service = new window.google.maps.places.PlacesService(
-                document.createElement('div')
-            );
+            const placeId = import.meta.env.VITE_GOOGLE_PLACE_ID;
+            const service = new window.google.maps.places.PlacesService(document.createElement('div'));
 
             service.getDetails(
                 {
-                    placeId: import.meta.env.VITE_GOOGLE_PLACE_ID,
+                    placeId,
                     fields: ['rating', 'user_ratings_total', 'reviews']
                 },
-                (result: any, status: any) => {
-                    if (status !== window.google.maps.places.PlacesServiceStatus.OK) {
-                        reject(new Error('Failed to fetch reviews'));
+                (result: any, status: string) => {
+                    if (status !== window.google.maps.places.PlacesServiceStatus.OK || !result) {
+                        reject(new Error(`Places API error: ${status}`));
                         return;
                     }
 
                     // Filter reviews: 4+ stars from the past year with text content
                     const oneYearAgo = Date.now() - (365 * 24 * 60 * 60 * 1000);
-                    const filteredReviews = (result.reviews || [])
-                        .filter((review: GoogleReview) => {
-                            const reviewDate = review.time * 1000; // Convert to milliseconds
-                            return reviewDate > oneYearAgo && 
-                                   review.rating >= 4 && 
-                                   review.text.trim().length > 0;
-                        });
+                    const filteredReviews = (result.reviews || []).filter((review: any) => {
+                        const reviewDate = review.time * 1000; // Convert to milliseconds
+                        return reviewDate > oneYearAgo &&
+                            review.rating >= 4 &&
+                            review.text && review.text.trim().length > 0;
+                    });
+
+                    const mappedReviews: GoogleReview[] = filteredReviews.map((review: any) => ({
+                        author_name: review.author_name,
+                        profile_photo_url: review.profile_photo_url,
+                        rating: review.rating,
+                        relative_time_description: review.relative_time_description,
+                        text: review.text,
+                        time: review.time
+                    }));
 
                     resolve({
                         rating: result.rating || 0,
                         user_ratings_total: result.user_ratings_total || 0,
-                        reviews: filteredReviews
+                        reviews: mappedReviews
                     });
                 }
             );

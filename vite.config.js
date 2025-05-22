@@ -21,16 +21,4 @@ export default defineConfig({
       '@': resolve(__dirname, './src'),
     },
   },
-  server: {
-    proxy: {
-      '/api/google-places': {
-        target: 'https://maps.googleapis.com/maps/api',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api\/google-places/, ''),
-        headers: {
-          'Accept': 'application/json',
-        },
-      },
-    },
-  },
 })
