@@ -11,6 +11,17 @@
     />
     <link rel="manifest" href="/manifest.json" />
     <title>Clarke Engineering</title>
+    <script>
+      function initMap() {
+        // This function will be called when the Places API is loaded
+        window.googlePlacesApiLoaded = true;
+      }
+    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=%VITE_GOOGLE_PLACES_API_KEY%&libraries=places&callback=initMap"
+      async
+      defer
+    ></script>
   </head>
   <body>
     <div id="app"></div>
