@@ -1,31 +1,45 @@
 import { useQuery } from '@tanstack/react-query'
 
-// Define our interfaces to match Google Maps API types
-export interface GoogleReview {
-    author_name: string
-    profile_photo_url: string
-    rating: number
-    relative_time_description: string
-    text: string
-    time: number
+// Define proper TypeScript types for Google Places API responses
+export interface GooglePlaceReview {
+    author_name: string;
+    author_url?: string;
+    profile_photo_url: string;
+    rating: number;
+    relative_time_description: string;
+    text: string;
+    time: number;
 }
 
-export interface PlaceDetails {
-    rating: number
-    user_ratings_total: number
-    reviews: GoogleReview[]
+export interface GooglePlaceDetails {
+    name: string;
+    rating: number;
+    user_ratings_total: number;
+    reviews?: GooglePlaceReview[];
 }
 
-// Add Google Maps types
+// Declare global Google Maps types
 declare global {
     interface Window {
         google: {
             maps: {
                 places: {
-                    PlacesService: any;
+                    PlacesService: new (element: Element) => {
+                        getDetails: (
+                            request: { placeId: string; fields: string[] },
+                            callback: (
+                                result: GooglePlaceDetails | null,
+                                status: google.maps.places.PlacesServiceStatus
+                            ) => void
+                        ) => void;
+                    };
                     PlacesServiceStatus: {
                         OK: string;
-                        [key: string]: string;
+                        ZERO_RESULTS: string;
+                        INVALID_REQUEST: string;
+                        OVER_QUERY_LIMIT: string;
+                        REQUEST_DENIED: string;
+                        ERROR: string;
                     };
                 };
             };
@@ -33,79 +47,52 @@ declare global {
     }
 }
 
-// Load Google Maps JavaScript API
-const loadGoogleMapsAPI = () => {
-    if (window.google?.maps) return Promise.resolve();
+/** Fetches place details from Google Places API (via Maps JS library) */
+async function fetchPlaceDetails(placeId: string): Promise<GooglePlaceDetails> {
+    // Ensure Google Places API is available
+    if (!window.google?.maps?.places) {
+        throw new Error('Google Places API not loaded. Please ensure the API script is included with the "places" library.');
+    }
 
-    return new Promise<void>((resolve, reject) => {
-        const script = document.createElement('script');
-        script.src = `https://maps.googleapis.com/maps/api/js?key=${import.meta.env.VITE_GOOGLE_PLACES_API_KEY}&libraries=places`;
-        script.async = true;
-        script.defer = true;
-        script.onload = () => resolve();
-        script.onerror = () => reject(new Error('Failed to load Google Maps API'));
-        document.head.appendChild(script);
-    });
-};
+    // Create a dummy element for PlacesService (required but not used)
+    const service = new window.google.maps.places.PlacesService(
+        document.createElement('div')
+    );
 
-// Fetch reviews using browser-based Places API
-const fetchGoogleReviews = async (): Promise<PlaceDetails> => {
-    try {
-        await loadGoogleMapsAPI();
-
-        return new Promise((resolve, reject) => {
-            const placeId = import.meta.env.VITE_GOOGLE_PLACE_ID;
-            const service = new window.google.maps.places.PlacesService(document.createElement('div'));
-
-            service.getDetails(
-                {
-                    placeId,
-                    fields: ['rating', 'user_ratings_total', 'reviews']
-                },
-                (result: any, status: string) => {
-                    if (status !== window.google.maps.places.PlacesServiceStatus.OK || !result) {
-                        reject(new Error(`Places API error: ${status}`));
-                        return;
-                    }
-
-                    // Filter reviews: 4+ stars from the past year with text content
-                    const oneYearAgo = Date.now() - (365 * 24 * 60 * 60 * 1000);
-                    const filteredReviews = (result.reviews || []).filter((review: any) => {
-                        const reviewDate = review.time * 1000; // Convert to milliseconds
-                        return reviewDate > oneYearAgo &&
-                            review.rating >= 4 &&
-                            review.text && review.text.trim().length > 0;
-                    });
-
-                    const mappedReviews: GoogleReview[] = filteredReviews.map((review: any) => ({
-                        author_name: review.author_name,
-                        profile_photo_url: review.profile_photo_url,
-                        rating: review.rating,
-                        relative_time_description: review.relative_time_description,
-                        text: review.text,
-                        time: review.time
-                    }));
-
+    return new Promise((resolve, reject) => {
+        service.getDetails(
+            {
+                placeId,
+                fields: ['name', 'rating', 'user_ratings_total', 'reviews']
+            },
+            (result, status) => {
+                if (status === window.google.maps.places.PlacesServiceStatus.OK && result) {
                     resolve({
+                        name: result.name || '',
                         rating: result.rating || 0,
                         user_ratings_total: result.user_ratings_total || 0,
-                        reviews: mappedReviews
+                        reviews: result.reviews || []
                     });
+                } else {
+                    reject(new Error(`Places API request failed: ${status}`));
                 }
-            );
-        });
-    } catch (error) {
-        console.error('Error fetching reviews:', error);
-        throw error;
-    }
-};
+            }
+        );
+    });
+}
 
-export function useGoogleReviews() {
+/**
+ * React hook to fetch and cache Google Place reviews
+ * @param placeId - The Google Place ID to fetch reviews for
+ * @returns Query result containing place details including reviews
+ */
+export function useGoogleReviews(placeId: string) {
     return useQuery({
-        queryKey: ['googleReviews'],
-        queryFn: fetchGoogleReviews,
-        staleTime: 1000 * 60 * 5, // Consider data stale after 5 minutes
-        refetchOnWindowFocus: false,
-        retry: 1,
+        queryKey: ['googleReviews', placeId],
+        queryFn: () => fetchPlaceDetails(placeId),
+        staleTime: 2 * 24 * 60 * 60 * 1000, // Consider data fresh for 2 days
+        gcTime: 2 * 24 * 60 * 60 * 1000,    // Keep cached data for 2 days (garbage collection time)
+        retry: 2, // Retry failed requests twice
+        refetchOnWindowFocus: false, // Don't refetch when window regains focus
     });
 } 

@@ -11,7 +11,6 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as ShopCapabilitiesImport } from './routes/shop-capabilities'
 import { Route as ServicesImport } from './routes/services'
 import { Route as ProjectsImport } from './routes/projects'
 import { Route as ContactImport } from './routes/contact'
@@ -19,12 +18,6 @@ import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
-
-const ShopCapabilitiesRoute = ShopCapabilitiesImport.update({
-  id: '/shop-capabilities',
-  path: '/shop-capabilities',
-  getParentRoute: () => rootRoute,
-} as any)
 
 const ServicesRoute = ServicesImport.update({
   id: '/services',
@@ -95,13 +88,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesImport
       parentRoute: typeof rootRoute
     }
-    '/shop-capabilities': {
-      id: '/shop-capabilities'
-      path: '/shop-capabilities'
-      fullPath: '/shop-capabilities'
-      preLoaderRoute: typeof ShopCapabilitiesImport
-      parentRoute: typeof rootRoute
-    }
   }
 }
 
@@ -113,7 +99,6 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
-  '/shop-capabilities': typeof ShopCapabilitiesRoute
 }
 
 export interface FileRoutesByTo {
@@ -122,7 +107,6 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
-  '/shop-capabilities': typeof ShopCapabilitiesRoute
 }
 
 export interface FileRoutesById {
@@ -132,34 +116,14 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
-  '/shop-capabilities': typeof ShopCapabilitiesRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/about'
-    | '/contact'
-    | '/projects'
-    | '/services'
-    | '/shop-capabilities'
+  fullPaths: '/' | '/about' | '/contact' | '/projects' | '/services'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/about'
-    | '/contact'
-    | '/projects'
-    | '/services'
-    | '/shop-capabilities'
-  id:
-    | '__root__'
-    | '/'
-    | '/about'
-    | '/contact'
-    | '/projects'
-    | '/services'
-    | '/shop-capabilities'
+  to: '/' | '/about' | '/contact' | '/projects' | '/services'
+  id: '__root__' | '/' | '/about' | '/contact' | '/projects' | '/services'
   fileRoutesById: FileRoutesById
 }
 
@@ -169,7 +133,6 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   ProjectsRoute: typeof ProjectsRoute
   ServicesRoute: typeof ServicesRoute
-  ShopCapabilitiesRoute: typeof ShopCapabilitiesRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -178,7 +141,6 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   ProjectsRoute: ProjectsRoute,
   ServicesRoute: ServicesRoute,
-  ShopCapabilitiesRoute: ShopCapabilitiesRoute,
 }
 
 export const routeTree = rootRoute
@@ -195,8 +157,7 @@ export const routeTree = rootRoute
         "/about",
         "/contact",
         "/projects",
-        "/services",
-        "/shop-capabilities"
+        "/services"
       ]
     },
     "/": {
@@ -213,9 +174,6 @@ export const routeTree = rootRoute
     },
     "/services": {
       "filePath": "services.tsx"
-    },
-    "/shop-capabilities": {
-      "filePath": "shop-capabilities.tsx"
     }
   }
 }

@@ -7,13 +7,21 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel'
-import type { GoogleReview } from '@/lib/hooks/useGoogleReviews'
+import type { GooglePlaceReview } from '@/lib/hooks/useGoogleReviews'
 import { useGoogleReviews } from '@/lib/hooks/useGoogleReviews'
 import { Star, StarHalf } from 'lucide-react'
 import { useState } from 'react'
 
-export function GoogleReviews() {
-  const { data, isLoading, error } = useGoogleReviews()
+interface GoogleReviewsProps {
+  placeId?: string
+  className?: string
+}
+
+export function GoogleReviews({
+  placeId = import.meta.env.VITE_GOOGLE_PLACE_ID,
+  className = '',
+}: GoogleReviewsProps) {
+  const { data, isLoading, error } = useGoogleReviews(placeId)
   const [expandedReviews, setExpandedReviews] = useState<
     Record<number, boolean>
   >({})
@@ -27,7 +35,7 @@ export function GoogleReviews() {
       stars.push(
         <Star
           key={`star-${i}`}
-          className="w-4 h-4 fill-yellow-400 text-yellow-400"
+          className="h-4 w-4 fill-yellow-400 text-yellow-400"
         />,
       )
     }
@@ -36,8 +44,16 @@ export function GoogleReviews() {
       stars.push(
         <StarHalf
           key="half-star"
-          className="w-4 h-4 fill-yellow-400 text-yellow-400"
+          className="h-4 w-4 fill-yellow-400 text-yellow-400"
         />,
+      )
+    }
+
+    // Add empty stars to make total of 5
+    const emptyStars = 5 - stars.length
+    for (let i = 0; i < emptyStars; i++) {
+      stars.push(
+        <Star key={`empty-star-${i}`} className="h-4 w-4 text-gray-300" />,
       )
     }
 
@@ -52,32 +68,47 @@ export function GoogleReviews() {
   }
 
   if (isLoading) {
-    return <div className="text-center py-8">Loading reviews...</div>
+    return (
+      <div className="flex h-48 items-center justify-center">
+        <div className="text-center">
+          <div className="mb-2 h-6 w-6 animate-spin rounded-full border-2 border-primary border-t-transparent"></div>
+          <p className="text-sm text-gray-500">Loading reviews...</p>
+        </div>
+      </div>
+    )
   }
 
   if (error) {
     return (
-      <div className="text-center py-8 text-red-500">
-        Failed to load reviews
+      <div className="flex h-48 items-center justify-center">
+        <div className="text-center text-red-500">
+          <p className="mb-2 font-medium">Failed to load reviews</p>
+          <p className="text-sm">
+            {error instanceof Error ? error.message : 'Unknown error occurred'}
+          </p>
+        </div>
       </div>
     )
   }
 
   if (!data?.reviews?.length) {
-    return <div className="text-center py-8">No reviews available</div>
+    return (
+      <div className="flex h-48 items-center justify-center">
+        <p className="text-gray-500">No reviews available</p>
+      </div>
+    )
   }
 
   return (
-    <div className="py-8">
+    <div className={`py-8 ${className}`}>
       {/* Overall Rating Section */}
-      <div className="mb-12 flex flex-col md:flex-row items-center justify-between gap-8">
+      <div className="mb-12 flex flex-col items-center justify-between gap-8 md:flex-row">
         <div className="flex-1">
           <h2 className="text-3xl font-bold">
-            Highly Rated by Our Satisfied Customers
+            {data.name || 'Customer Reviews'}
           </h2>
-          <div className="text-lg text-gray-600 mt-4">
-            Don't just take our word for it, see what our clients have to say
-            about us.
+          <div className="mt-4 text-lg text-gray-600">
+            See what our clients have to say about their experience with us.
           </div>
         </div>
 
@@ -85,7 +116,7 @@ export function GoogleReviews() {
           <CardContent>
             <div className="flex items-center justify-center gap-6">
               <div className="flex flex-col items-center">
-                <div className="text-6xl font-bold text-gray-900 mb-1">
+                <div className="mb-1 text-6xl font-bold text-gray-900">
                   {data.rating.toFixed(1)}
                 </div>
                 <div className="flex items-center gap-1">
@@ -100,7 +131,7 @@ export function GoogleReviews() {
                 <div className="text-2xl font-bold text-gray-900">
                   {data.user_ratings_total}
                 </div>
-                <div className="text-xs text-gray-500 mt-1">
+                <div className="mt-1 text-xs text-gray-500">
                   From Google Reviews
                 </div>
               </div>
@@ -117,18 +148,27 @@ export function GoogleReviews() {
         className="w-full"
       >
         <CarouselContent>
-          {data.reviews.map((review: GoogleReview, index: number) => (
+          {data.reviews.map((review: GooglePlaceReview, index: number) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
               <div className="p-1">
-                <Card className="p-4 h-full flex flex-col">
-                  <div className="flex items-center gap-4 mb-4">
+                <Card className="flex h-full flex-col p-4">
+                  <div className="mb-4 flex items-center gap-4">
                     <img
                       src={review.profile_photo_url}
                       alt={`${review.author_name}'s profile`}
-                      className="w-12 h-12 rounded-full"
+                      className="h-12 w-12 rounded-full"
                     />
                     <div>
-                      <h3 className="font-semibold">{review.author_name}</h3>
+                      <h3 className="font-semibold">
+                        <a
+                          href={review.author_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-primary"
+                        >
+                          {review.author_name}
+                        </a>
+                      </h3>
                       <div className="flex items-center gap-1">
                         {renderStars(review.rating)}
                       </div>
@@ -136,7 +176,7 @@ export function GoogleReviews() {
                   </div>
                   <div className="relative flex-grow">
                     <p
-                      className={`text-sm text-gray-600 mb-2 ${
+                      className={`mb-2 text-sm text-gray-600 ${
                         !expandedReviews[index] ? 'line-clamp-3' : ''
                       }`}
                     >
@@ -153,7 +193,7 @@ export function GoogleReviews() {
                       </Button>
                     )}
                   </div>
-                  <p className="text-xs text-gray-400 mt-2">
+                  <p className="mt-2 text-xs text-gray-400">
                     {review.relative_time_description}
                   </p>
                 </Card>

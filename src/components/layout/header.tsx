@@ -10,7 +10,6 @@ import { Link } from '@tanstack/react-router'
 export function Header() {
   const navLinks = [
     { to: '/services', label: 'Services' },
-    { to: '/shop-capabilities', label: 'Shop Capabilities' },
     { to: '/projects', label: 'Projects' },
     { to: '/about', label: 'About' },
     { to: '/contact', label: 'Contact' },
