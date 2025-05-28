@@ -12,22 +12,26 @@ import { Link } from '@tanstack/react-router'
 const serviceLinks = [
   {
     title: '🚜 Excavator Repairs',
-    description: 'Reliable hydraulic, mechanical, and welding services for excavation contractors.',
+    description:
+      'Reliable hydraulic, mechanical, and welding services for excavation contractors.',
     to: '/services/excavator-repairs',
   },
   {
     title: '🏗️ Elevator & Crane Repairs',
-    description: 'Experts in Lifting Equipment Welding, Fabrication & Structural Repair',
+    description:
+      'Experts in Lifting Equipment Welding, Fabrication & Structural Repair',
     to: '/services/elevator-crane-repairs',
   },
   {
     title: '🚛 Truck & Automotive Repairs',
-    description: 'Commercial Vehicle Welding • Custom Modifications • Fleet Repair',
+    description:
+      'Commercial Vehicle Welding • Custom Modifications • Fleet Repair',
     to: '/services/truck-automotive-repairs',
   },
   {
     title: '🏗️ Construction Industry Repairs',
-    description: 'Mobile & In-Shop Welding • Structural Steel • Heavy Equipment',
+    description:
+      'Mobile & In-Shop Welding • Structural Steel • Heavy Equipment',
     to: '/services/construction-repairs',
   },
   {
@@ -37,7 +41,8 @@ const serviceLinks = [
   },
   {
     title: '⚓ Marine Engineering & Welding',
-    description: 'Aluminum & Marine-Grade Welding • Vessel Repairs • Custom Fabrication',
+    description:
+      'Aluminum & Marine-Grade Welding • Vessel Repairs • Custom Fabrication',
     to: '/services/marine-engineering',
   },
   {
@@ -52,7 +57,8 @@ const serviceLinks = [
   },
   {
     title: '🗑️ Waste Management Equipment',
-    description: 'Trusted experts in heavy-duty bin, truck, and equipment repairs',
+    description:
+      'Trusted experts in heavy-duty bin, truck, and equipment repairs',
     to: '/services/waste-disposal',
   },
 ]
@@ -85,7 +91,9 @@ export function Header() {
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className={cn(navigationMenuTriggerStyle(), 'text-lg')}>
+              <NavigationMenuTrigger
+                className={cn(navigationMenuTriggerStyle(), 'text-lg')}
+              >
                 Services
               </NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -96,7 +104,9 @@ export function Header() {
                       to={service.to}
                       className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                     >
-                      <div className="text-sm font-medium leading-none">{service.title}</div>
+                      <div className="text-sm font-medium leading-none">
+                        {service.title}
+                      </div>
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                         {service.description}
                       </p>
