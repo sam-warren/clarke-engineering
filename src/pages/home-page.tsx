@@ -1,21 +1,22 @@
-import { GoogleReviews } from '@/components/google-integration/google-reviews'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { Link } from '@tanstack/react-router'
 import {
   ArrowRight,
-  CheckCircle2,
   ChevronDown,
-  Clock4,
-  Dot,
-  Mail,
   Phone,
   Sparkles,
-  Wrench
+  Mail,
+  Wrench,
+  Clock4,
+  CheckSquare2,
+  CheckCircle2,
+  Dot,
 } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { toast } from 'sonner'
+import { GoogleReviews } from '@/components/google-integration/google-reviews'
 
 const VIDEOS = [
   '/videos/4941363-hd_1920_1080_25fps.mp4',
@@ -57,45 +58,31 @@ export function HomePage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative h-screen w-full">
-        {/* Video Background */}
-        <div className="absolute inset-0">
-          {VIDEOS.map((video, index) => (
-            <video
-              key={video}
-              src={video}
-              className="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000"
-              style={{ opacity: index === activeIndex ? 1 : 0 }}
-              autoPlay
-              muted
-              loop
-              playsInline
-            />
-          ))}
-          {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black/50" />
-        </div>
-
+      <section className="relative w-full bg-gradient-to-b from-slate-900 to-slate-800">
+        <div className="absolute inset-0 bg-red-600/5" />
+        
         {/* Hero Content */}
-        <div className="relative flex h-full items-center justify-center px-4 text-center">
+        <div className="relative flex items-center justify-center px-4 text-center py-32">
           <div className="max-w-4xl">
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-              <span className="block">Trusted Since 1960.</span>
-              <span className="mt-2 block text-2xl font-medium text-white/90 sm:text-3xl md:text-4xl">
+            <h1 className="text-6xl font-bold tracking-tight sm:text-7xl md:text-8xl">
+              <span className="block bg-gradient-to-r from-white via-red-100 to-white bg-clip-text text-transparent">
+                Trusted Since 1960.
+              </span>
+              <span className="mt-4 block text-2xl font-medium sm:text-3xl md:text-4xl text-gray-200">
                 Victoria's most experienced welding and machining shop
               </span>
             </h1>
 
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80 sm:text-xl md:text-2xl">
+            <p className="mx-auto mt-8 max-w-2xl text-lg sm:text-xl md:text-2xl text-gray-300">
               Serving industries across Vancouver Island with precision
               engineering, quality craftsmanship, and unmatched expertise.
             </p>
 
-            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Button
                 asChild
                 size="lg"
-                className="min-w-[200px] px-8 py-7 text-xl font-semibold text-white bg-red-600 hover:bg-red-700"
+                className="min-w-[200px] px-8 py-7 text-xl font-semibold bg-red-600 hover:bg-red-700 text-white shadow-lg"
               >
                 <Link to="/contact" className="flex items-center gap-2">
                   Get a Quote <ArrowRight className="h-6 w-6" />
@@ -105,7 +92,7 @@ export function HomePage() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="min-w-[200px] px-8 py-7 text-xl font-semibold border-2 border-white bg-transparent text-white hover:bg-white/10 hover:text-white"
+                className="min-w-[200px] px-8 py-7 text-xl font-semibold border-2 border-gray-400 text-white bg-transparent hover:bg-white/10 shadow-lg"
               >
                 <a href="tel:2504752400" className="flex items-center gap-2">
                   <Phone className="h-6 w-6" /> Call Now
@@ -113,19 +100,13 @@ export function HomePage() {
               </Button>
             </div>
           </div>
-
-          {/* Learn More Indicator */}
-          <div className="absolute bottom-32 left-1/2 -translate-x-1/2 text-white flex flex-col items-center animate-bounce">
-            <span className="text-lg font-medium mb-2">Learn More</span>
-            <ChevronDown className="h-6 w-6" />
-          </div>
         </div>
       </section>
 
       <div className="container mx-auto px-4 py-16 space-y-20">
         {/* Service Divisions Section */}
         <section>
-          <div className="text-center mb-12">
+          <div className="text-center mb-4">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
               Explore Our Specialized Divisions
             </h2>

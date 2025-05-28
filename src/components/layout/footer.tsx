@@ -38,7 +38,9 @@ export function Footer() {
               </div>
               <div>
                 <p className="text-sm text-gray-400">Address</p>
-                <p className="font-medium">3364 Burns Ave, Victoria, BC V8Z 3P2</p>
+                <p className="font-medium">
+                  3364 Burns Ave, Victoria, BC V8Z 3P2
+                </p>
               </div>
             </div>
 
@@ -55,11 +57,6 @@ export function Footer() {
         </Card>
 
         <Card className="bg-gray-700 border-gray-600 text-gray-200">
-          <CardHeader>
-            <CardTitle className="text-xl text-white">
-              Association Badges
-            </CardTitle>
-          </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 gap-8 place-items-center">
               <div className="flex items-center justify-center w-full h-full">
@@ -107,8 +104,9 @@ export function Footer() {
           </CardHeader>
           <CardContent>
             <p className="mb-4 text-gray-300">
-              Visit our facility in Victoria, BC. We're conveniently located in the industrial area,
-              with easy access for both commercial and personal vehicles.
+              Visit our facility in Victoria, BC. We're conveniently located in
+              the industrial area, with easy access for both commercial and
+              personal vehicles.
             </p>
             <GoogleMapComponent
               height="300px"
