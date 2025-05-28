@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import { GoogleMapComponent } from '@/components/google-integration/google-map'
+import { Clock, Mail, MapPin, Phone } from 'lucide-react'
 
 export function Footer() {
   return (
@@ -10,19 +11,46 @@ export function Footer() {
           <CardHeader>
             <CardTitle className="text-xl text-white">Contact Info</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-1">
-            <p>
-              <strong>Phone:</strong> (250) 475 2400
-            </p>
-            <p>
-              <strong>Email:</strong> Clarke@islandnet.com
-            </p>
-            <p>
-              <strong>Address:</strong> 3364 Burns Ave, Victoria, BC V8Z 3P2
-            </p>
-            <p>
-              <strong>Hours:</strong> Monday - Friday: 7am - 5:30pm
-            </p>
+          <CardContent className="space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="bg-red-100/10 p-2 rounded-full">
+                <Phone className="h-5 w-5 text-red-400" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-400">Phone</p>
+                <p className="font-medium">(250) 475 2400</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <div className="bg-red-100/10 p-2 rounded-full">
+                <Mail className="h-5 w-5 text-red-400" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-400">Email</p>
+                <p className="font-medium">Clarke@islandnet.com</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <div className="bg-red-100/10 p-2 rounded-full">
+                <MapPin className="h-5 w-5 text-red-400" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-400">Address</p>
+                <p className="font-medium">3364 Burns Ave, Victoria, BC V8Z 3P2</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <div className="bg-red-100/10 p-2 rounded-full">
+                <Clock className="h-5 w-5 text-red-400" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-400">Business Hours</p>
+                <p className="font-medium">Monday - Friday: 7am - 5:30pm</p>
+              </div>
+            </div>
           </CardContent>
         </Card>
 
@@ -33,16 +61,43 @@ export function Footer() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <ul className="space-y-2">
-              <li>Red Seal Badge - Placeholder</li>
-              <li>BBB Better Business Bureau Badge - Placeholder</li>
-              <li>CWB Badge - Placeholder</li>
-              <li>
-                Island Equipment Operators Association Member Badge -
-                Placeholder
-              </li>
-              <li>CFIB Member Badge - Placeholder</li>
-            </ul>
+            <div className="grid grid-cols-2 gap-8 place-items-center">
+              <div className="flex items-center justify-center w-full h-full">
+                <img
+                  src="/images/certification-badges/RedSeal.png"
+                  alt="Red Seal Certification"
+                  className="h-32 w-auto object-contain"
+                />
+              </div>
+              <div className="flex items-center justify-center w-full h-full">
+                <img
+                  src="/images/certification-badges/BBB.png"
+                  alt="Better Business Bureau"
+                  className="h-32 w-auto object-contain"
+                />
+              </div>
+              <div className="flex items-center justify-center w-full h-full">
+                <img
+                  src="/images/certification-badges/CWB.png"
+                  alt="CWB Certification"
+                  className="h-32 w-auto object-contain"
+                />
+              </div>
+              <div className="flex items-center justify-center w-full h-full">
+                <img
+                  src="/images/certification-badges/IslandEquipmentOwnersAssn.png"
+                  alt="Island Equipment Owners Association"
+                  className="h-32 w-auto object-contain"
+                />
+              </div>
+              <div className="flex items-center justify-center w-full h-full col-span-2">
+                <img
+                  src="/images/certification-badges/CFIB.png"
+                  alt="CFIB Member"
+                  className="h-20 w-auto object-contain"
+                />
+              </div>
+            </div>
           </CardContent>
         </Card>
 
@@ -51,8 +106,12 @@ export function Footer() {
             <CardTitle className="text-xl text-white">Location Map</CardTitle>
           </CardHeader>
           <CardContent>
+            <p className="mb-4 text-gray-300">
+              Visit our facility in Victoria, BC. We're conveniently located in the industrial area,
+              with easy access for both commercial and personal vehicles.
+            </p>
             <GoogleMapComponent
-              height="250px"
+              height="300px"
               className="rounded-md overflow-hidden"
               address="Clarke Engineering & Welding Ltd."
             />

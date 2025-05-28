@@ -11,19 +11,22 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as ServicesImport } from './routes/services'
 import { Route as ProjectsImport } from './routes/projects'
 import { Route as ContactImport } from './routes/contact'
 import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
+import { Route as ServicesIndexImport } from './routes/services/index'
+import { Route as ServicesWasteDisposalImport } from './routes/services/waste-disposal'
+import { Route as ServicesTruckAutomotiveRepairsImport } from './routes/services/truck-automotive-repairs'
+import { Route as ServicesPavingEquipmentImport } from './routes/services/paving-equipment'
+import { Route as ServicesMunicipalGovernmentImport } from './routes/services/municipal-government'
+import { Route as ServicesMarineEngineeringImport } from './routes/services/marine-engineering'
+import { Route as ServicesExcavatorRepairsImport } from './routes/services/excavator-repairs'
+import { Route as ServicesElevatorCraneRepairsImport } from './routes/services/elevator-crane-repairs'
+import { Route as ServicesConstructionRepairsImport } from './routes/services/construction-repairs'
+import { Route as ServicesConcreteEquipmentImport } from './routes/services/concrete-equipment'
 
 // Create/Update Routes
-
-const ServicesRoute = ServicesImport.update({
-  id: '/services',
-  path: '/services',
-  getParentRoute: () => rootRoute,
-} as any)
 
 const ProjectsRoute = ProjectsImport.update({
   id: '/projects',
@@ -46,6 +49,70 @@ const AboutRoute = AboutImport.update({
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ServicesIndexRoute = ServicesIndexImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ServicesWasteDisposalRoute = ServicesWasteDisposalImport.update({
+  id: '/services/waste-disposal',
+  path: '/services/waste-disposal',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ServicesTruckAutomotiveRepairsRoute =
+  ServicesTruckAutomotiveRepairsImport.update({
+    id: '/services/truck-automotive-repairs',
+    path: '/services/truck-automotive-repairs',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const ServicesPavingEquipmentRoute = ServicesPavingEquipmentImport.update({
+  id: '/services/paving-equipment',
+  path: '/services/paving-equipment',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ServicesMunicipalGovernmentRoute =
+  ServicesMunicipalGovernmentImport.update({
+    id: '/services/municipal-government',
+    path: '/services/municipal-government',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const ServicesMarineEngineeringRoute = ServicesMarineEngineeringImport.update({
+  id: '/services/marine-engineering',
+  path: '/services/marine-engineering',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ServicesExcavatorRepairsRoute = ServicesExcavatorRepairsImport.update({
+  id: '/services/excavator-repairs',
+  path: '/services/excavator-repairs',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ServicesElevatorCraneRepairsRoute =
+  ServicesElevatorCraneRepairsImport.update({
+    id: '/services/elevator-crane-repairs',
+    path: '/services/elevator-crane-repairs',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const ServicesConstructionRepairsRoute =
+  ServicesConstructionRepairsImport.update({
+    id: '/services/construction-repairs',
+    path: '/services/construction-repairs',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const ServicesConcreteEquipmentRoute = ServicesConcreteEquipmentImport.update({
+  id: '/services/concrete-equipment',
+  path: '/services/concrete-equipment',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -81,11 +148,74 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsImport
       parentRoute: typeof rootRoute
     }
-    '/services': {
-      id: '/services'
+    '/services/concrete-equipment': {
+      id: '/services/concrete-equipment'
+      path: '/services/concrete-equipment'
+      fullPath: '/services/concrete-equipment'
+      preLoaderRoute: typeof ServicesConcreteEquipmentImport
+      parentRoute: typeof rootRoute
+    }
+    '/services/construction-repairs': {
+      id: '/services/construction-repairs'
+      path: '/services/construction-repairs'
+      fullPath: '/services/construction-repairs'
+      preLoaderRoute: typeof ServicesConstructionRepairsImport
+      parentRoute: typeof rootRoute
+    }
+    '/services/elevator-crane-repairs': {
+      id: '/services/elevator-crane-repairs'
+      path: '/services/elevator-crane-repairs'
+      fullPath: '/services/elevator-crane-repairs'
+      preLoaderRoute: typeof ServicesElevatorCraneRepairsImport
+      parentRoute: typeof rootRoute
+    }
+    '/services/excavator-repairs': {
+      id: '/services/excavator-repairs'
+      path: '/services/excavator-repairs'
+      fullPath: '/services/excavator-repairs'
+      preLoaderRoute: typeof ServicesExcavatorRepairsImport
+      parentRoute: typeof rootRoute
+    }
+    '/services/marine-engineering': {
+      id: '/services/marine-engineering'
+      path: '/services/marine-engineering'
+      fullPath: '/services/marine-engineering'
+      preLoaderRoute: typeof ServicesMarineEngineeringImport
+      parentRoute: typeof rootRoute
+    }
+    '/services/municipal-government': {
+      id: '/services/municipal-government'
+      path: '/services/municipal-government'
+      fullPath: '/services/municipal-government'
+      preLoaderRoute: typeof ServicesMunicipalGovernmentImport
+      parentRoute: typeof rootRoute
+    }
+    '/services/paving-equipment': {
+      id: '/services/paving-equipment'
+      path: '/services/paving-equipment'
+      fullPath: '/services/paving-equipment'
+      preLoaderRoute: typeof ServicesPavingEquipmentImport
+      parentRoute: typeof rootRoute
+    }
+    '/services/truck-automotive-repairs': {
+      id: '/services/truck-automotive-repairs'
+      path: '/services/truck-automotive-repairs'
+      fullPath: '/services/truck-automotive-repairs'
+      preLoaderRoute: typeof ServicesTruckAutomotiveRepairsImport
+      parentRoute: typeof rootRoute
+    }
+    '/services/waste-disposal': {
+      id: '/services/waste-disposal'
+      path: '/services/waste-disposal'
+      fullPath: '/services/waste-disposal'
+      preLoaderRoute: typeof ServicesWasteDisposalImport
+      parentRoute: typeof rootRoute
+    }
+    '/services/': {
+      id: '/services/'
       path: '/services'
       fullPath: '/services'
-      preLoaderRoute: typeof ServicesImport
+      preLoaderRoute: typeof ServicesIndexImport
       parentRoute: typeof rootRoute
     }
   }
@@ -98,7 +228,16 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
-  '/services': typeof ServicesRoute
+  '/services/concrete-equipment': typeof ServicesConcreteEquipmentRoute
+  '/services/construction-repairs': typeof ServicesConstructionRepairsRoute
+  '/services/elevator-crane-repairs': typeof ServicesElevatorCraneRepairsRoute
+  '/services/excavator-repairs': typeof ServicesExcavatorRepairsRoute
+  '/services/marine-engineering': typeof ServicesMarineEngineeringRoute
+  '/services/municipal-government': typeof ServicesMunicipalGovernmentRoute
+  '/services/paving-equipment': typeof ServicesPavingEquipmentRoute
+  '/services/truck-automotive-repairs': typeof ServicesTruckAutomotiveRepairsRoute
+  '/services/waste-disposal': typeof ServicesWasteDisposalRoute
+  '/services': typeof ServicesIndexRoute
 }
 
 export interface FileRoutesByTo {
@@ -106,7 +245,16 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
-  '/services': typeof ServicesRoute
+  '/services/concrete-equipment': typeof ServicesConcreteEquipmentRoute
+  '/services/construction-repairs': typeof ServicesConstructionRepairsRoute
+  '/services/elevator-crane-repairs': typeof ServicesElevatorCraneRepairsRoute
+  '/services/excavator-repairs': typeof ServicesExcavatorRepairsRoute
+  '/services/marine-engineering': typeof ServicesMarineEngineeringRoute
+  '/services/municipal-government': typeof ServicesMunicipalGovernmentRoute
+  '/services/paving-equipment': typeof ServicesPavingEquipmentRoute
+  '/services/truck-automotive-repairs': typeof ServicesTruckAutomotiveRepairsRoute
+  '/services/waste-disposal': typeof ServicesWasteDisposalRoute
+  '/services': typeof ServicesIndexRoute
 }
 
 export interface FileRoutesById {
@@ -115,15 +263,67 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
-  '/services': typeof ServicesRoute
+  '/services/concrete-equipment': typeof ServicesConcreteEquipmentRoute
+  '/services/construction-repairs': typeof ServicesConstructionRepairsRoute
+  '/services/elevator-crane-repairs': typeof ServicesElevatorCraneRepairsRoute
+  '/services/excavator-repairs': typeof ServicesExcavatorRepairsRoute
+  '/services/marine-engineering': typeof ServicesMarineEngineeringRoute
+  '/services/municipal-government': typeof ServicesMunicipalGovernmentRoute
+  '/services/paving-equipment': typeof ServicesPavingEquipmentRoute
+  '/services/truck-automotive-repairs': typeof ServicesTruckAutomotiveRepairsRoute
+  '/services/waste-disposal': typeof ServicesWasteDisposalRoute
+  '/services/': typeof ServicesIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/projects' | '/services'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/projects'
+    | '/services/concrete-equipment'
+    | '/services/construction-repairs'
+    | '/services/elevator-crane-repairs'
+    | '/services/excavator-repairs'
+    | '/services/marine-engineering'
+    | '/services/municipal-government'
+    | '/services/paving-equipment'
+    | '/services/truck-automotive-repairs'
+    | '/services/waste-disposal'
+    | '/services'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/projects' | '/services'
-  id: '__root__' | '/' | '/about' | '/contact' | '/projects' | '/services'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/projects'
+    | '/services/concrete-equipment'
+    | '/services/construction-repairs'
+    | '/services/elevator-crane-repairs'
+    | '/services/excavator-repairs'
+    | '/services/marine-engineering'
+    | '/services/municipal-government'
+    | '/services/paving-equipment'
+    | '/services/truck-automotive-repairs'
+    | '/services/waste-disposal'
+    | '/services'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/projects'
+    | '/services/concrete-equipment'
+    | '/services/construction-repairs'
+    | '/services/elevator-crane-repairs'
+    | '/services/excavator-repairs'
+    | '/services/marine-engineering'
+    | '/services/municipal-government'
+    | '/services/paving-equipment'
+    | '/services/truck-automotive-repairs'
+    | '/services/waste-disposal'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 
@@ -132,7 +332,16 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   ProjectsRoute: typeof ProjectsRoute
-  ServicesRoute: typeof ServicesRoute
+  ServicesConcreteEquipmentRoute: typeof ServicesConcreteEquipmentRoute
+  ServicesConstructionRepairsRoute: typeof ServicesConstructionRepairsRoute
+  ServicesElevatorCraneRepairsRoute: typeof ServicesElevatorCraneRepairsRoute
+  ServicesExcavatorRepairsRoute: typeof ServicesExcavatorRepairsRoute
+  ServicesMarineEngineeringRoute: typeof ServicesMarineEngineeringRoute
+  ServicesMunicipalGovernmentRoute: typeof ServicesMunicipalGovernmentRoute
+  ServicesPavingEquipmentRoute: typeof ServicesPavingEquipmentRoute
+  ServicesTruckAutomotiveRepairsRoute: typeof ServicesTruckAutomotiveRepairsRoute
+  ServicesWasteDisposalRoute: typeof ServicesWasteDisposalRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -140,7 +349,16 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   ProjectsRoute: ProjectsRoute,
-  ServicesRoute: ServicesRoute,
+  ServicesConcreteEquipmentRoute: ServicesConcreteEquipmentRoute,
+  ServicesConstructionRepairsRoute: ServicesConstructionRepairsRoute,
+  ServicesElevatorCraneRepairsRoute: ServicesElevatorCraneRepairsRoute,
+  ServicesExcavatorRepairsRoute: ServicesExcavatorRepairsRoute,
+  ServicesMarineEngineeringRoute: ServicesMarineEngineeringRoute,
+  ServicesMunicipalGovernmentRoute: ServicesMunicipalGovernmentRoute,
+  ServicesPavingEquipmentRoute: ServicesPavingEquipmentRoute,
+  ServicesTruckAutomotiveRepairsRoute: ServicesTruckAutomotiveRepairsRoute,
+  ServicesWasteDisposalRoute: ServicesWasteDisposalRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -157,7 +375,16 @@ export const routeTree = rootRoute
         "/about",
         "/contact",
         "/projects",
-        "/services"
+        "/services/concrete-equipment",
+        "/services/construction-repairs",
+        "/services/elevator-crane-repairs",
+        "/services/excavator-repairs",
+        "/services/marine-engineering",
+        "/services/municipal-government",
+        "/services/paving-equipment",
+        "/services/truck-automotive-repairs",
+        "/services/waste-disposal",
+        "/services/"
       ]
     },
     "/": {
@@ -172,8 +399,35 @@ export const routeTree = rootRoute
     "/projects": {
       "filePath": "projects.tsx"
     },
-    "/services": {
-      "filePath": "services.tsx"
+    "/services/concrete-equipment": {
+      "filePath": "services/concrete-equipment.tsx"
+    },
+    "/services/construction-repairs": {
+      "filePath": "services/construction-repairs.tsx"
+    },
+    "/services/elevator-crane-repairs": {
+      "filePath": "services/elevator-crane-repairs.tsx"
+    },
+    "/services/excavator-repairs": {
+      "filePath": "services/excavator-repairs.tsx"
+    },
+    "/services/marine-engineering": {
+      "filePath": "services/marine-engineering.tsx"
+    },
+    "/services/municipal-government": {
+      "filePath": "services/municipal-government.tsx"
+    },
+    "/services/paving-equipment": {
+      "filePath": "services/paving-equipment.tsx"
+    },
+    "/services/truck-automotive-repairs": {
+      "filePath": "services/truck-automotive-repairs.tsx"
+    },
+    "/services/waste-disposal": {
+      "filePath": "services/waste-disposal.tsx"
+    },
+    "/services/": {
+      "filePath": "services/index.tsx"
     }
   }
 }

@@ -4,13 +4,15 @@ import { useIsMobile } from '@/hooks/use-mobile'
 import { Link } from '@tanstack/react-router'
 import {
   ArrowRight,
-  CheckCircle2,
   ChevronDown,
   Phone,
   Sparkles,
   Mail,
   Wrench,
   Clock4,
+  CheckSquare2,
+  CheckCircle2,
+  Dot,
 } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { toast } from 'sonner'
@@ -135,71 +137,253 @@ export function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: 'Heavy-Duty Equipment Repairs',
-                description:
-                  'Mobile and shop-based repairs for construction machinery and industrial equipment.',
-                icon: '🚜',
-              },
-              {
-                title: 'Elevators & Cranes',
-                description:
-                  'Welding, modification, and inspection support for lifting equipment components.',
-                icon: '🏗️',
-              },
-              {
-                title: 'Restaurants',
-                description:
-                  'Fast-response commercial kitchen repairs through Victoria Restaurant Repairs & Welding.',
-                icon: '🍽️',
-              },
-              {
-                title: 'Commercial',
-                description:
-                  'Custom welding and fabrication for businesses, storefronts, and institutions.',
-                icon: '🏢',
-              },
-              {
-                title: 'Residential',
-                description:
-                  'Handrails, gates, custom furniture, staircases, and in-home modifications.',
-                icon: '🏠',
-              },
-              {
-                title: 'Marine',
-                description:
-                  'Vessel, dock, and marine infrastructure repairs and custom fabrication.',
-                icon: '⚓',
-              },
-              {
-                title: 'Automotive & Trucking',
-                description:
-                  'Frame repairs, modifications, trailers, and custom aluminum welding.',
-                icon: '🚚',
-              },
-            ].map((service) => (
-              <Card
-                key={service.title}
-                className="overflow-hidden hover:shadow-lg transition-all duration-300 border-t-4 border-t-red-500 h-full"
-              >
-                <CardHeader className="pb-3">
-                  <div className="text-3xl mb-2">{service.icon}</div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <p className="text-gray-600">{service.description}</p>
-                  <div className="mt-4">
-                    <Button
-                      variant="ghost"
-                      className="text-red-600 hover:text-red-700 p-0 flex items-center gap-1"
-                    >
-                      Learn More <ArrowRight className="h-4 w-4" />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+            {/* Equipment Repairs Section */}
+            <div className="lg:col-span-3">
+              <h3 className="text-2xl font-bold mb-6">Equipment Repairs</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[
+                  {
+                    title: 'Excavator Repairs',
+                    description: (
+                      <div className="flex flex-col gap-1.5">
+                        {[
+                          'Excavators',
+                          'Backhoes',
+                          'Bulldozers',
+                          'Skid-Steers',
+                          'Dump Trucks',
+                        ].map((item) => (
+                          <div key={item} className="flex items-center gap-2">
+                            <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
+                            <span>{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    ),
+                    icon: '🚜',
+                    to: '/services/excavator-repairs',
+                  },
+                  {
+                    title: 'Elevator & Crane Repairs',
+                    description: (
+                      <div className="flex flex-col gap-1.5">
+                        {[
+                          'Professional elevator repair',
+                          'Crane maintenance & repair',
+                          'Lift system services',
+                          'Boom equipment repair',
+                        ].map((item) => (
+                          <div key={item} className="flex items-center gap-2">
+                            <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
+                            <span>{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    ),
+                    icon: '🏗️',
+                    to: '/services/elevator-crane-repairs',
+                  },
+                  {
+                    title: 'Truck & Automotive Repairs',
+                    description: (
+                      <div className="flex flex-col gap-1.5">
+                        {[
+                          'Commercial Vehicle Welding',
+                          'Custom Modifications',
+                          'Fleet Repair Services',
+                        ].map((item) => (
+                          <div key={item} className="flex items-center gap-2">
+                            <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
+                            <span>{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    ),
+                    icon: '🚛',
+                    to: '/services/truck-automotive-repairs',
+                  },
+                  {
+                    title: 'Waste Management Equipment',
+                    description: (
+                      <div className="flex flex-col gap-1.5">
+                        {[
+                          'Waste disposal bin repairs',
+                          'Roll-off fleet maintenance',
+                          'Container modifications',
+                        ].map((item) => (
+                          <div key={item} className="flex items-center gap-2">
+                            <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
+                            <span>{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    ),
+                    icon: '🗑️',
+                    to: '/services/waste-disposal',
+                  },
+                  {
+                    title: 'Paving Equipment Repairs',
+                    description: (
+                      <div className="flex flex-col gap-1.5">
+                        {[
+                          'Asphalt Plant Equipment',
+                          'Fleet Maintenance',
+                          'Heavy-Duty Welding',
+                          'Field Repairs',
+                        ].map((item) => (
+                          <div key={item} className="flex items-center gap-2">
+                            <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
+                            <span>{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    ),
+                    icon: '🚧',
+                    to: '/services/paving-equipment',
+                  },
+                  {
+                    title: 'Concrete Equipment Repairs',
+                    description: (
+                      <div className="flex flex-col gap-1.5">
+                        {[
+                          'Concrete Plant Equipment',
+                          'Fleet Maintenance',
+                          'Heavy-Duty Welding',
+                          'Mobile Service',
+                        ].map((item) => (
+                          <div key={item} className="flex items-center gap-2">
+                            <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
+                            <span>{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    ),
+                    icon: '🏭',
+                    to: '/services/concrete-equipment',
+                  },
+                ].map((service) => (
+                  <Card
+                    key={service.title}
+                    className="overflow-hidden hover:shadow-lg transition-all duration-300 border-t-4 border-t-red-500 h-full flex flex-col"
+                  >
+                    <CardHeader className="pb-3">
+                      <div className="text-3xl mb-2">{service.icon}</div>
+                      <CardTitle className="text-xl">{service.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="pt-0 flex flex-col flex-1">
+                      <div className="flex-1">{service.description}</div>
+                      <div className="mt-6">
+                        <Button
+                          asChild
+                          variant="ghost"
+                          className="text-red-600 hover:text-red-700 hover:bg-red-50 w-full py-6 text-lg font-medium"
+                        >
+                          <Link
+                            to={service.to}
+                            className="flex items-center justify-center gap-2"
+                          >
+                            Learn More <ArrowRight className="h-5 w-5" />
+                          </Link>
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            {/* Engineering Section */}
+            <div className="lg:col-span-3 mt-12">
+              <h3 className="text-2xl font-bold mb-6">Engineering</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[
+                  {
+                    title: 'Municipal & Government Projects',
+                    description: (
+                      <div className="flex flex-col gap-1.5">
+                        {[
+                          'Public Infrastructure Projects',
+                          'Government Facility Maintenance',
+                          'Municipal Equipment Repair',
+                        ].map((item) => (
+                          <div key={item} className="flex items-center gap-2">
+                            <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
+                            <span>{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    ),
+                    icon: '🏛️',
+                    to: '/services/municipal-government',
+                  },
+                  {
+                    title: 'Marine Engineering & Welding',
+                    description: (
+                      <div className="flex flex-col gap-1.5">
+                        {[
+                          'Aluminum & Marine-Grade Welding',
+                          'Vessel Repairs',
+                          'Custom Marine Fabrication',
+                        ].map((item) => (
+                          <div key={item} className="flex items-center gap-2">
+                            <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
+                            <span>{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    ),
+                    icon: '⚓',
+                    to: '/services/marine-engineering',
+                  },
+                  {
+                    title: 'Construction Industry Repairs',
+                    description: (
+                      <div className="flex flex-col gap-1.5">
+                        {[
+                          'Mobile & In-Shop Welding',
+                          'Structural Steel Services',
+                          'Heavy Equipment Repair',
+                        ].map((item) => (
+                          <div key={item} className="flex items-center gap-2">
+                            <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
+                            <span>{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    ),
+                    icon: '🏗️',
+                    to: '/services/construction',
+                  },
+                ].map((service) => (
+                  <Card
+                    key={service.title}
+                    className="overflow-hidden hover:shadow-lg transition-all duration-300 border-t-4 border-t-red-500 h-full flex flex-col"
+                  >
+                    <CardHeader className="pb-3">
+                      <div className="text-3xl mb-2">{service.icon}</div>
+                      <CardTitle className="text-xl">{service.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="pt-0 flex flex-col flex-1">
+                      <div className="flex-1">{service.description}</div>
+                      <div className="mt-6">
+                        <Button
+                          asChild
+                          variant="ghost"
+                          className="text-red-600 hover:text-red-700 hover:bg-red-50 w-full py-6 text-lg font-medium"
+                        >
+                          <Link
+                            to={service.to}
+                            className="flex items-center justify-center gap-2"
+                          >
+                            Learn More <ArrowRight className="h-5 w-5" />
+                          </Link>
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
