@@ -2,12 +2,11 @@ import { Button } from '@/components/ui/button'
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
-  CardTitle,
+  CardTitle
 } from '@/components/ui/card'
-import { ArrowRight, Phone, Mail } from 'lucide-react'
 import { Link } from '@tanstack/react-router'
+import { ArrowRight, Mail, Phone } from 'lucide-react'
 
 interface ServicePageProps {
   title: string
