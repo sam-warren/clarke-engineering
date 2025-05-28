@@ -48,52 +48,6 @@ export function HomePage() {
 
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="relative w-full bg-gradient-to-b from-slate-900 to-slate-800">
-        <div className="absolute inset-0 bg-red-600/5" />
-
-        {/* Hero Content */}
-        <div className="relative flex items-center justify-center px-4 text-center py-32">
-          <div className="max-w-4xl">
-            <h1 className="text-6xl font-bold tracking-tight sm:text-7xl md:text-8xl">
-              <span className="block bg-gradient-to-r from-white via-red-100 to-white bg-clip-text text-transparent">
-                Trusted Since 1960.
-              </span>
-              <span className="mt-4 block text-2xl font-medium sm:text-3xl md:text-4xl text-gray-200">
-                Victoria's most experienced welding and machining shop
-              </span>
-            </h1>
-
-            <p className="mx-auto mt-8 max-w-2xl text-lg sm:text-xl md:text-2xl text-gray-300">
-              Serving industries across Vancouver Island with precision
-              engineering, quality craftsmanship, and unmatched expertise.
-            </p>
-
-            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Button
-                asChild
-                size="lg"
-                className="min-w-[200px] px-8 py-7 text-xl font-semibold bg-red-600 hover:bg-red-700 text-white shadow-lg"
-              >
-                <Link to="/contact" className="flex items-center gap-2">
-                  Get a Quote <ArrowRight className="h-6 w-6" />
-                </Link>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="min-w-[200px] px-8 py-7 text-xl font-semibold border-2 border-gray-400 text-white bg-transparent hover:bg-white/10 hover:text-white shadow-lg"
-              >
-                <a href="tel:2504752400" className="flex items-center gap-2">
-                  <Phone className="h-6 w-6" /> Call Now
-                </a>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <div className="container mx-auto px-4 py-16 space-y-20">
         {/* Service Divisions Section */}
         <section>
