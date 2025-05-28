@@ -11,27 +11,20 @@ import {
   Mail,
   Phone,
   Sparkles,
-  Wrench
+  Wrench,
 } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { toast } from 'sonner'
 
-const VIDEOS = [
-  '/videos/4941363-hd_1920_1080_25fps.mp4',
-  '/videos/4941457-hd_1920_1080_25fps.mp4',
-  '/videos/4315553-uhd_3840_2160_30fps.mp4',
-  '/videos/13053713_3840_2160_50fps.mp4',
-]
+// const VIDEOS = [
+//   '/videos/4941363-hd_1920_1080_25fps.mp4',
+//   '/videos/4941457-hd_1920_1080_25fps.mp4',
+//   '/videos/4315553-uhd_3840_2160_30fps.mp4',
+//   '/videos/13053713_3840_2160_50fps.mp4',
+// ]
 
 export function HomePage() {
-  const [activeIndex, setActiveIndex] = useState(0)
   const isMobile = useIsMobile()
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveIndex((i) => (i + 1) % VIDEOS.length)
-    }, 5000)
-    return () => clearInterval(timer)
-  }, [])
 
   useEffect(() => {
     if (!isMobile) {
@@ -58,7 +51,7 @@ export function HomePage() {
       {/* Hero Section */}
       <section className="relative w-full bg-gradient-to-b from-slate-900 to-slate-800">
         <div className="absolute inset-0 bg-red-600/5" />
-        
+
         {/* Hero Content */}
         <div className="relative flex items-center justify-center px-4 text-center py-32">
           <div className="max-w-4xl">
@@ -140,6 +133,8 @@ export function HomePage() {
                     ),
                     icon: '🚜',
                     to: '/services/excavator-repairs',
+                    image:
+                      '/images/site-assets/hero-cards/excavators-earthworks.png',
                   },
                   {
                     title: 'Elevator & Crane Repairs',
@@ -160,6 +155,8 @@ export function HomePage() {
                     ),
                     icon: '🏗️',
                     to: '/services/elevator-crane-repairs',
+                    image:
+                      '/images/site-assets/hero-cards/elevator-crane-repairs.png',
                   },
                   {
                     title: 'Truck & Automotive Repairs',
@@ -179,6 +176,8 @@ export function HomePage() {
                     ),
                     icon: '🚛',
                     to: '/services/truck-automotive-repairs',
+                    image:
+                      '/images/site-assets/hero-cards/truck-automotive-repairs.png',
                   },
                   {
                     title: 'Waste Management Equipment',
@@ -198,6 +197,8 @@ export function HomePage() {
                     ),
                     icon: '🗑️',
                     to: '/services/waste-disposal',
+                    image:
+                      '/images/site-assets/hero-cards/waste-management-equipment.png',
                   },
                   {
                     title: 'Paving Equipment Repairs',
@@ -218,6 +219,8 @@ export function HomePage() {
                     ),
                     icon: '🚧',
                     to: '/services/paving-equipment',
+                    image:
+                      '/images/site-assets/hero-cards/paving-equipment.png',
                   },
                   {
                     title: 'Concrete Equipment Repairs',
@@ -238,13 +241,24 @@ export function HomePage() {
                     ),
                     icon: '🏭',
                     to: '/services/concrete-equipment',
+                    image:
+                      '/images/site-assets/hero-cards/concrete-equipment.png',
                   },
                 ].map((service) => (
                   <Card
                     key={service.title}
-                    className="overflow-hidden hover:shadow-lg transition-all duration-300 border-t-4 border-t-red-500 h-full flex flex-col"
+                    className="overflow-hidden hover:shadow-lg transition-all duration-300 border-t-4 border-t-red-500 h-full flex flex-col relative"
                   >
-                    <CardHeader className="pb-3">
+                    {service.image && (
+                      <div className="absolute -top-5 -right-5 w-40 h-40">
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          className="absolute top-0 right-0 w-40 h-40 object-cover rounded-full"
+                        />
+                      </div>
+                    )}
+                    <CardHeader className="pb-3 relative z-10">
                       <div className="text-3xl mb-2">{service.icon}</div>
                       <CardTitle className="text-xl">{service.title}</CardTitle>
                     </CardHeader>
@@ -293,6 +307,8 @@ export function HomePage() {
                     ),
                     icon: '🏛️',
                     to: '/services/municipal-government',
+                    image:
+                      '/images/site-assets/hero-cards/municipal-government.png',
                   },
                   {
                     title: 'Marine Engineering & Welding',
@@ -312,6 +328,8 @@ export function HomePage() {
                     ),
                     icon: '⚓',
                     to: '/services/marine-engineering',
+                    image:
+                      '/images/site-assets/hero-cards/marine-engineering.png',
                   },
                   {
                     title: 'Construction Industry Repairs',
@@ -331,12 +349,23 @@ export function HomePage() {
                     ),
                     icon: '🏗️',
                     to: '/services/construction',
+                    image:
+                      '/images/site-assets/hero-cards/construction-industry.png',
                   },
                 ].map((service) => (
                   <Card
                     key={service.title}
-                    className="overflow-hidden hover:shadow-lg transition-all duration-300 border-t-4 border-t-red-500 h-full flex flex-col"
+                    className="overflow-hidden hover:shadow-lg transition-all duration-300 border-t-4 border-t-red-500 h-full flex flex-col relative"
                   >
+                    {service.image && (
+                      <div className="absolute -top-5 -right-5 w-40 h-40">
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          className="absolute top-0 right-0 w-40 h-40 object-cover rounded-full"
+                        />
+                      </div>
+                    )}
                     <CardHeader className="pb-3">
                       <div className="text-3xl mb-2">{service.icon}</div>
                       <CardTitle className="text-xl">{service.title}</CardTitle>
