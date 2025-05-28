@@ -90,7 +90,7 @@ export function HomePage() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="min-w-[200px] px-8 py-7 text-xl font-semibold border-2 border-gray-400 text-white bg-transparent hover:bg-white/10 shadow-lg"
+                className="min-w-[200px] px-8 py-7 text-xl font-semibold border-2 border-gray-400 text-white bg-transparent hover:bg-white/10 hover:text-white shadow-lg"
               >
                 <a href="tel:2504752400" className="flex items-center gap-2">
                   <Phone className="h-6 w-6" /> Call Now
