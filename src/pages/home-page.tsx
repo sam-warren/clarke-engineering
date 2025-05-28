@@ -1,22 +1,20 @@
+import { GoogleReviews } from '@/components/google-integration/google-reviews'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { Link } from '@tanstack/react-router'
 import {
   ArrowRight,
-  ChevronDown,
+  CheckCircle2,
+  Clock4,
+  Dot,
+  Mail,
   Phone,
   Sparkles,
-  Mail,
-  Wrench,
-  Clock4,
-  CheckSquare2,
-  CheckCircle2,
-  Dot,
+  Wrench
 } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { toast } from 'sonner'
-import { GoogleReviews } from '@/components/google-integration/google-reviews'
 
 const VIDEOS = [
   '/videos/4941363-hd_1920_1080_25fps.mp4',

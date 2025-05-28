@@ -1,6 +1,6 @@
+import { GoogleMapComponent } from '@/components/google-integration/google-map'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
-import { GoogleMapComponent } from '@/components/google-integration/google-map'
 import { Clock, Mail, MapPin, Phone } from 'lucide-react'
 
 export function Footer() {
