@@ -1,8 +1,7 @@
-import Alert from '@/components/ui/custom-alert'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Loader, XCircle } from 'lucide-react'
-import React, { useState } from 'react'
 import type { ChangeEvent, FormEvent } from 'react'
+import React, { useState } from 'react'
 
 interface FormData {
   name: string
