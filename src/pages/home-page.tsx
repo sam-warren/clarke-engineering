@@ -51,16 +51,6 @@ export function HomePage() {
       <div className="container mx-auto px-4 py-16 space-y-20">
         {/* Service Divisions Section */}
         <section>
-          <div className="text-center mb-4">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-              Explore Our Specialized Divisions
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Tailored services for every industry, backed by decades of
-              expertise and a commitment to excellence.
-            </p>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Equipment Repairs Section */}
             <div className="lg:col-span-3">
@@ -85,7 +75,6 @@ export function HomePage() {
                         ))}
                       </div>
                     ),
-                    icon: '🚜',
                     to: '/services/excavator-repairs',
                     image:
                       '/images/site-assets/hero-cards/excavators-earthworks.png',
@@ -107,7 +96,6 @@ export function HomePage() {
                         ))}
                       </div>
                     ),
-                    icon: '🏗️',
                     to: '/services/elevator-crane-repairs',
                     image:
                       '/images/site-assets/hero-cards/elevator-crane-repairs.png',
@@ -128,7 +116,6 @@ export function HomePage() {
                         ))}
                       </div>
                     ),
-                    icon: '🚛',
                     to: '/services/truck-automotive-repairs',
                     image:
                       '/images/site-assets/hero-cards/truck-automotive-repairs.png',
@@ -149,7 +136,6 @@ export function HomePage() {
                         ))}
                       </div>
                     ),
-                    icon: '🗑️',
                     to: '/services/waste-disposal',
                     image:
                       '/images/site-assets/hero-cards/waste-management-equipment.png',
@@ -171,7 +157,6 @@ export function HomePage() {
                         ))}
                       </div>
                     ),
-                    icon: '🚧',
                     to: '/services/paving-equipment',
                     image:
                       '/images/site-assets/hero-cards/paving-equipment.png',
@@ -193,7 +178,6 @@ export function HomePage() {
                         ))}
                       </div>
                     ),
-                    icon: '🏭',
                     to: '/services/concrete-equipment',
                     image:
                       '/images/site-assets/hero-cards/concrete-equipment.png',
@@ -213,7 +197,6 @@ export function HomePage() {
                       </div>
                     )}
                     <CardHeader className="pb-3 relative z-10">
-                      <div className="text-3xl mb-2">{service.icon}</div>
                       <CardTitle className="text-xl">{service.title}</CardTitle>
                     </CardHeader>
                     <CardContent className="pt-0 flex flex-col flex-1">
@@ -259,7 +242,6 @@ export function HomePage() {
                         ))}
                       </div>
                     ),
-                    icon: '🏛️',
                     to: '/services/municipal-government',
                     image:
                       '/images/site-assets/hero-cards/municipal-government.png',
@@ -280,7 +262,6 @@ export function HomePage() {
                         ))}
                       </div>
                     ),
-                    icon: '⚓',
                     to: '/services/marine-engineering',
                     image:
                       '/images/site-assets/hero-cards/marine-engineering.png',
@@ -301,7 +282,6 @@ export function HomePage() {
                         ))}
                       </div>
                     ),
-                    icon: '🏗️',
                     to: '/services/construction',
                     image:
                       '/images/site-assets/hero-cards/construction-industry.png',
@@ -321,7 +301,6 @@ export function HomePage() {
                       </div>
                     )}
                     <CardHeader className="pb-3">
-                      <div className="text-3xl mb-2">{service.icon}</div>
                       <CardTitle className="text-xl">{service.title}</CardTitle>
                     </CardHeader>
                     <CardContent className="pt-0 flex flex-col flex-1">
