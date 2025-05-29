@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import React from 'react'
 import {
   Card,
   CardContent,
@@ -9,7 +10,7 @@ import { Link } from '@tanstack/react-router'
 import { ArrowRight, Mail, Phone } from 'lucide-react'
 
 interface ServicePageProps {
-  title: string
+  title: string | React.ReactNode
   description: string
   testimonial: {
     quote: string

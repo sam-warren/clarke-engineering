@@ -26,7 +26,16 @@ import {
 
 const serviceLinks = [
   {
-    title: '🚜 Excavator Repairs',
+    title: (
+      <span className="flex items-center gap-2">
+        <img 
+          src="/images/site-assets/emojis/excavator.png" 
+          alt="Excavator" 
+          className="w-5 h-5 inline-block" 
+        />
+        Excavator Repairs
+      </span>
+    ),
     description:
       'Reliable hydraulic, mechanical, and welding services for excavation contractors.',
     to: '/services/excavator-repairs',
