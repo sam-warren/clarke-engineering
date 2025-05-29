@@ -48,14 +48,32 @@ export function HomePage() {
 
   return (
     <div className="flex flex-col">
-      <div className="container mx-auto px-4 py-16 space-y-20">
+      <div className="container mx-auto px-4 py-6 space-y-20">
         {/* Service Divisions Section */}
         <section>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="space-y-20">
             {/* Equipment Repairs Section */}
-            <div className="lg:col-span-3">
-              <h3 className="text-2xl font-bold mb-6">Equipment Repairs</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div>
+              {/* Equipment Repairs Hero Banner */}
+              <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-xl p-8 mb-8 text-white relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('/images/site-assets/hero-cards/excavators-earthworks.png')] bg-cover bg-center opacity-10"></div>
+                <div className="relative z-10 text-center">
+                  <div className="flex items-center justify-center gap-3 mb-3">
+                    <Wrench className="h-8 w-8 text-red-400" />
+                    <h2 className="text-3xl md:text-4xl font-bold">
+                      Heavy Duty Equipment Repairs
+                    </h2>
+                    <Wrench className="h-8 w-8 text-red-400" />
+                  </div>
+                  <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+                    Clarke Engineering specializes in comprehensive heavy
+                    equipment repair services. From excavators to concrete
+                    equipment, our Red Seal certified technicians deliver expert
+                    solutions with fast turnaround times.
+                  </p>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
                 {[
                   {
                     title: 'Excavator Repairs',
@@ -183,48 +201,53 @@ export function HomePage() {
                       '/images/site-assets/hero-cards/concrete-equipment.png',
                   },
                 ].map((service) => (
-                  <Card
-                    key={service.title}
-                    className="overflow-hidden hover:shadow-lg transition-all duration-300 border-t-4 border-t-red-500 h-full flex flex-col relative"
-                  >
-                    {service.image && (
-                      <div className="absolute -top-5 -right-5 w-40 h-40">
-                        <img
-                          src={service.image}
-                          alt={service.title}
-                          className="absolute top-0 right-0 w-40 h-40 object-cover rounded-full"
-                        />
-                      </div>
-                    )}
-                    <CardHeader className="pb-3 relative z-10">
-                      <CardTitle className="text-xl">{service.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="pt-0 flex flex-col flex-1">
-                      <div className="flex-1">{service.description}</div>
-                      <div className="mt-6">
-                        <Button
-                          asChild
-                          variant="ghost"
-                          className="text-red-600 hover:text-red-700 hover:bg-red-50 w-full py-6 text-lg font-medium"
-                        >
-                          <Link
-                            to={service.to}
-                            className="flex items-center justify-center gap-2"
-                          >
-                            Learn More <ArrowRight className="h-5 w-5" />
-                          </Link>
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
+                  <Link key={service.title} to={service.to} className="block">
+                    <Card className="overflow-hidden hover:shadow-xl hover:shadow-red-100 transition-all duration-300 border-t-4 border-t-red-500 h-full flex flex-col relative md:min-h-[200px] cursor-pointer hover:scale-[1.02] transform">
+                      {service.image && (
+                        <div className="absolute -top-5 -right-5 w-40 h-40">
+                          <img
+                            src={service.image}
+                            alt={service.title}
+                            className="absolute top-0 right-0 w-40 h-40 object-cover rounded-full"
+                          />
+                        </div>
+                      )}
+                      <CardHeader className="pb-2 relative z-10 md:pb-2">
+                        <CardTitle className="text-xl pr-32 leading-tight">
+                          {service.title}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent className="pt-0 flex flex-col flex-1 hidden md:flex">
+                        <div className="flex-1 pr-32">
+                          {service.description}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </Link>
                 ))}
               </div>
             </div>
 
             {/* Engineering Section */}
-            <div className="lg:col-span-3 mt-12">
-              <h3 className="text-2xl font-bold mb-6">Engineering</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div>
+              {/* Engineering Hero Banner */}
+              <div className="bg-gradient-to-r from-red-600 via-red-500 to-red-600 rounded-xl p-8 mb-8 text-white relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('/images/site-assets/hero-cards/construction-industry.png')] bg-cover bg-center opacity-15"></div>
+                <div className="relative z-10 text-center">
+                  <div className="flex items-center justify-center gap-3 mb-3">
+                    <h2 className="text-3xl md:text-4xl font-bold">
+                      Custom Engineering Solutions
+                    </h2>
+                  </div>
+                  <p className="text-lg text-red-100 max-w-3xl mx-auto">
+                    With over 60 years of engineering expertise, Clarke
+                    Engineering delivers innovative solutions for municipal,
+                    marine, and construction projects across Victoria and
+                    beyond.
+                  </p>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
                 {[
                   {
                     title: 'Municipal & Government Projects',
@@ -287,40 +310,29 @@ export function HomePage() {
                       '/images/site-assets/hero-cards/construction-industry.png',
                   },
                 ].map((service) => (
-                  <Card
-                    key={service.title}
-                    className="overflow-hidden hover:shadow-lg transition-all duration-300 border-t-4 border-t-red-500 h-full flex flex-col relative"
-                  >
-                    {service.image && (
-                      <div className="absolute -top-5 -right-5 w-40 h-40">
-                        <img
-                          src={service.image}
-                          alt={service.title}
-                          className="absolute top-0 right-0 w-40 h-40 object-cover rounded-full"
-                        />
-                      </div>
-                    )}
-                    <CardHeader className="pb-3">
-                      <CardTitle className="text-xl">{service.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="pt-0 flex flex-col flex-1">
-                      <div className="flex-1">{service.description}</div>
-                      <div className="mt-6">
-                        <Button
-                          asChild
-                          variant="ghost"
-                          className="text-red-600 hover:text-red-700 hover:bg-red-50 w-full py-6 text-lg font-medium"
-                        >
-                          <Link
-                            to={service.to}
-                            className="flex items-center justify-center gap-2"
-                          >
-                            Learn More <ArrowRight className="h-5 w-5" />
-                          </Link>
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
+                  <Link key={service.title} to={service.to} className="block">
+                    <Card className="overflow-hidden hover:shadow-xl hover:shadow-red-100 transition-all duration-300 border-t-4 border-t-red-500 h-full flex flex-col relative md:min-h-[200px] cursor-pointer hover:scale-[1.02] transform">
+                      {service.image && (
+                        <div className="absolute -top-5 -right-5 w-40 h-40">
+                          <img
+                            src={service.image}
+                            alt={service.title}
+                            className="absolute top-0 right-0 w-40 h-40 object-cover rounded-full"
+                          />
+                        </div>
+                      )}
+                      <CardHeader className="pb-2 relative z-10 md:pb-2">
+                        <CardTitle className="text-xl pr-32 leading-tight">
+                          {service.title}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent className="pt-0 flex flex-col flex-1 hidden md:flex">
+                        <div className="flex-1 pr-32">
+                          {service.description}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </Link>
                 ))}
               </div>
             </div>

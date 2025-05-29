@@ -8,6 +8,21 @@ import {
 } from '@/components/ui/navigation-menu'
 import { cn } from '@/lib/utils'
 import { Link } from '@tanstack/react-router'
+import { useState } from 'react'
+import { Menu, ChevronRight, ChevronDown, Wrench, Info, Phone, ArrowRight } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetHeader,
+  SheetFooter,
+} from '@/components/ui/sheet'
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from '@/components/ui/collapsible'
 
 const serviceLinks = [
   {
@@ -63,9 +78,121 @@ const serviceLinks = [
   },
 ]
 
+function MobileNavigation() {
+  const [open, setOpen] = useState(false)
+  const [servicesOpen, setServicesOpen] = useState(false)
+
+  const navLinks = [
+    { to: '/about', label: 'About', icon: Info },
+    { to: '/contact', label: 'Contact', icon: Phone },
+  ]
+
+  return (
+    <Sheet open={open} onOpenChange={setOpen}>
+      <SheetTrigger asChild>
+        <Button variant="ghost" size="icon" className="md:hidden mr-2">
+          <Menu className="h-5 w-5" />
+          <span className="sr-only">Toggle menu</span>
+        </Button>
+      </SheetTrigger>
+      <SheetContent side="right" className="w-[280px] sm:w-[350px] flex flex-col overflow-y-auto">
+        <SheetHeader className="pb-6">
+          <div className="flex items-center justify-center">
+            <img
+              src="/images/brand-identity/clarke-logo.png"
+              alt="Clarke Engineering & Welding"
+              className="h-16 w-auto"
+            />
+          </div>
+        </SheetHeader>
+        
+        <nav className="flex flex-col space-y-1 flex-1 overflow-y-auto">
+          {/* Services with collapsible submenu */}
+          <Collapsible open={servicesOpen} onOpenChange={setServicesOpen}>
+            <CollapsibleTrigger asChild>
+              <Button
+                variant="ghost"
+                className="w-full justify-start text-lg font-medium px-4 py-3 h-auto"
+              >
+                <div className="flex items-center justify-between w-full">
+                  <div className="flex items-center gap-3">
+                    <Wrench className="h-5 w-5 text-red-500 flex-shrink-0" />
+                    <span>Services</span>
+                  </div>
+                  {servicesOpen ? (
+                    <ChevronDown className="h-4 w-4 text-red-500 flex-shrink-0" />
+                  ) : (
+                    <ChevronRight className="h-4 w-4 text-red-500 flex-shrink-0" />
+                  )}
+                </div>
+              </Button>
+            </CollapsibleTrigger>
+            <CollapsibleContent className="space-y-1 pl-4">
+              {serviceLinks.map((service) => (
+                <Link
+                  key={service.to}
+                  to={service.to}
+                  onClick={() => setOpen(false)}
+                  className="block px-4 py-3 rounded-md text-sm transition-colors hover:bg-accent hover:text-accent-foreground"
+                >
+                  <div className="font-medium mb-1">{service.title}</div>
+                  <div className="text-xs text-muted-foreground line-clamp-2">
+                    {service.description}
+                  </div>
+                </Link>
+              ))}
+            </CollapsibleContent>
+          </Collapsible>
+
+          {/* Regular navigation links */}
+          {navLinks.map((link) => {
+            const IconComponent = link.icon
+            return (
+              <Link
+                key={link.to}
+                to={link.to}
+                onClick={() => setOpen(false)}
+                className="flex items-center gap-3 px-4 py-3 text-lg font-medium rounded-md transition-colors hover:bg-accent hover:text-accent-foreground"
+                activeProps={{
+                  className: 'bg-accent text-accent-foreground',
+                }}
+              >
+                <IconComponent className="h-5 w-5 text-red-500 flex-shrink-0" />
+                <span>{link.label}</span>
+              </Link>
+            )
+          })}
+        </nav>
+
+        <SheetFooter className="mt-6 pt-6 border-t flex-shrink-0">
+          <div className="w-full space-y-3">
+            <div className="text-center text-sm text-muted-foreground">
+              Ready to get your equipment back in action?
+            </div>
+            <Link
+              to="/contact"
+              onClick={() => setOpen(false)}
+              className="w-full"
+            >
+              <Button className="w-full bg-red-600 hover:bg-red-700 text-white">
+                <Phone className="h-4 w-4 mr-2" />
+                Get In Touch
+                <ArrowRight className="h-4 w-4 ml-2" />
+              </Button>
+            </Link>
+            <div className="text-center text-xs text-muted-foreground">
+              Call us: (250) 475 2400
+            </div>
+          </div>
+        </SheetFooter>
+      </SheetContent>
+    </Sheet>
+  )
+}
+
 export function Header() {
   const navLinks = [
-    { to: '/projects', label: 'Projects' },
+    // { to: '/projects', label: 'Projects' },
     { to: '/about', label: 'About' },
     { to: '/contact', label: 'Contact' },
   ]
@@ -88,6 +215,7 @@ export function Header() {
           </div>
         </Link>
 
+        {/* Desktop Navigation */}
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
             <NavigationMenuItem>
@@ -138,33 +266,9 @@ export function Header() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* Mobile Menu Button - Placeholder for Shadcn Sheet or DropdownMenu */}
-        <div className="md:hidden">
-          <button className="p-2 rounded-md hover:bg-accent">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <line x1="4" x2="20" y1="12" y2="12" />
-              <line x1="4" x2="20" y1="6" y2="6" />
-              <line x1="4" x2="20" y1="18" y2="18" />
-            </svg>
-          </button>
-        </div>
+        {/* Mobile Navigation */}
+        <MobileNavigation />
       </div>
-      {/* 
-        Future enhancements for Header:
-        - Mobile navigation: Implement using Shadcn Sheet component for a drawer.
-        - Dropdown menus for services/divisions (if needed): Shadcn NavigationMenu submenus or DropdownMenu.
-        - Sticky Call to Action: Implement using Shadcn Button and manage visibility on scroll.
-      */}
     </header>
   )
 }
