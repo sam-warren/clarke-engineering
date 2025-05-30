@@ -8,8 +8,16 @@ import {
 } from '@/components/ui/navigation-menu'
 import { cn } from '@/lib/utils'
 import { Link } from '@tanstack/react-router'
-import { useState } from 'react'
-import { Menu, ChevronRight, ChevronDown, Wrench, Info, Phone, ArrowRight } from 'lucide-react'
+import { useState, useEffect, useRef } from 'react'
+import {
+  Menu,
+  ChevronRight,
+  ChevronDown,
+  Wrench,
+  Info,
+  Phone,
+  ArrowRight,
+} from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   Sheet,
@@ -28,10 +36,10 @@ const serviceLinks = [
   {
     title: (
       <span className="flex items-center gap-2">
-        <img 
-          src="/images/site-assets/emojis/excavator.png" 
-          alt="Excavator" 
-          className="w-5 h-5 inline-block" 
+        <img
+          src="/images/site-assets/emojis/excavator.png"
+          alt="Excavator"
+          className="w-5 h-5 inline-block"
         />
         Excavator Repairs
       </span>
@@ -104,7 +112,10 @@ function MobileNavigation() {
           <span className="sr-only">Toggle menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side="right" className="w-[280px] sm:w-[350px] flex flex-col overflow-y-auto">
+      <SheetContent
+        side="right"
+        className="w-[280px] sm:w-[350px] flex flex-col overflow-y-auto"
+      >
         <SheetHeader className="pb-6">
           <div className="flex items-center justify-center">
             <img
@@ -114,7 +125,7 @@ function MobileNavigation() {
             />
           </div>
         </SheetHeader>
-        
+
         <nav className="flex flex-col space-y-1 flex-1 overflow-y-auto">
           {/* Services with collapsible submenu */}
           <Collapsible open={servicesOpen} onOpenChange={setServicesOpen}>
@@ -200,6 +211,26 @@ function MobileNavigation() {
 }
 
 export function Header() {
+  const [position, setPosition] = useState<string>(
+    '[&_div.absolute]:right-auto [&_div.absolute]:left-0',
+  )
+  const menuRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (menuRef.current) {
+      const menuRect = menuRef.current.getBoundingClientRect()
+      const spaceOnLeft = menuRect.left
+      const spaceOnRight = window.innerWidth - menuRect.right
+
+      // Set position based on available space
+      if (spaceOnLeft > spaceOnRight) {
+        setPosition('[&_div.absolute]:left-auto [&_div.absolute]:right-0')
+      } else {
+        setPosition('[&_div.absolute]:right-auto [&_div.absolute]:left-0')
+      }
+    }
+  }, [menuRef.current])
+
   const navLinks = [
     // { to: '/projects', label: 'Projects' },
     { to: '/about', label: 'About' },
@@ -208,7 +239,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background">
-      <div className="container mx-auto flex h-24 max-w-screen-2xl items-center justify-between">
+      <div className="container mx-auto flex h-24 max-w-screen-2xl items-center justify-between px-4 md:px-6 lg:px-8">
         <Link to="/" className="mr-6 flex items-center space-x-4">
           <img
             src="/images/brand-identity/clarke-logo.png"
@@ -225,7 +256,10 @@ export function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <NavigationMenu className="hidden md:flex">
+        <NavigationMenu
+          ref={menuRef}
+          className={cn('hidden md:flex', position)}
+        >
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger
@@ -234,7 +268,7 @@ export function Header() {
                 Services
               </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <div className="grid w-[800px] gap-3 p-4 md:grid-cols-2">
+                <div className="relative grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                   {serviceLinks.map((service) => (
                     <Link
                       key={service.to}

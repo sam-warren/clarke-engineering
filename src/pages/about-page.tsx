@@ -115,7 +115,7 @@ export function AboutPage() {
                 key={imagePath}
                 className="md:basis-1/2 lg:basis-1/3"
               >
-                <Card className="shadow-lg overflow-hidden py-0 mx-10 h-64">
+                <Card className="shadow-lg overflow-hidden py-0 h-64">
                   <img
                     src={imagePath}
                     alt={`Clarke Engineering - Image ${index + 1}`}
@@ -125,8 +125,8 @@ export function AboutPage() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="absolute -left-0 hover:bg-gray-100" />
-          <CarouselNext className="absolute -right-0 hover:bg-gray-100" />
+          <CarouselPrevious className="absolute -left-12 hover:bg-gray-100" />
+          <CarouselNext className="absolute -right-12 hover:bg-gray-100" />
         </Carousel>
       </div>
 

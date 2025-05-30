@@ -24,9 +24,9 @@ export function ContactPage() {
       )}
 
       {/* 2x2 Grid Layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
         {/* Top Left: Descriptive Content */}
-        <div className="flex flex-col justify-start py-10 space-y-6">
+        <div className="flex flex-col justify-start lg:py-10 space-y-6">
           <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Ready to Get Started?

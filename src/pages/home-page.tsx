@@ -78,15 +78,15 @@ export function HomePage() {
                   {
                     title: 'Excavator Repairs',
                     description: (
-                      <div className="flex flex-col gap-1.5">
+                      <div className="flex flex-wrap gap-3">
                         {[
-                          'Excavators',
                           'Backhoes',
                           'Bulldozers',
                           'Skid-Steers',
-                          'Dump Trucks',
+                          'Dump trucks',
+                          'Hydraulics',
                         ].map((item) => (
-                          <div key={item} className="flex items-center gap-2">
+                          <div key={item} className="flex items-center gap-1.5 whitespace-nowrap">
                             <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
                             <span>{item}</span>
                           </div>
@@ -100,14 +100,16 @@ export function HomePage() {
                   {
                     title: 'Elevator & Crane Repairs',
                     description: (
-                      <div className="flex flex-col gap-1.5">
+                      <div className="flex flex-wrap gap-3">
                         {[
-                          'Professional elevator repair',
-                          'Crane maintenance & repair',
-                          'Lift system services',
-                          'Boom equipment repair',
+                          'Elevators',
+                          'Scissor Lifts',
+                          'Cranes',
+                          'Aerial work platforms (AWPs)',
+                          'Booms',
+                          'Forklifts',
                         ].map((item) => (
-                          <div key={item} className="flex items-center gap-2">
+                          <div key={item} className="flex items-center gap-1.5 whitespace-nowrap">
                             <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
                             <span>{item}</span>
                           </div>
@@ -121,13 +123,21 @@ export function HomePage() {
                   {
                     title: 'Truck & Automotive Repairs',
                     description: (
-                      <div className="flex flex-col gap-1.5">
+                      <div className="flex flex-wrap gap-3">
                         {[
-                          'Commercial Vehicle Welding',
-                          'Custom Modifications',
-                          'Fleet Repair Services',
+                          'Trucks',
+                          'HIABs',
+                          'Beds',
+                          'Boxes',
+                          'Drive shafts',
+                          'Rims',
+                          'Bins',
+                          'Hydraulics',
+                          'Tankers',
+                          'Trailers',
+                          'Food trucks',
                         ].map((item) => (
-                          <div key={item} className="flex items-center gap-2">
+                          <div key={item} className="flex items-center gap-1.5 whitespace-nowrap">
                             <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
                             <span>{item}</span>
                           </div>
@@ -141,13 +151,14 @@ export function HomePage() {
                   {
                     title: 'Waste Management Equipment',
                     description: (
-                      <div className="flex flex-col gap-1.5">
+                      <div className="flex flex-wrap gap-3">
                         {[
                           'Waste disposal bin repairs',
                           'Roll-off fleet maintenance',
                           'Container modifications',
+                          'Hydraulics',
                         ].map((item) => (
-                          <div key={item} className="flex items-center gap-2">
+                          <div key={item} className="flex items-center gap-1.5 whitespace-nowrap">
                             <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
                             <span>{item}</span>
                           </div>
@@ -161,14 +172,14 @@ export function HomePage() {
                   {
                     title: 'Paving Equipment Repairs',
                     description: (
-                      <div className="flex flex-col gap-1.5">
+                      <div className="flex flex-wrap gap-3">
                         {[
-                          'Asphalt Plant Equipment',
-                          'Fleet Maintenance',
-                          'Heavy-Duty Welding',
-                          'Field Repairs',
+                          'Paving fleet maintenance',
+                          'Asphalt plant repairs and fabrication',
+                          'Field repairs',
+                          'Heavy-duty welding',
                         ].map((item) => (
-                          <div key={item} className="flex items-center gap-2">
+                          <div key={item} className="flex items-center gap-1.5 whitespace-nowrap">
                             <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
                             <span>{item}</span>
                           </div>
@@ -182,14 +193,15 @@ export function HomePage() {
                   {
                     title: 'Concrete Equipment Repairs',
                     description: (
-                      <div className="flex flex-col gap-1.5">
+                      <div className="flex flex-wrap gap-3">
                         {[
-                          'Concrete Plant Equipment',
-                          'Fleet Maintenance',
-                          'Heavy-Duty Welding',
-                          'Mobile Service',
+                          'Concrete plant repairs and fabrication',
+                          'Fleet maintenance',
+                          'Railings',
+                          'Mobile service',
+                          'Heavy-duty welding',
                         ].map((item) => (
-                          <div key={item} className="flex items-center gap-2">
+                          <div key={item} className="flex items-center gap-1.5 whitespace-nowrap">
                             <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
                             <span>{item}</span>
                           </div>
@@ -204,11 +216,11 @@ export function HomePage() {
                   <Link key={service.title} to={service.to} className="block">
                     <Card className="overflow-hidden hover:shadow-xl hover:shadow-red-100 transition-all duration-300 border-t-4 border-t-red-500 h-full flex flex-col relative md:min-h-[200px] cursor-pointer hover:scale-[1.02] transform">
                       {service.image && (
-                        <div className="absolute -top-5 -right-5 w-40 h-40">
+                        <div className="absolute top-1 right-1 w-30 h-30">
                           <img
                             src={service.image}
                             alt={service.title}
-                            className="absolute top-0 right-0 w-40 h-40 object-cover rounded-full"
+                            className="absolute top-0 right-0 w-30 h-30 object-cover rounded-xl"
                           />
                         </div>
                       )}
@@ -252,13 +264,13 @@ export function HomePage() {
                   {
                     title: 'Municipal & Government Projects',
                     description: (
-                      <div className="flex flex-col gap-1.5">
+                      <div className="flex flex-wrap gap-3">
                         {[
-                          'Public Infrastructure Projects',
-                          'Government Facility Maintenance',
-                          'Municipal Equipment Repair',
+                          'Civic infrastructure',
+                          'Public amenities and installation',
+                          'Fleet and equipment installation',
                         ].map((item) => (
-                          <div key={item} className="flex items-center gap-2">
+                          <div key={item} className="flex items-center gap-1.5 whitespace-nowrap">
                             <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
                             <span>{item}</span>
                           </div>
@@ -272,13 +284,16 @@ export function HomePage() {
                   {
                     title: 'Marine Engineering & Welding',
                     description: (
-                      <div className="flex flex-col gap-1.5">
+                      <div className="flex flex-wrap gap-3">
                         {[
-                          'Aluminum & Marine-Grade Welding',
-                          'Vessel Repairs',
-                          'Custom Marine Fabrication',
+                          'Aluminum & marine-grade welding',
+                          'Vessel repairs',
+                          'Ramps and docks',
+                          'Barges',
+                          'Railings',
+                          'Hydraulics',
                         ].map((item) => (
-                          <div key={item} className="flex items-center gap-2">
+                          <div key={item} className="flex items-center gap-1.5 whitespace-nowrap">
                             <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
                             <span>{item}</span>
                           </div>
@@ -292,13 +307,16 @@ export function HomePage() {
                   {
                     title: 'Construction Industry Repairs',
                     description: (
-                      <div className="flex flex-col gap-1.5">
+                      <div className="flex flex-wrap gap-3">
                         {[
-                          'Mobile & In-Shop Welding',
-                          'Structural Steel Services',
-                          'Heavy Equipment Repair',
+                          'Structural steel',
+                          'Hand railings',
+                          'Staircases',
+                          'Gates',
+                          'Mobile field welding',
+                          'Boiler and pipe welding',
                         ].map((item) => (
-                          <div key={item} className="flex items-center gap-2">
+                          <div key={item} className="flex items-center gap-1.5 whitespace-nowrap">
                             <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
                             <span>{item}</span>
                           </div>
@@ -313,11 +331,11 @@ export function HomePage() {
                   <Link key={service.title} to={service.to} className="block">
                     <Card className="overflow-hidden hover:shadow-xl hover:shadow-red-100 transition-all duration-300 border-t-4 border-t-red-500 h-full flex flex-col relative md:min-h-[200px] cursor-pointer hover:scale-[1.02] transform">
                       {service.image && (
-                        <div className="absolute -top-5 -right-5 w-40 h-40">
+                        <div className="absolute top-1 right-1 w-30 h-30">
                           <img
                             src={service.image}
                             alt={service.title}
-                            className="absolute top-0 right-0 w-40 h-40 object-cover rounded-full"
+                            className="absolute top-0 right-0 w-30 h-30 object-cover rounded-xl"
                           />
                         </div>
                       )}

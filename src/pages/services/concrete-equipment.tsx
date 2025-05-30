@@ -3,7 +3,7 @@ import { ServicePage } from '@/components/service-page'
 export function ConcreteEquipmentPage() {
   return (
     <ServicePage
-      title="🔧 Concrete Equipment Repairs & Fabrication"
+      title="🏭 Concrete Equipment Repairs & Fabrication"
       description="Heavy-Duty Welding • Mobile Service • Custom Solutions"
       testimonial={{
         quote: "Clarke keeps our Concrete Company pouring",
