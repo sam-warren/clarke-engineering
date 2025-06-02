@@ -360,7 +360,7 @@ export function HomePage() {
                         ))}
                       </div>
                     ),
-                    to: '/services/construction',
+                    to: '/services/construction-repairs',
                     image:
                       '/images/site-assets/hero-cards/construction-industry.png',
                   },
