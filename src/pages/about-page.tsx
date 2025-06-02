@@ -119,8 +119,8 @@ export function AboutPage() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious/>
-        <CarouselNext/>
+        <CarouselPrevious />
+        <CarouselNext />
       </Carousel>
 
       <Card className="shadow-lg">
