@@ -105,8 +105,8 @@ export function Footer() {
             </CardHeader>
             <CardContent>
               <p className="mb-4 text-gray-300">
-                Visit our facility in Victoria, BC. We're conveniently located in
-                the industrial area, with easy access for both commercial and
+                Visit our facility in Victoria, BC. We're conveniently located
+                in the industrial area, with easy access for both commercial and
                 personal vehicles.
               </p>
               <GoogleMapComponent

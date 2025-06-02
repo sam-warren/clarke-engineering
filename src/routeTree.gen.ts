@@ -11,11 +11,9 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as ProjectsImport } from './routes/projects'
 import { Route as ContactImport } from './routes/contact'
 import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
-import { Route as ServicesIndexImport } from './routes/services/index'
 import { Route as ServicesWasteDisposalImport } from './routes/services/waste-disposal'
 import { Route as ServicesTruckAutomotiveRepairsImport } from './routes/services/truck-automotive-repairs'
 import { Route as ServicesPavingEquipmentImport } from './routes/services/paving-equipment'
@@ -27,12 +25,6 @@ import { Route as ServicesConstructionRepairsImport } from './routes/services/co
 import { Route as ServicesConcreteEquipmentImport } from './routes/services/concrete-equipment'
 
 // Create/Update Routes
-
-const ProjectsRoute = ProjectsImport.update({
-  id: '/projects',
-  path: '/projects',
-  getParentRoute: () => rootRoute,
-} as any)
 
 const ContactRoute = ContactImport.update({
   id: '/contact',
@@ -49,12 +41,6 @@ const AboutRoute = AboutImport.update({
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const ServicesIndexRoute = ServicesIndexImport.update({
-  id: '/services/',
-  path: '/services/',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -141,13 +127,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactImport
       parentRoute: typeof rootRoute
     }
-    '/projects': {
-      id: '/projects'
-      path: '/projects'
-      fullPath: '/projects'
-      preLoaderRoute: typeof ProjectsImport
-      parentRoute: typeof rootRoute
-    }
     '/services/concrete-equipment': {
       id: '/services/concrete-equipment'
       path: '/services/concrete-equipment'
@@ -211,13 +190,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesWasteDisposalImport
       parentRoute: typeof rootRoute
     }
-    '/services/': {
-      id: '/services/'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesIndexImport
-      parentRoute: typeof rootRoute
-    }
   }
 }
 
@@ -227,7 +199,6 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/projects': typeof ProjectsRoute
   '/services/concrete-equipment': typeof ServicesConcreteEquipmentRoute
   '/services/construction-repairs': typeof ServicesConstructionRepairsRoute
   '/services/elevator-crane-repairs': typeof ServicesElevatorCraneRepairsRoute
@@ -237,14 +208,12 @@ export interface FileRoutesByFullPath {
   '/services/paving-equipment': typeof ServicesPavingEquipmentRoute
   '/services/truck-automotive-repairs': typeof ServicesTruckAutomotiveRepairsRoute
   '/services/waste-disposal': typeof ServicesWasteDisposalRoute
-  '/services': typeof ServicesIndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/projects': typeof ProjectsRoute
   '/services/concrete-equipment': typeof ServicesConcreteEquipmentRoute
   '/services/construction-repairs': typeof ServicesConstructionRepairsRoute
   '/services/elevator-crane-repairs': typeof ServicesElevatorCraneRepairsRoute
@@ -254,7 +223,6 @@ export interface FileRoutesByTo {
   '/services/paving-equipment': typeof ServicesPavingEquipmentRoute
   '/services/truck-automotive-repairs': typeof ServicesTruckAutomotiveRepairsRoute
   '/services/waste-disposal': typeof ServicesWasteDisposalRoute
-  '/services': typeof ServicesIndexRoute
 }
 
 export interface FileRoutesById {
@@ -262,7 +230,6 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/projects': typeof ProjectsRoute
   '/services/concrete-equipment': typeof ServicesConcreteEquipmentRoute
   '/services/construction-repairs': typeof ServicesConstructionRepairsRoute
   '/services/elevator-crane-repairs': typeof ServicesElevatorCraneRepairsRoute
@@ -272,7 +239,6 @@ export interface FileRoutesById {
   '/services/paving-equipment': typeof ServicesPavingEquipmentRoute
   '/services/truck-automotive-repairs': typeof ServicesTruckAutomotiveRepairsRoute
   '/services/waste-disposal': typeof ServicesWasteDisposalRoute
-  '/services/': typeof ServicesIndexRoute
 }
 
 export interface FileRouteTypes {
@@ -281,7 +247,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/projects'
     | '/services/concrete-equipment'
     | '/services/construction-repairs'
     | '/services/elevator-crane-repairs'
@@ -291,13 +256,11 @@ export interface FileRouteTypes {
     | '/services/paving-equipment'
     | '/services/truck-automotive-repairs'
     | '/services/waste-disposal'
-    | '/services'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/contact'
-    | '/projects'
     | '/services/concrete-equipment'
     | '/services/construction-repairs'
     | '/services/elevator-crane-repairs'
@@ -307,13 +270,11 @@ export interface FileRouteTypes {
     | '/services/paving-equipment'
     | '/services/truck-automotive-repairs'
     | '/services/waste-disposal'
-    | '/services'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/contact'
-    | '/projects'
     | '/services/concrete-equipment'
     | '/services/construction-repairs'
     | '/services/elevator-crane-repairs'
@@ -323,7 +284,6 @@ export interface FileRouteTypes {
     | '/services/paving-equipment'
     | '/services/truck-automotive-repairs'
     | '/services/waste-disposal'
-    | '/services/'
   fileRoutesById: FileRoutesById
 }
 
@@ -331,7 +291,6 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
-  ProjectsRoute: typeof ProjectsRoute
   ServicesConcreteEquipmentRoute: typeof ServicesConcreteEquipmentRoute
   ServicesConstructionRepairsRoute: typeof ServicesConstructionRepairsRoute
   ServicesElevatorCraneRepairsRoute: typeof ServicesElevatorCraneRepairsRoute
@@ -341,14 +300,12 @@ export interface RootRouteChildren {
   ServicesPavingEquipmentRoute: typeof ServicesPavingEquipmentRoute
   ServicesTruckAutomotiveRepairsRoute: typeof ServicesTruckAutomotiveRepairsRoute
   ServicesWasteDisposalRoute: typeof ServicesWasteDisposalRoute
-  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
-  ProjectsRoute: ProjectsRoute,
   ServicesConcreteEquipmentRoute: ServicesConcreteEquipmentRoute,
   ServicesConstructionRepairsRoute: ServicesConstructionRepairsRoute,
   ServicesElevatorCraneRepairsRoute: ServicesElevatorCraneRepairsRoute,
@@ -358,7 +315,6 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesPavingEquipmentRoute: ServicesPavingEquipmentRoute,
   ServicesTruckAutomotiveRepairsRoute: ServicesTruckAutomotiveRepairsRoute,
   ServicesWasteDisposalRoute: ServicesWasteDisposalRoute,
-  ServicesIndexRoute: ServicesIndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -374,7 +330,6 @@ export const routeTree = rootRoute
         "/",
         "/about",
         "/contact",
-        "/projects",
         "/services/concrete-equipment",
         "/services/construction-repairs",
         "/services/elevator-crane-repairs",
@@ -383,8 +338,7 @@ export const routeTree = rootRoute
         "/services/municipal-government",
         "/services/paving-equipment",
         "/services/truck-automotive-repairs",
-        "/services/waste-disposal",
-        "/services/"
+        "/services/waste-disposal"
       ]
     },
     "/": {
@@ -395,9 +349,6 @@ export const routeTree = rootRoute
     },
     "/contact": {
       "filePath": "contact.tsx"
-    },
-    "/projects": {
-      "filePath": "projects.tsx"
     },
     "/services/concrete-equipment": {
       "filePath": "services/concrete-equipment.tsx"
@@ -425,9 +376,6 @@ export const routeTree = rootRoute
     },
     "/services/waste-disposal": {
       "filePath": "services/waste-disposal.tsx"
-    },
-    "/services/": {
-      "filePath": "services/index.tsx"
     }
   }
 }

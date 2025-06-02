@@ -1,7 +1,6 @@
 import { GoogleReviews } from '@/components/google-integration/google-reviews'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { useIsMobile } from '@/hooks/use-mobile'
 import { Link } from '@tanstack/react-router'
 import {
   ArrowRight,
@@ -10,42 +9,10 @@ import {
   Dot,
   Mail,
   Phone,
-  Sparkles,
   Wrench,
 } from 'lucide-react'
-import { useEffect } from 'react'
-import { toast } from 'sonner'
-
-// const VIDEOS = [
-//   '/videos/4941363-hd_1920_1080_25fps.mp4',
-//   '/videos/4941457-hd_1920_1080_25fps.mp4',
-//   '/videos/4315553-uhd_3840_2160_30fps.mp4',
-//   '/videos/13053713_3840_2160_50fps.mp4',
-// ]
 
 export function HomePage() {
-  const isMobile = useIsMobile()
-
-  useEffect(() => {
-    if (!isMobile) {
-      toast(
-        <div className="flex flex-col gap-1">
-          <div className="flex items-center gap-2 font-bold">
-            <Sparkles className="h-5 w-5" />
-            {new Date().getFullYear() - 1960} Years of Excellence in Victoria
-          </div>
-          <p className="text-sm">
-            Providing industry-leading welding, fabrication, and engineering
-            solutions since 1960.
-          </p>
-        </div>,
-        {
-          duration: 10000,
-        },
-      )
-    }
-  }, [isMobile])
-
   return (
     <div className="flex flex-col">
       <div className="container mx-auto px-4 py-6 space-y-20">
@@ -234,11 +201,11 @@ export function HomePage() {
                   <Link key={service.title} to={service.to} className="block">
                     <Card className="overflow-hidden hover:shadow-xl hover:shadow-red-100 transition-all duration-300 border-t-4 border-t-red-500 h-full flex flex-col relative md:min-h-[200px] cursor-pointer hover:scale-[1.02] transform">
                       {service.image && (
-                        <div className="absolute top-1 right-1 w-30 h-30">
+                        <div className="absolute top-1 right-1 w-37 h-37 sm:w-25 sm:h-25">
                           <img
                             src={service.image}
                             alt={service.title}
-                            className="absolute top-0 right-0 w-30 h-30 object-cover rounded-xl"
+                            className="absolute top-0 right-0 w-37 h-37 sm:w-25 sm:h-25 object-cover rounded-xl"
                           />
                         </div>
                       )}
@@ -247,17 +214,23 @@ export function HomePage() {
                           {service.title}
                         </CardTitle>
                       </CardHeader>
-                      <CardContent className="pt-0 flex flex-col flex-1 hidden md:flex">
-                        <div className="flex-1 pr-32">
+                      <CardContent className="pt-0 flex-col flex-1 hidden md:flex">
+                        <div className="flex-1 pr-20">
                           {service.description}
                         </div>
-                        <Button variant="ghost" className="gap-1 text-red-500 mt-4 font-bold hover:text-red-600 hover:bg-red-50 py-3 h-12 cursor-pointer">
+                        <Button
+                          variant="secondary"
+                          className="gap-1 text-red-500 mt-4 font-bold hover:text-red-600 hover:bg-red-50 py-3 h-12 cursor-pointer"
+                        >
                           <span>Learn More</span>
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </CardContent>
                       <CardContent className="pt-0 md:hidden">
-                        <Button variant="ghost" className="gap-1 text-red-500 font-bold hover:text-red-600 hover:bg-red-50 py-3 h-12 cursor-pointer">
+                        <Button
+                          variant="secondary"
+                          className="gap-1 text-red-500 font-bold hover:text-red-600 hover:bg-red-50 py-3 h-12 cursor-pointer"
+                        >
                           <span>Learn More</span>
                           <ArrowRight className="h-4 w-4" />
                         </Button>
@@ -368,11 +341,11 @@ export function HomePage() {
                   <Link key={service.title} to={service.to} className="block">
                     <Card className="overflow-hidden hover:shadow-xl hover:shadow-red-100 transition-all duration-300 border-t-4 border-t-red-500 h-full flex flex-col relative md:min-h-[200px] cursor-pointer hover:scale-[1.02] transform">
                       {service.image && (
-                        <div className="absolute top-1 right-1 w-30 h-30">
+                        <div className="absolute top-1 right-1 w-37 h-37 sm:w-25 sm:h-25">
                           <img
                             src={service.image}
                             alt={service.title}
-                            className="absolute top-0 right-0 w-30 h-30 object-cover rounded-xl"
+                            className="absolute top-0 right-0 w-37 h-37 sm:w-25 sm:h-25 object-cover rounded-xl"
                           />
                         </div>
                       )}
@@ -381,17 +354,23 @@ export function HomePage() {
                           {service.title}
                         </CardTitle>
                       </CardHeader>
-                      <CardContent className="pt-0 flex flex-col flex-1 hidden md:flex">
-                        <div className="flex-1 pr-32">
+                      <CardContent className="pt-0 flex-col flex-1 hidden md:flex">
+                        <div className="flex-1 pr-20">
                           {service.description}
                         </div>
-                        <Button variant="ghost" className="gap-1 text-red-500 mt-4 font-bold hover:text-red-600 hover:bg-red-50 py-3 h-12 cursor-pointer">
+                        <Button
+                          variant="secondary"
+                          className="gap-1 text-red-500 mt-4 font-bold hover:text-red-600 hover:bg-red-50 py-3 h-12 cursor-pointer"
+                        >
                           <span>Learn More</span>
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </CardContent>
                       <CardContent className="pt-0 md:hidden">
-                        <Button variant="ghost" className="gap-1 text-red-500 font-bold hover:text-red-600 hover:bg-red-50 py-3 h-12 cursor-pointer">
+                        <Button
+                          variant="secondary"
+                          className="gap-1 text-red-500 font-bold hover:text-red-600 hover:bg-red-50 py-3 h-12 cursor-pointer"
+                        >
                           <span>Learn More</span>
                           <ArrowRight className="h-4 w-4" />
                         </Button>

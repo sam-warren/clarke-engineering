@@ -14,30 +14,31 @@ const getImageNumber = (filename: string) => {
   return num
 }
 
+// Move importImages function outside component
+const importImages = async () => {
+  const imageContext = import.meta.glob(
+    '/public/images/site-assets/about-us/*.{jpg,JPG,jpeg,JPEG,png,PNG}',
+  )
+  const imageList: string[] = []
+
+  for (const path in imageContext) {
+    const imagePath = path.replace('/public', '')
+    imageList.push(imagePath)
+  }
+
+  imageList.sort((a, b) => getImageNumber(a) - getImageNumber(b))
+  return imageList
+}
+
 export function AboutPage() {
   const [images, setImages] = useState<string[]>([])
 
   useEffect(() => {
-    const importImages = async () => {
-      const imageContext = import.meta.glob(
-        '/public/images/site-assets/about-us/*.{jpg,JPG,jpeg,JPEG,png,PNG}',
-      )
-      const imageList: string[] = []
-
-      for (const path in imageContext) {
-        const imagePath = path.replace('/public', '')
-        imageList.push(imagePath)
-      }
-
-      imageList.sort((a, b) => getImageNumber(a) - getImageNumber(b))
-      setImages(imageList)
-    }
-
-    importImages()
+    importImages().then(setImages)
   }, [])
 
   return (
-    <div className="space-y-8 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+    <div className="container mx-auto px-4 py-6 space-y-8">
       <h1 className="text-4xl font-bold text-center mb-6">About Us</h1>
       <p className="text-xl text-center text-gray-600 mb-10">
         Learn more about our company and the people who make it great.
@@ -117,8 +118,8 @@ export function AboutPage() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious className="hidden md:flex" />
+        <CarouselNext className="hidden md:flex" />
       </Carousel>
 
       <Card className="shadow-lg">
