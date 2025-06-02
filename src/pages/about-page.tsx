@@ -18,7 +18,6 @@ export function AboutPage() {
   const [images, setImages] = useState<string[]>([])
 
   useEffect(() => {
-    // Import all images from the about-us directory
     const importImages = async () => {
       const imageContext = import.meta.glob(
         '/public/images/site-assets/about-us/*.{jpg,JPG,jpeg,JPEG,png,PNG}',
@@ -30,7 +29,6 @@ export function AboutPage() {
         imageList.push(imagePath)
       }
 
-      // Sort images by number in filename
       imageList.sort((a, b) => getImageNumber(a) - getImageNumber(b))
       setImages(imageList)
     }
