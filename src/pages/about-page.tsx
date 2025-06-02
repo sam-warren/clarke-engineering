@@ -100,35 +100,28 @@ export function AboutPage() {
         </CardContent>
       </Card>
 
-      {/* Image Carousel */}
-      <div className="w-full relative">
-        <Carousel
-          opts={{
-            align: 'start',
-            loop: true,
-          }}
-          className="w-full"
-        >
-          <CarouselContent>
-            {images.map((imagePath, index) => (
-              <CarouselItem
-                key={imagePath}
-                className="md:basis-1/2 lg:basis-1/3"
-              >
-                <Card className="shadow-lg overflow-hidden py-0 h-64">
-                  <img
-                    src={imagePath}
-                    alt={`Clarke Engineering - Image ${index + 1}`}
-                    className="w-full h-64 object-cover object-top"
-                  />
-                </Card>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="absolute -left-12 hover:bg-gray-100" />
-          <CarouselNext className="absolute -right-12 hover:bg-gray-100" />
-        </Carousel>
-      </div>
+      <Carousel
+        opts={{
+          align: 'start',
+          loop: true,
+        }}
+      >
+        <CarouselContent>
+          {images.map((imagePath, index) => (
+            <CarouselItem key={imagePath} className="md:basis-1/2 lg:basis-1/3">
+              <Card className="shadow-lg overflow-hidden py-0 h-64">
+                <img
+                  src={imagePath}
+                  alt={`Clarke Engineering - Image ${index + 1}`}
+                  className="w-full h-64 object-cover object-top"
+                />
+              </Card>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious/>
+        <CarouselNext/>
+      </Carousel>
 
       <Card className="shadow-lg">
         <CardHeader>

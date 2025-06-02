@@ -132,7 +132,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ onAlert }) => {
 
       const alert = {
         type: 'success' as const,
-        message: "Message sent successfully! We'll get back to you soon.",
+        message:
+          "Message sent! We've sent you a confirmation email with the details. Check your inbox.",
       }
       onAlert?.(alert)
 
@@ -164,9 +165,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onAlert }) => {
     const baseClasses =
       'flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50'
     return `${baseClasses} ${
-      errors[fieldName]
-        ? 'border-red-500 focus-visible:ring-red-500'
-        : ''
+      errors[fieldName] ? 'border-red-500 focus-visible:ring-red-500' : ''
     }`
   }
 
@@ -174,9 +173,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onAlert }) => {
     const baseClasses =
       'flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50'
     return `${baseClasses} ${
-      errors[fieldName]
-        ? 'border-red-500 focus-visible:ring-red-500'
-        : ''
+      errors[fieldName] ? 'border-red-500 focus-visible:ring-red-500' : ''
     }`
   }
 
@@ -185,8 +182,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onAlert }) => {
       <CardHeader>
         <CardTitle className="text-2xl">Send Us a Message</CardTitle>
         <p className="text-muted-foreground">
-          Fill out the form below and we'll get back to you as soon as
-          possible.
+          Fill out the form below and we'll get back to you as soon as possible.
         </p>
       </CardHeader>
       <CardContent>
