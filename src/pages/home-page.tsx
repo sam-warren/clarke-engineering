@@ -251,16 +251,16 @@ export function HomePage() {
                         <div className="flex-1 pr-32">
                           {service.description}
                         </div>
-                        <div className="flex items-center gap-1 text-red-500 mt-4 font-bold">
+                        <Button variant="ghost" className="gap-1 text-red-500 mt-4 font-bold hover:text-red-600 hover:bg-red-50 py-3 h-12 cursor-pointer">
                           <span>Learn More</span>
                           <ArrowRight className="h-4 w-4" />
-                        </div>
+                        </Button>
                       </CardContent>
                       <CardContent className="pt-0 md:hidden">
-                        <div className="flex items-center gap-1 text-red-500 font-bold">
+                        <Button variant="ghost" className="gap-1 text-red-500 font-bold hover:text-red-600 hover:bg-red-50 py-3 h-12 cursor-pointer">
                           <span>Learn More</span>
                           <ArrowRight className="h-4 w-4" />
-                        </div>
+                        </Button>
                       </CardContent>
                     </Card>
                   </Link>
@@ -385,16 +385,16 @@ export function HomePage() {
                         <div className="flex-1 pr-32">
                           {service.description}
                         </div>
-                        <div className="flex items-center gap-1 text-red-500 mt-4 font-bold">
+                        <Button variant="ghost" className="gap-1 text-red-500 mt-4 font-bold hover:text-red-600 hover:bg-red-50 py-3 h-12 cursor-pointer">
                           <span>Learn More</span>
                           <ArrowRight className="h-4 w-4" />
-                        </div>
+                        </Button>
                       </CardContent>
                       <CardContent className="pt-0 md:hidden">
-                        <div className="flex items-center gap-1 text-red-500 font-bold">
+                        <Button variant="ghost" className="gap-1 text-red-500 font-bold hover:text-red-600 hover:bg-red-50 py-3 h-12 cursor-pointer">
                           <span>Learn More</span>
                           <ArrowRight className="h-4 w-4" />
-                        </div>
+                        </Button>
                       </CardContent>
                     </Card>
                   </Link>
