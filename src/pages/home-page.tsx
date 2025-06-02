@@ -86,7 +86,10 @@ export function HomePage() {
                           'Dump trucks',
                           'Hydraulics',
                         ].map((item) => (
-                          <div key={item} className="flex items-center gap-1.5 whitespace-nowrap">
+                          <div
+                            key={item}
+                            className="flex items-center gap-1.5 whitespace-nowrap"
+                          >
                             <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
                             <span>{item}</span>
                           </div>
@@ -109,7 +112,10 @@ export function HomePage() {
                           'Booms',
                           'Forklifts',
                         ].map((item) => (
-                          <div key={item} className="flex items-center gap-1.5 whitespace-nowrap">
+                          <div
+                            key={item}
+                            className="flex items-center gap-1.5 whitespace-nowrap"
+                          >
                             <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
                             <span>{item}</span>
                           </div>
@@ -137,7 +143,10 @@ export function HomePage() {
                           'Trailers',
                           'Food trucks',
                         ].map((item) => (
-                          <div key={item} className="flex items-center gap-1.5 whitespace-nowrap">
+                          <div
+                            key={item}
+                            className="flex items-center gap-1.5 whitespace-nowrap"
+                          >
                             <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
                             <span>{item}</span>
                           </div>
@@ -158,7 +167,10 @@ export function HomePage() {
                           'Container modifications',
                           'Hydraulics',
                         ].map((item) => (
-                          <div key={item} className="flex items-center gap-1.5 whitespace-nowrap">
+                          <div
+                            key={item}
+                            className="flex items-center gap-1.5 whitespace-nowrap"
+                          >
                             <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
                             <span>{item}</span>
                           </div>
@@ -179,7 +191,10 @@ export function HomePage() {
                           'Field repairs',
                           'Heavy-duty welding',
                         ].map((item) => (
-                          <div key={item} className="flex items-center gap-1.5 whitespace-nowrap">
+                          <div
+                            key={item}
+                            className="flex items-center gap-1.5 whitespace-nowrap"
+                          >
                             <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
                             <span>{item}</span>
                           </div>
@@ -201,7 +216,10 @@ export function HomePage() {
                           'Mobile service',
                           'Heavy-duty welding',
                         ].map((item) => (
-                          <div key={item} className="flex items-center gap-1.5 whitespace-nowrap">
+                          <div
+                            key={item}
+                            className="flex items-center gap-1.5 whitespace-nowrap"
+                          >
                             <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
                             <span>{item}</span>
                           </div>
@@ -232,6 +250,16 @@ export function HomePage() {
                       <CardContent className="pt-0 flex flex-col flex-1 hidden md:flex">
                         <div className="flex-1 pr-32">
                           {service.description}
+                        </div>
+                        <div className="flex items-center gap-1 text-red-500 mt-4 font-bold">
+                          <span>Learn More</span>
+                          <ArrowRight className="h-4 w-4" />
+                        </div>
+                      </CardContent>
+                      <CardContent className="pt-0 md:hidden">
+                        <div className="flex items-center gap-1 text-red-500 font-bold">
+                          <span>Learn More</span>
+                          <ArrowRight className="h-4 w-4" />
                         </div>
                       </CardContent>
                     </Card>
@@ -270,7 +298,10 @@ export function HomePage() {
                           'Public amenities and installation',
                           'Fleet and equipment installation',
                         ].map((item) => (
-                          <div key={item} className="flex items-center gap-1.5 whitespace-nowrap">
+                          <div
+                            key={item}
+                            className="flex items-center gap-1.5 whitespace-nowrap"
+                          >
                             <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
                             <span>{item}</span>
                           </div>
@@ -293,7 +324,10 @@ export function HomePage() {
                           'Railings',
                           'Hydraulics',
                         ].map((item) => (
-                          <div key={item} className="flex items-center gap-1.5 whitespace-nowrap">
+                          <div
+                            key={item}
+                            className="flex items-center gap-1.5 whitespace-nowrap"
+                          >
                             <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
                             <span>{item}</span>
                           </div>
@@ -316,7 +350,10 @@ export function HomePage() {
                           'Mobile field welding',
                           'Boiler and pipe welding',
                         ].map((item) => (
-                          <div key={item} className="flex items-center gap-1.5 whitespace-nowrap">
+                          <div
+                            key={item}
+                            className="flex items-center gap-1.5 whitespace-nowrap"
+                          >
                             <Dot className="h-4 w-4 text-red-500 flex-shrink-0" />
                             <span>{item}</span>
                           </div>
@@ -347,6 +384,16 @@ export function HomePage() {
                       <CardContent className="pt-0 flex flex-col flex-1 hidden md:flex">
                         <div className="flex-1 pr-32">
                           {service.description}
+                        </div>
+                        <div className="flex items-center gap-1 text-red-500 mt-4 font-bold">
+                          <span>Learn More</span>
+                          <ArrowRight className="h-4 w-4" />
+                        </div>
+                      </CardContent>
+                      <CardContent className="pt-0 md:hidden">
+                        <div className="flex items-center gap-1 text-red-500 font-bold">
+                          <span>Learn More</span>
+                          <ArrowRight className="h-4 w-4" />
                         </div>
                       </CardContent>
                     </Card>
