@@ -20,7 +20,7 @@ export function MarineEngineeringPage() {
         {
           title: "Aluminum & Steel Fabrication",
           items: [
-            "Custom docks, handrails, walkways, bulkheads, and one-off prototypes.",
+            "Custom docks, handrails, walkways, and bulkheads",
           ],
         },
         {

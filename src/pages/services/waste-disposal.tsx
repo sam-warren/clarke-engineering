@@ -62,7 +62,7 @@ export function WasteDisposalPage() {
           ],
         },
         {
-          title: "Custom Fabrication & Prototyping",
+          title: "Custom Fabrication",
           items: [
             "Brackets, gussets, guards, and hard-to-source parts",
             "Retrofit solutions to extend service life of aging equipment",
