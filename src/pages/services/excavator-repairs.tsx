@@ -70,7 +70,6 @@ export function ExcavatorRepairsPage() {
             'Jobsite welding for buckets, rippers, and custom mods',
             'Reinforcement of guards, steps, and handholds',
             'Concrete and demolition equipment repairs',
-            'One-off prototyping and part replication',
           ],
         },
       ]}

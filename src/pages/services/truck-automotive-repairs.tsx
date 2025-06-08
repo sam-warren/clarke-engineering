@@ -55,7 +55,7 @@ export function TruckAutomotiveRepairsPage() {
         {
           title: "Custom Fabrication & Upfitting",
           items: [
-            "Food truck builds, deck accessories, car wash systems, telecom lift repairs, and one-off prototypes.",
+            "Food truck builds, deck accessories, car wash systems, and telecom lift repairs.",
           ],
         },
         {

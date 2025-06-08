@@ -33,10 +33,10 @@ export function HomePage() {
                     <Wrench className="h-8 w-8 text-red-400" />
                   </div>
                   <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-                    Clarke Engineering specializes in comprehensive heavy
-                    equipment repair services. From excavators to concrete
-                    equipment, our Red Seal certified technicians deliver expert
-                    solutions with fast turnaround times.
+                    Clarke specializes in rapid-response heavy equipment repair
+                    services. From excavators to concrete equipment, our Red
+                    Seal certified technicians deliver expert solutions with
+                    fast turnaround times.
                   </p>
                 </div>
               </div>
@@ -249,14 +249,13 @@ export function HomePage() {
                 <div className="relative z-10 text-center">
                   <div className="flex items-center justify-center gap-3 mb-3">
                     <h2 className="text-3xl md:text-4xl font-bold">
-                      Custom Engineering Solutions
+                      Custom Fabrication Solutions
                     </h2>
                   </div>
                   <p className="text-lg text-red-100 max-w-3xl mx-auto">
-                    With over 60 years of engineering expertise, Clarke
-                    Engineering delivers innovative solutions for municipal,
-                    marine, and construction projects across Victoria and
-                    beyond.
+                    With over 60 years of fabrication expertise, Clarke delivers
+                    innovative solutions for municipal, marine, and construction
+                    projects across Victoria and beyond.
                   </p>
                 </div>
               </div>
@@ -286,7 +285,7 @@ export function HomePage() {
                       '/images/site-assets/hero-cards/municipal-government.png',
                   },
                   {
-                    title: 'Marine Engineering & Welding',
+                    title: 'Marine Fabrication & Welding',
                     description: (
                       <div className="flex flex-wrap gap-3">
                         {[

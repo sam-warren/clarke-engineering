@@ -7,7 +7,7 @@ export function ConcreteEquipmentPage() {
       description="Heavy-Duty Welding • Mobile Service • Custom Solutions"
       testimonial={{
         quote: "Clarke keeps our Concrete Company pouring",
-        author: "CEO of Island Asphalt.",
+        author: "CEO of Concrete Co.",
       }}
       vendors={[
         "Butler Concrete & Aggregate",
