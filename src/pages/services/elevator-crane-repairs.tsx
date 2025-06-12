@@ -3,7 +3,7 @@ import { ServicePage } from '@/components/service-page'
 export function ElevatorCraneRepairsPage() {
   return (
     <ServicePage
-      title="🏗️ Elevator & Crane Repairs"
+      title="🏗️ Cranes,  Lifts, and The Elevator Industry Repairs"
       description="Experts in Lifting Equipment Welding, Fabrication & Structural Repair"
       testimonial={{
         quote: 'Clarke keeps our Cranes working',

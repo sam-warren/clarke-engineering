@@ -49,7 +49,7 @@ const serviceLinks = [
     to: '/services/excavator-repairs',
   },
   {
-    title: '🏗️ Elevator & Crane Repairs',
+    title: '🏗️ Cranes,  Lifts, and The Elevator Industry Repairs',
     description:
       'Experts in Lifting Equipment Welding, Fabrication & Structural Repair',
     to: '/services/elevator-crane-repairs',

@@ -68,7 +68,7 @@ export function HomePage() {
                       '/images/site-assets/hero-cards/excavators-earthworks.webp',
                   },
                   {
-                    title: 'Elevator & Crane Repairs',
+                    title: 'Cranes,  Lifts, and The Elevator Industry Repairs',
                     description: (
                       <div className="flex flex-wrap gap-3">
                         {[
