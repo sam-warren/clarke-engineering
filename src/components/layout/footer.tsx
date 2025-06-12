@@ -62,35 +62,35 @@ export function Footer() {
               <div className="grid grid-cols-2 gap-8 place-items-center">
                 <div className="flex items-center justify-center w-full h-full">
                   <img
-                    src="/images/certification-badges/RedSeal.png"
+                    src="/images/certification-badges/RedSeal.webp"
                     alt="Red Seal Certification"
                     className="h-32 w-auto object-contain"
                   />
                 </div>
                 <div className="flex items-center justify-center w-full h-full">
                   <img
-                    src="/images/certification-badges/BBB.png"
+                    src="/images/certification-badges/BBB.webp"
                     alt="Better Business Bureau"
                     className="h-32 w-auto object-contain"
                   />
                 </div>
                 <div className="flex items-center justify-center w-full h-full">
                   <img
-                    src="/images/certification-badges/CWB.png"
+                    src="/images/certification-badges/CWB.webp"
                     alt="CWB Certification"
                     className="h-32 w-auto object-contain"
                   />
                 </div>
                 <div className="flex items-center justify-center w-full h-full">
                   <img
-                    src="/images/certification-badges/IslandEquipmentOwnersAssn.png"
+                    src="/images/certification-badges/IslandEquipmentOwnersAssn.webp"
                     alt="Island Equipment Owners Association"
                     className="h-32 w-auto object-contain"
                   />
                 </div>
                 <div className="flex items-center justify-center w-full h-full col-span-2">
                   <img
-                    src="/images/certification-badges/CFIB.png"
+                    src="/images/certification-badges/CFIB.webp"
                     alt="CFIB Member"
                     className="h-20 w-auto object-contain"
                   />

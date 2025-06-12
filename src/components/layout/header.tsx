@@ -37,7 +37,7 @@ const serviceLinks = [
     title: (
       <span className="flex items-center gap-2">
         <img
-          src="/images/site-assets/emojis/excavator.png"
+          src="/images/site-assets/emojis/excavator.webp"
           alt="Excavator"
           className="w-5 h-5 inline-block"
         />
@@ -119,7 +119,7 @@ function MobileNavigation() {
         <SheetHeader className="pb-6">
           <div className="flex items-center justify-center">
             <img
-              src="/images/brand-identity/clarke-logo.png"
+              src="/images/brand-identity/clarke-logo.webp"
               alt="Clarke Engineering & Welding"
               className="h-16 w-auto"
             />
@@ -242,7 +242,7 @@ export function Header() {
       <div className="container mx-auto flex h-24 max-w-screen-2xl items-center justify-between px-4 md:px-6 lg:px-8">
         <Link to="/" className="mr-6 flex items-center space-x-4">
           <img
-            src="/images/brand-identity/clarke-logo.png"
+            src="/images/brand-identity/clarke-logo.webp"
             alt="Clarke Logo"
             width={450}
             height={450}

@@ -23,7 +23,7 @@ export function HomePage() {
             <div>
               {/* Equipment Repairs Hero Banner */}
               <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-xl p-8 mb-8 text-white relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('/images/site-assets/hero-cards/excavators-earthworks.png')] bg-cover bg-center opacity-10"></div>
+                <div className="absolute inset-0 bg-[url('/images/site-assets/hero-cards/excavators-earthworks.webp')] bg-cover bg-center opacity-10"></div>
                 <div className="relative z-10 text-center">
                   <div className="flex items-center justify-center gap-3 mb-3">
                     <Wrench className="h-8 w-8 text-red-400" />
@@ -65,7 +65,7 @@ export function HomePage() {
                     ),
                     to: '/services/excavator-repairs',
                     image:
-                      '/images/site-assets/hero-cards/excavators-earthworks.png',
+                      '/images/site-assets/hero-cards/excavators-earthworks.webp',
                   },
                   {
                     title: 'Elevator & Crane Repairs',
@@ -91,7 +91,7 @@ export function HomePage() {
                     ),
                     to: '/services/elevator-crane-repairs',
                     image:
-                      '/images/site-assets/hero-cards/elevator-crane-repairs.png',
+                      '/images/site-assets/hero-cards/elevator-crane-repairs.webp',
                   },
                   {
                     title: 'Truck & Automotive Repairs',
@@ -122,7 +122,7 @@ export function HomePage() {
                     ),
                     to: '/services/truck-automotive-repairs',
                     image:
-                      '/images/site-assets/hero-cards/truck-automotive-repairs.png',
+                      '/images/site-assets/hero-cards/truck-automotive-repairs.webp',
                   },
                   {
                     title: 'Waste Management Equipment',
@@ -146,7 +146,7 @@ export function HomePage() {
                     ),
                     to: '/services/waste-disposal',
                     image:
-                      '/images/site-assets/hero-cards/waste-management-equipment.png',
+                      '/images/site-assets/hero-cards/waste-management-equipment.webp',
                   },
                   {
                     title: 'Paving Equipment Repairs',
@@ -170,7 +170,7 @@ export function HomePage() {
                     ),
                     to: '/services/paving-equipment',
                     image:
-                      '/images/site-assets/hero-cards/paving-equipment.png',
+                      '/images/site-assets/hero-cards/paving-equipment.webp',
                   },
                   {
                     title: 'Concrete Equipment Repairs',
@@ -195,7 +195,7 @@ export function HomePage() {
                     ),
                     to: '/services/concrete-equipment',
                     image:
-                      '/images/site-assets/hero-cards/concrete-equipment.png',
+                      '/images/site-assets/hero-cards/concrete-equipment.webp',
                   },
                 ].map((service) => (
                   <Link key={service.title} to={service.to} className="block">
@@ -245,7 +245,7 @@ export function HomePage() {
             <div>
               {/* Engineering Hero Banner */}
               <div className="bg-gradient-to-r from-red-600 via-red-500 to-red-600 rounded-xl p-8 mb-8 text-white relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('/images/site-assets/hero-cards/construction-industry.png')] bg-cover bg-center opacity-15"></div>
+                <div className="absolute inset-0 bg-[url('/images/site-assets/hero-cards/construction-industry.webp')] bg-cover bg-center opacity-15"></div>
                 <div className="relative z-10 text-center">
                   <div className="flex items-center justify-center gap-3 mb-3">
                     <h2 className="text-3xl md:text-4xl font-bold">
@@ -282,7 +282,7 @@ export function HomePage() {
                     ),
                     to: '/services/municipal-government',
                     image:
-                      '/images/site-assets/hero-cards/municipal-government.png',
+                      '/images/site-assets/hero-cards/municipal-government.webp',
                   },
                   {
                     title: 'Marine Fabrication & Welding',
@@ -308,7 +308,7 @@ export function HomePage() {
                     ),
                     to: '/services/marine-engineering',
                     image:
-                      '/images/site-assets/hero-cards/marine-engineering.png',
+                      '/images/site-assets/hero-cards/marine-engineering.webp',
                   },
                   {
                     title: 'Construction Industry Repairs',
@@ -334,7 +334,7 @@ export function HomePage() {
                     ),
                     to: '/services/construction-repairs',
                     image:
-                      '/images/site-assets/hero-cards/construction-industry.png',
+                      '/images/site-assets/hero-cards/construction-industry.webp',
                   },
                 ].map((service) => (
                   <Link key={service.title} to={service.to} className="block">

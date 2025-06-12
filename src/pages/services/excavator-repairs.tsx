@@ -6,7 +6,7 @@ export function ExcavatorRepairsPage() {
       title={
         <span className="flex items-center justify-center gap-2">
           <img
-            src="/images/site-assets/emojis/excavator.png"
+            src="/images/site-assets/emojis/excavator.webp"
             alt="Excavator"
             className="w-16 h-16 inline-block"
           />
