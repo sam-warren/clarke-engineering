@@ -247,10 +247,10 @@ export function Header() {
             alt="Clarke Logo"
             width={450}
             height={450}
-            className="h-20 w-auto transform -rotate-[30deg]"
+            className="h-20 w-auto"
           />
           <div className="flex flex-col py-2">
-            <span className="bg-gradient-to-r from-red-600/90 to-red-500/90 bg-clip-text text-xl font-bold leading-relaxed tracking-tight text-transparent sm:text-4xl">
+            <span className="bg-gradient-to-r from-red-600/90 to-red-500/90 bg-clip-text text-xl font-bold leading-relaxed tracking-tighter text-transparent sm:text-4xl font-family-montserrat">
               ENGINEERING & WELDING LTD.
             </span>
           </div>
@@ -264,7 +264,7 @@ export function Header() {
               alt="Clarke Logo"
               width={450}
               height={450}
-              className="h-16 w-auto transform -rotate-[30deg]"
+              className="h-16 w-auto"
             />
           </Link>
           <Button

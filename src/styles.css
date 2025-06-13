@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 @import 'tailwindcss';
 
 @plugin "tailwindcss-animate";
@@ -129,7 +129,7 @@ code {
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   --font-family-michroma: 'Michroma', ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
-  --font-family-anton: 'Anton', sans-serif;
+  --font-family-montserrat: 'Montserrat', sans-serif;
 }
 
 @layer base {
