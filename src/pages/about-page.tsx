@@ -51,49 +51,25 @@ export function AboutPage() {
         <CardContent>
           <div className="prose prose-lg max-w-none">
             <p className="mb-4">
-              "Hey there, I'm Graham Pink, General Manager here at Clarke
-              Engineering and Welding Ltd."
+              <strong>Clarke Engineering & Welding Ltd</strong> has been keeping
+              Vancouver Island’s heavy equipment moving since 1960. Built on a
+              legacy of craftsmanship, honesty, and hard work, we specialize in
+              hydraulic, mechanical, and welding solutions for the industries
+              that keep our region running — excavation, marine, municipal,
+              construction, and beyond.
+              region running — excavation, marine, municipal, construction, and
+              beyond.
             </p>
             <p className="mb-4">
-              "And I'm Dave Clarke — thanks a ton for stopping by our website,"
-              Dave added with a nod.
+              Our mission is simple: Minimize downtime. Maximize reliability.
+              Deliver repairs the right way — the first time. Whether it’s in
+              the field or at our shop, our Red Seal certified technicians bring
+              the know-how and hustle to solve complex problems fast.
             </p>
             <p className="mb-4">
-              "Yeah, seriously, we're real glad to have someone as fine as
-              yourself poking around and seeing what we get up to down here at
-              3364 Burns Avenue in Victoria," said Graham, wiping his hands on a
-              rag that somehow made them dirtier.
-            </p>
-            <p className="mb-4">
-              "You know, Graham," said Dave, leaning on the workbench, "when my
-              dad, Bob Clarke, started this little welding and machine shop back
-              in 1959, he had a pretty clear idea of what it should be — a place
-              that puts people first, a shop that can fix just about anything,
-              and isn't afraid to get a bit grimy doing it."
-            </p>
-            <p className="mb-4">
-              Dave paused and looked around the place — at the sparks flying in
-              the corner and the hum of the lathe working through another piece
-              of steel.
-            </p>
-            <p className="mb-4">
-              "I think he'd be proud of what we've built here," he said. "We
-              still put our customers at the center of everything we do. That's
-              what keeps me going. A lot of our customers have become friends —
-              good ones, too."
-            </p>
-            <p className="mb-4">
-              "It's a gritty business, though," he added with a wry smile.
-            </p>
-            <p className="mb-4">
-              "Sure is," said Graham, glancing down at his oil-streaked
-              overalls. "But that's part of the charm."
-            </p>
-            <p className="text-lg font-medium">
-              So whether you've been coming to us for years or you're just
-              thinking about giving us a try, we'd be glad to help sort out your
-              mess before it turns into a disaster. That's what we do best — fix
-              things, build trust, and keep the sparks flying.
+              We’re not just a service provider — we’re a trusted partner to the
+              crews who build, dig, pave, and haul across the Island. Clarke is
+              where experience meets action.
             </p>
           </div>
         </CardContent>

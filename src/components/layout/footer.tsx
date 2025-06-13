@@ -92,7 +92,7 @@ export function Footer() {
                   <img
                     src="/images/certification-badges/CFIB.webp"
                     alt="CFIB Member"
-                    className="h-20 w-auto object-contain"
+                    className="h-15 w-auto object-contain"
                   />
                 </div>
               </div>
