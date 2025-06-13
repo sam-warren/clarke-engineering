@@ -38,7 +38,7 @@ export function AboutPage() {
   }, [])
 
   return (
-    <div className="container mx-auto px-4 py-6 space-y-8">
+    <div className="container mx-auto px-4 py-6 space-y-8 max-w-screen-2xl">
       <h1 className="text-4xl font-bold text-center mb-6">About Us</h1>
       <p className="text-xl text-center text-gray-600 mb-10">
         Learn more about our company and the people who make it great.
