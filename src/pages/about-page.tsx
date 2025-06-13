@@ -57,8 +57,6 @@ export function AboutPage() {
               hydraulic, mechanical, and welding solutions for the industries
               that keep our region running — excavation, marine, municipal,
               construction, and beyond.
-              region running — excavation, marine, municipal, construction, and
-              beyond.
             </p>
             <p className="mb-4">
               Our mission is simple: Minimize downtime. Maximize reliability.

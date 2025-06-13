@@ -3,66 +3,64 @@ import { ServicePage } from '@/components/service-page'
 export function ConcreteEquipmentPage() {
   return (
     <ServicePage
-      title="🏭 Concrete Equipment Repairs & Fabrication"
+      title="🏭 Concrete Equipment Repairs"
       description="Heavy-Duty Welding • Mobile Service • Custom Solutions"
+      ctaTitle="Ready to get your equipment fixed?"
       testimonial={{
-        quote: "Clarke keeps our Concrete Company pouring",
+        quote: "Clarke keeps our Concrete Equipment working",
         author: "CEO of Concrete Co.",
       }}
       vendors={[
-        "Butler Concrete & Aggregate",
-        "Heidelberg Materials",
-        "City Pumping",
-        "Oceanside Concrete Pumping",
-        "Radix Concrete Pumping",
-        "Pacific Concrete Cutters",
-        "LaFarge Canada",
+        "Lafarge Canada Inc",
+        "Ocean Concrete Ltd",
+        "Somas Concrete Products Ltd",
+        "Victoria Ready Mix Ltd",
+        "Island Ready Mix Ltd",
+        "Burnco Rock Products Ltd",
+        "Tri-Con Ready Mix Ltd",
+        "Municipal Public Works",
+        "Construction Companies",
+        "Precast Concrete Manufacturers",
       ]}
       capabilities={[
         {
-          title: "Hydraulic & Truck Repairs",
+          title: "Concrete Plant & Batch Equipment",
           items: [
-            "Cylinder mounts, dump box welding, hose bracket fixes, truck steps, and sub-frame reinforcement.",
+            "Mixer drum repairs, conveyor systems, and plant structural welding.",
           ],
         },
         {
-          title: "Conveyor & Chute Repairs",
+          title: "Ready Mix Truck Repairs",
           items: [
-            "Troughs, belt tensioners, guards, pulleys, and custom chute fabrication with AR/UHMW liners.",
+            "Drum welding, hydraulic motor mounts, and chute modifications.",
           ],
         },
         {
-          title: "Silo & Bin Welding",
+          title: "Pump & Placing Equipment",
           items: [
-            "Cone patches, gate frames, ladder cages, and corrosion-resistant welds.",
+            "Concrete pump boom repairs, hydraulic cylinder rebuilds, and line repairs.",
           ],
         },
         {
-          title: "Boom & Pump Truck Repairs",
+          title: "Precast & Form Work",
           items: [
-            "Crack welds on booms, outrigger reinforcement, pipe brackets, and custom guards.",
+            "Custom fabrication of concrete forms, lifting hardware, and embedments.",
           ],
         },
         {
-          title: "Loader & Skid-Steer Repairs",
+          title: "Aggregate Handling Equipment",
           items: [
-            "Bucket edge rebuilds, quick-attach welds, and hydraulic frame repairs.",
+            "Conveyor repairs, screening equipment welding, and crusher modifications.",
           ],
         },
         {
-          title: "Batch Plant Maintenance",
+          title: "Field Service & Emergency Repairs",
           items: [
-            "Catwalks, towers, access ladders, and structural bracing repairs.",
-          ],
-        },
-        {
-          title: "Safety & Compliance Fabrication",
-          items: [
-            "Custom handrails, fall protection anchors, safety cages, and guard retrofits.",
+            "Mobile welding for urgent concrete equipment breakdowns on job sites.",
           ],
         },
       ]}
-      tagline="Local. Fast. Reliable. We keep your plant and fleet moving."
+      tagline="Concrete solutions. Built to last."
     />
   )
 } 

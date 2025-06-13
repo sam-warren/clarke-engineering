@@ -5,52 +5,62 @@ export function MunicipalGovernmentPage() {
     <ServicePage
       title="🏛️ Municipal & Government Projects"
       description="Trusted Welding & Fabrication for Public Infrastructure"
+      ctaTitle="Ready to start your project?"
       testimonial={{
-        quote: 'Clarke keeps our City Trucks working',
-        author: 'CEO of City.',
+        quote: "Clarke keeps our Municipal projects moving",
+        author: "Municipal Manager",
       }}
       vendors={[
-        'Canadian Coast Guard',
-        'Royal Canadian Navy',
-        'Capital Regional District',
-        'Esquimalt Graving Dock',
-        'Intercon Marine',
-        'BC Transit',
-        'District of Oak Bay',
-        'District of Saanich',
-        'BC Hydro',
-        'School District #61',
-        'Vancouver Island Health Authority',
-        'Saanich Fire Dept',
+        "City of Victoria",
+        "District of Saanich",
+        "Township of Esquimalt",
+        "District of Oak Bay",
+        "City of Colwood",
+        "District of Langford",
+        "Town of Sidney",
+        "Capital Regional District",
+        "Provincial Government Agencies",
+        "Crown Corporations",
       ]}
       capabilities={[
         {
-          title: 'Civic Infrastructure Repairs',
+          title: "Public Infrastructure Fabrication",
           items: [
-            'Road barriers, aluminum handrails, guardrails, and bollard welding.',
+            "Custom railings, barriers, and safety equipment for public facilities.",
           ],
         },
         {
-          title: 'Public Amenities & Installations',
+          title: "Fleet & Equipment Services",
           items: [
-            'Bleacher frames, bike racks, seating supports, signage posts, and custom fixtures.',
+            "Municipal vehicle modifications, snow plow mounts, and equipment repairs.",
           ],
         },
         {
-          title: 'Public Art & Structural Steelwork',
+          title: "Parks & Recreation Facilities",
           items: [
-            'Archways, display frames, decorative metalwork',
-            '(e.g., Bastion Square Archway – City of Victoria)',
+            "Playground equipment repairs, park furniture, and recreational facility metalwork.",
           ],
         },
         {
-          title: 'Fleet & Equipment Welding',
+          title: "Emergency Services Support",
           items: [
-            'Snowplows, salt spreaders, trailers, and municipal service vehicles.',
+            "Fire truck modifications, emergency vehicle repairs, and safety equipment fabrication.",
+          ],
+        },
+        {
+          title: "Water & Sewer Infrastructure",
+          items: [
+            "Utility access structures, pipe supports, and treatment facility metalwork.",
+          ],
+        },
+        {
+          title: "Transportation Infrastructure",
+          items: [
+            "Traffic signal supports, street furniture, and transit facility improvements.",
           ],
         },
       ]}
-      tagline="Local. Dependable. Experienced in public works and civic infrastructure."
+      tagline="Serving our community with reliable public infrastructure solutions."
     />
   )
 }

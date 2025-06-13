@@ -8,10 +8,12 @@ import {
 } from '@/components/ui/card'
 import { Link } from '@tanstack/react-router'
 import { ArrowRight, Mail, Phone } from 'lucide-react'
+import { PageCTA } from '@/components/ui/page-cta'
 
 interface ServicePageProps {
   title: string | React.ReactNode
   description: string
+  ctaTitle?: string
   testimonial: {
     quote: string
     author: string
@@ -27,6 +29,7 @@ interface ServicePageProps {
 export function ServicePage({
   title,
   description,
+  ctaTitle,
   testimonial,
   vendors,
   capabilities,
@@ -41,6 +44,9 @@ export function ServicePage({
           {description}
         </p>
       </div>
+
+      {/* CTA Section */}
+      {ctaTitle && <PageCTA title={ctaTitle} />}
 
       {/* Testimonial */}
       <Card className="bg-accent/10">

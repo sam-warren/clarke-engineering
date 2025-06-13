@@ -3,58 +3,64 @@ import { ServicePage } from '@/components/service-page'
 export function ElevatorCraneRepairsPage() {
   return (
     <ServicePage
-      title="🏗️ Cranes,  Lifts, and The Elevator Industry Repairs"
+      title="🏗️ Cranes, Lifts, and The Elevator Repair Industry"
       description="Experts in Lifting Equipment Welding, Fabrication & Structural Repair"
+      ctaTitle="Ready to get your equipment fixed?"
       testimonial={{
-        quote: 'Clarke keeps our Cranes working',
-        author: 'CEO of Crane Co.',
+        quote: "Clarke keeps our Lifting Equipment working",
+        author: "Safety Manager",
       }}
       vendors={[
-        'TK Elevator',
-        'Westcoast Elevator',
-        'Richmond Elevator',
-        'Kone Elevators & Escalators',
-        'LB Crane Rentals',
-        "Bert's Enterprises",
-        'Esquimalt Graving Dock',
-        'MR Crane Services Ltd',
-        "Russel's Crane & Cartage",
-        'Vic City Crane',
-        'Advantage Crane',
+        "Thyssen Krupp Elevator",
+        "Otis Elevator Company",
+        "Schindler Elevator Corp",
+        "KONE Inc",
+        "Local Elevator Service Companies",
+        "Crane Rental Companies",
+        "Construction Contractors",
+        "Industrial Maintenance Providers",
+        "Material Handling Equipment Dealers",
+        "Safety Inspection Services",
       ]}
       capabilities={[
         {
-          title: 'Hydraulic & Mechanical Repair',
+          title: "Elevator Equipment Repairs",
           items: [
-            'Troubleshooting and repairs for cylinders, pumps, and control systems.',
+            "Elevator car frames, guide rail brackets, and safety system components.",
           ],
         },
         {
-          title: 'Precision Welding & Fabrication',
+          title: "Mobile Crane Services",
           items: [
-            'Baseplates, rope plates, car-to-cable assemblies, and custom brackets.',
+            "Boom repairs, outrigger welding, and structural crane modifications.",
           ],
         },
         {
-          title: 'Crane Overhaul & Modification',
+          title: "Aerial Work Platform Repairs",
           items: [
-            'Tower cranes, AWP lifts, level-luffing cranes (Krupp 150T, Ebco 30T, Konecranes), boom repair, and pin removal.',
+            "Scissor lifts, boom lifts, and platform structural welding.",
           ],
         },
         {
-          title: 'Bearing & Pulley Work',
+          title: "Material Handling Equipment",
           items: [
-            'Pressure-fit pulley replacement, bearing inspection and servicing.',
+            "Forklift repairs, conveyor systems, and lifting device modifications.",
           ],
         },
         {
-          title: 'Forklift & Lift Equipment Repair',
+          title: "Safety & Inspection Support",
           items: [
-            'Boom lifts, cherry pickers, scissor lifts—serving the telecommunications and logistics industries.',
+            "Structural reinforcement and safety system component fabrication.",
+          ],
+        },
+        {
+          title: "Custom Lifting Solutions",
+          items: [
+            "Specialized lifting hardware, custom brackets, and safety equipment.",
           ],
         },
       ]}
-      tagline="Built for those who lift BC."
+      tagline="Lifting solutions that work. Safety you can trust."
     />
   )
 }

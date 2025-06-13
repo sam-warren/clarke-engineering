@@ -5,6 +5,7 @@ export function MarineEngineeringPage() {
     <ServicePage
       title="⚓ Marine Engineering & Welding"
       description="Aluminum & Marine-Grade Welding • Vessel Repairs • Custom Fabrication"
+      ctaTitle="Ready for your Marine project?"
       testimonial={{
         quote: "Clarke keeps our Marine Company Sailing",
         author: "CEO of Ship Co.",

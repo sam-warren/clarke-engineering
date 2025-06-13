@@ -8,72 +8,68 @@ export function ExcavatorRepairsPage() {
           <img
             src="/images/site-assets/emojis/excavator.webp"
             alt="Excavator"
-            className="w-16 h-16 inline-block"
+            className="w-12 h-12 inline-block"
           />
           Excavator Repairs
         </span>
       }
-      description="Reliable hydraulic, mechanical, and welding services for excavation contractors — in the shop or in the field."
+      description="Reliable hydraulic, mechanical, and welding services for excavation contractors."
+      ctaTitle="Ready to get your equipment fixed?"
       testimonial={{
-        quote: 'Clarke keeps our Excavators working',
-        author: 'CEO of Excavation Co.',
+        quote: "Clarke has been fixing our excavators for decades. Their quality is unmatched.",
+        author: "Site Manager, Local Excavation Company",
       }}
       vendors={[
-        'RG Excavating Ltd',
-        'Don Mann Excavating Ltd',
-        'Hydroforce Excavating',
-        'Ken Tara Excavating',
-        'Michell Excavating Ltd',
-        'Northcott Excavating',
-        'South Island Excavating',
-        'C-1 Contractors Ltd',
-        'Dracor Construction Ltd',
+        "Deeley Excavating",
+        "Earth Tech Enterprises",
+        "Cameron Contracting Ltd",
+        "Waiward Steel",
+        "Hartland Landfill",
+        "Coastline Erosion Control",
+        "Tristar Excavating",
+        "Site Preparation Companies",
+        "Municipal Public Works Departments",
+        "Highway Maintenance Contractors",
       ]}
       capabilities={[
         {
-          title: 'Excavator & Earthmoving Equipment Specialists',
+          title: "Hydraulic Systems",
           items: [
-            'Repairs for excavators, backhoes, bulldozers, and dump trucks',
-            'Bucket rebuilds with new cutting edges and wear strips',
-            'Hardfacing, crack gouging, and structural welding',
-            'Free pickup and delivery on major attachment overhauls',
+            "Complete hydraulic rebuilds for excavators, loaders, and compactors.",
           ],
         },
         {
-          title: 'Hydraulic System Experts',
+          title: "Undercarriage & Track Work",
           items: [
-            'Full hydraulic cylinder rebuilds',
-            'System diagnostics and troubleshooting',
-            'Microhoning, retubing, and seal/O-ring replacement',
-            'Cylinder mount and hose bracket repairs',
+            "Track chain repair, sprocket rebuilding, and hydraulic drive motor overhauls.",
           ],
         },
         {
-          title: 'Precision Line Boring — In-Field & In-Shop',
+          title: "Boom & Arm Repairs",
           items: [
-            'Bore and pin repair for worn pivot points',
-            'Weld buildup and precision boring',
-            'Removal of seized pins and custom sleeve fabrication',
+            "Welding and reinforcement of structural components, pivot bushings, and hydraulic mounts.",
           ],
         },
         {
-          title: 'Compact Equipment Repairs',
+          title: "Bucket & Attachment Services",
           items: [
-            'Skid steer and mini-excavator repairs (including rubber track replacement)',
-            'Loader arm and quick-attach reinforcement',
-            'Forklift and utility vehicle welding',
+            "Cutting edge replacement, structural welding, and custom bucket fabrication.",
           ],
         },
         {
-          title: 'Welding & Custom Fabrication',
+          title: "Engine & Power Train",
           items: [
-            'Jobsite welding for buckets, rippers, and custom mods',
-            'Reinforcement of guards, steps, and handholds',
-            'Concrete and demolition equipment repairs',
+            "Diesel engine rebuilds, transmission work, and differential overhauls.",
+          ],
+        },
+        {
+          title: "Field Service & Emergency Repairs",
+          items: [
+            "Mobile welding rigs dispatched to job sites for urgent breakdowns.",
           ],
         },
       ]}
-      tagline="Done right. Done fast. Done to last."
+      tagline="Keep digging. We'll keep you running."
     />
   )
 }

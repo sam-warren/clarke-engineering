@@ -5,68 +5,62 @@ export function PavingEquipmentPage() {
     <ServicePage
       title="🚧 Paving Equipment Repairs"
       description="Heavy-Duty Welding, Field Repairs & Mobile Service"
+      ctaTitle="Ready to get your equipment fixed?"
       testimonial={{
-        quote: "Clarke keeps our Paving Company paving",
-        author: "CEO of Pave Co.",
+        quote: "Clarke keeps our Paving Equipment working",
+        author: "CEO of Paving Co.",
       }}
       vendors={[
-        "Capital City Paving",
-        "Island Asphalt",
-        "Arrowhead Paving",
-        "Five Star Paving",
-        "BlackJacket Paving & Sealcoating",
+        "Lafarge Canada Inc",
+        "Burnco Rock Products Ltd",
+        "Central Paving Services",
+        "Victoria Line Painting Ltd",
+        "Island Paving Ltd",
+        "Hart Paving",
+        "CanTech Contracting Ltd",
+        "Asphalt Plants & Road Construction",
+        "Mainland Sand & Gravel",
+        "Port of Victoria / Nanaimo",
       ]}
       capabilities={[
         {
-          title: "Paver Repairs",
+          title: "Asphalt Plant & Mobile Equipment",
           items: [
-            "Screed welding, hopper rebuilds, auger and slat conveyor fixes.",
+            "Plant maintenance for continuous production during paving season.",
           ],
         },
         {
-          title: "Heated Tank & Manifold Repairs",
+          title: "Paver & Compactor Repairs",
           items: [
-            "Jacketed pipe welds, burner bracket repairs, valve leak patching.",
+            "Screed welding, hydraulic repairs, and roller drum restoration.",
           ],
         },
         {
-          title: "Roller & Compactor Fixes",
+          title: "Hot Mix & Transfer Equipment",
           items: [
-            "Drum mount welds, scraper bar brackets, ROPS and fender repairs.",
+            "Heated truck bed liners, conveyor systems, and batch plant repairs.",
           ],
         },
         {
-          title: "Hydraulic System Repairs",
+          title: "Field Service & Emergency Repairs",
           items: [
-            "Cylinder mounts, pump brackets, guard fabrication.",
+            "Mobile welding rigs for urgent paving equipment breakdowns.",
           ],
         },
         {
-          title: "Dump Truck & Trailer Repairs",
+          title: "Crushing & Screening Equipment",
           items: [
-            "Box liner installs, tailgate hinge rebuilds, tarp arm repairs.",
-          ],
-        },
-        {
-          title: "Sealcoating Rig Repairs",
-          items: [
-            "Tank crack patching, hose reel mounts, agitator shaft welds.",
-          ],
-        },
-        {
-          title: "Plant & Bin Welding",
-          items: [
-            "Hot bin patching, catwalks, guardrails, and drag slat repairs.",
+            "Aggregate plant welding, conveyor repairs, and structural modifications.",
           ],
         },
         {
           title: "Custom Fabrication",
           items: [
-            "Tool racks, shovel holders, tie-downs, crew steps.",
+            "Guards, steps, walkways, and safety equipment for paving operations.",
           ],
         },
       ]}
-      tagline="Local. Fast. Reliable. We keep your equipment working."
+      tagline="Keep the roads smooth. We'll keep you rolling."
     />
   )
 } 

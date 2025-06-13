@@ -5,65 +5,62 @@ export function ConstructionRepairsPage() {
     <ServicePage
       title="🏗️ Construction Industry Repairs"
       description="Mobile & In-Shop Welding • Structural Steel • Heavy Equipment"
+      ctaTitle="Ready to start your project?"
       testimonial={{
-        quote: 'Clarke keeps our construction company working',
-        author: 'CEO of Construction Co.',
+        quote: "Clarke keeps our Construction projects moving",
+        author: "Project Manager",
       }}
       vendors={[
-        'Terrazza Builders Ltd',
-        'Campbell Construction Ltd',
-        'Emery Electric',
-        'Farmer Construction Ltd',
-        'Foster Air Conditioning Ltd',
-        'HHS Drilling and Blasting',
-        'Home Lumber Ltd',
-        'Independent Heating Services Co',
-        'Island Temperature Controls',
-        'Jawl Properties Ltd',
-        'Knappett Projects Inc',
-        "Mac's Heating Ltd",
-        'Namdor Reinforcing Steel (1987) Ltd',
-        'Orca Masonry',
-        'Silver Fern Stainless Ltd',
-        'Victoria Drains Services',
+        "PCL Construction",
+        "Farmer Construction Ltd",
+        "Marco Group",
+        "Bird Construction",
+        "Clark Builders",
+        "Local General Contractors",
+        "Steel Fabrication Companies",
+        "Heavy Civil Contractors",
+        "Industrial Construction",
+        "Structural Steel Erectors",
       ]}
       capabilities={[
         {
-          title: 'Heavy Equipment & Attachment Repairs',
+          title: "Structural Steel Fabrication & Repair",
           items: [
-            'Excavators, Bobcats, skid steers, drilling rigs',
-            'Bins and waste containers',
-            'Repair Specialists for the construction waste disposal industry.',
+            "Beam welding, column repairs, and structural modifications for construction projects.",
           ],
         },
         {
-          title: 'Mobile Field Welding (3 Rigs)',
+          title: "Construction Equipment Repairs",
           items: [
-            'On-site repairs for urgent breakdowns and construction downtime prevention.',
+            "Crane welding, hoist repairs, and heavy machinery restoration.",
           ],
         },
         {
-          title: 'Structural & Architectural Steelwork',
+          title: "Site Welding Services",
           items: [
-            'Staircases, platforms, handrails, retaining wall anchors, and custom signage.',
+            "Mobile welding rigs for on-site repairs and emergency construction support.",
           ],
         },
         {
-          title: 'Boiler & Pipe Welding',
+          title: "Safety & Access Fabrication",
           items: [
-            'Pressure pipe welds, boiler fixes, HVAC steel sleepers (C5/C6 channels).',
+            "Custom handrails, staircases, platforms, and fall protection systems.",
           ],
         },
         {
-          title: 'Crane & Elevator Frame Repairs',
-          items: ['Mounts, guards, and structural reinforcements.'],
+          title: "Specialty Construction Support",
+          items: [
+            "Boiler and pipe welding, pressure vessel repairs, and industrial equipment services.",
+          ],
         },
         {
-          title: 'Specialty Welding & Fabrication',
-          items: ['Dywidag bar cutting/fab, gouging/crack welding'],
+          title: "Custom Fabrication",
+          items: [
+            "Gates, architectural metalwork, and specialized construction components.",
+          ],
         },
       ]}
-      tagline="On the tools. On your site. On time."
+      tagline="Building stronger. Building better. Built to last."
     />
   )
 }

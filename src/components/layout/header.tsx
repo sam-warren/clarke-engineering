@@ -49,7 +49,7 @@ const serviceLinks = [
     to: '/services/excavator-repairs',
   },
   {
-    title: '🏗️ Cranes,  Lifts, and The Elevator Industry Repairs',
+    title: '🏗️ Cranes,  Lifts, and The Elevator Repair Industry',
     description:
       'Experts in Lifting Equipment Welding, Fabrication & Structural Repair',
     to: '/services/elevator-crane-repairs',
@@ -239,14 +239,15 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background">
-      <div className="container mx-auto flex h-24 max-w-screen-7xl items-center justify-between px-4 md:px-6 lg:px-8">
-        <Link to="/" className="mr-6 flex items-center space-x-4">
+      <div className="container mx-auto flex h-20 md:h-24 max-w-screen-7xl items-center justify-between px-4 md:px-6 lg:px-8">
+        {/* Desktop Logo and Text */}
+        <Link to="/" className="mr-6 hidden md:flex items-center space-x-4">
           <img
             src="/images/brand-identity/clarke-logo.webp"
             alt="Clarke Logo"
             width={450}
             height={450}
-            className="h-20 w-auto"
+            className="h-20 w-auto transform -rotate-[30deg]"
           />
           <div className="flex flex-col py-2">
             <span className="bg-gradient-to-r from-red-600/90 to-red-500/90 bg-clip-text text-xl font-extrabold leading-relaxed tracking-tight text-transparent sm:text-2xl font-family-michroma">
@@ -255,59 +256,91 @@ export function Header() {
           </div>
         </Link>
 
-        {/* Desktop Navigation */}
-        <NavigationMenu
-          ref={menuRef}
-          className={cn('hidden md:flex', position)}
-        >
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger
-                className={cn(navigationMenuTriggerStyle(), 'text-lg')}
-              >
-                Services
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <div className="relative grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                  {serviceLinks.map((service) => (
-                    <Link
-                      key={service.to}
-                      to={service.to}
-                      className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                    >
-                      <div className="text-sm font-medium leading-none">
-                        {service.title}
-                      </div>
-                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                        {service.description}
-                      </p>
-                    </Link>
-                  ))}
-                </div>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            {navLinks.map((link) => (
-              <NavigationMenuItem key={link.to}>
-                <Link
-                  to={link.to}
+        {/* Mobile Logo and Phone Button */}
+        <div className="flex md:hidden items-center justify-between flex-1">
+          <Link to="/" className="flex items-center">
+            <img
+              src="/images/brand-identity/clarke-logo.webp"
+              alt="Clarke Logo"
+              width={450}
+              height={450}
+              className="h-16 w-auto transform -rotate-[30deg]"
+            />
+          </Link>
+          <Button
+            variant="default"
+            size="default"
+            className="text-white bg-red-500 border-red-600 hover:bg-red-600 hover:text-white mr-2"
+            onClick={() => (window.location.href = 'tel:+12504752400')}
+          >
+            <Phone className="h-4 w-4" />
+            (250) 475 2400
+          </Button>
+        </div>
+
+        {/* Desktop Call Button and Navigation */}
+        <div className="hidden md:flex items-center gap-4">
+          <Button
+            variant="default"
+            size="lg"
+            className="text-white bg-red-500 border-red-600 hover:bg-red-600 hover:text-white px-6 py-3 cursor-pointer"
+            onClick={() => (window.location.href = 'tel:+12504752400')}
+          >
+            <Phone className="h-4 w-4" />
+            Call Us: (250) 475 2400
+          </Button>
+
+          <NavigationMenu ref={menuRef} className={cn(position)}>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger
                   className={cn(navigationMenuTriggerStyle(), 'text-lg')}
-                  activeProps={{
-                    className: 'bg-accent text-accent-foreground font-semibold',
-                  }}
-                  inactiveProps={{
-                    className: cn(
-                      navigationMenuTriggerStyle(),
-                      'text-lg',
-                      'hover:bg-accent/50 hover:text-accent-foreground focus:bg-accent/50 focus:text-accent-foreground',
-                    ),
-                  }}
                 >
-                  {link.label}
-                </Link>
+                  Services
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="relative grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                    {serviceLinks.map((service) => (
+                      <Link
+                        key={service.to}
+                        to={service.to}
+                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                      >
+                        <div className="text-sm font-medium leading-none">
+                          {service.title}
+                        </div>
+                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                          {service.description}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </NavigationMenuContent>
               </NavigationMenuItem>
-            ))}
-          </NavigationMenuList>
-        </NavigationMenu>
+              {navLinks.map((link) => (
+                <NavigationMenuItem key={link.to}>
+                  <Link
+                    to={link.to}
+                    className={cn(navigationMenuTriggerStyle(), 'text-lg')}
+                    activeProps={{
+                      className:
+                        'bg-accent text-accent-foreground font-semibold',
+                    }}
+                    inactiveProps={{
+                      className: cn(
+                        navigationMenuTriggerStyle(),
+                        'text-lg',
+                        'hover:bg-accent/50 hover:text-accent-foreground focus:bg-accent/50 focus:text-accent-foreground',
+                      ),
+                    }}
+                  >
+                    {link.label}
+                  </Link>
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
 
         {/* Mobile Navigation */}
         <MobileNavigation />

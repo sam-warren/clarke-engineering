@@ -4,73 +4,63 @@ export function WasteDisposalPage() {
   return (
     <ServicePage
       title="🗑️ Waste Management Equipment"
-      description="Trusted experts in heavy-duty bin, truck, and equipment repairs — in the shop or on-site, fast and reliable."
+      description="Trusted experts in heavy-duty bin, truck, and equipment repairs"
+      ctaTitle="Ready to get your equipment fixed?"
       testimonial={{
-        quote: "Clarke keeps our Disposal Company hauling",
+        quote: "Clarke keeps our Waste Management Equipment working",
         author: "CEO of Waste Co.",
       }}
       vendors={[
-        "Waste Connections of Canada Inc",
+        "Capital Regional District (CRD)",
         "GFL Environmental Inc",
-        "DL Bins Ltd",
-        "Sooke Disposal",
-        "HL Disposal and Lawn Services",
-        "Allen Wright Enterprises",
-        "1-800 Got Junk",
+        "Emterra Environmental",
+        "Waste Management Inc",
+        "Provincial Waste Management",
+        "Municipal Collection Services",
+        "Private Hauling Companies",
+        "Industrial Waste Contractors",
+        "Construction & Demolition Haulers",
+        "Recycling Processing Facilities",
       ]}
       capabilities={[
         {
-          title: "Disposal Bin Repair Specialists",
+          title: "Roll-Off Container & Bin Repairs",
           items: [
-            "Rebuilds and patching for front-load, roll-off, and lugger bins",
-            "Lid and hinge repair or replacement",
-            "Liner installation and hard surfacing",
-            "Corrosion and impact damage restoration",
+            "Structural welding, floor patching, and door hinge rebuilds for waste containers.",
           ],
         },
         {
-          title: "Truck Body & Hydraulic Repairs",
+          title: "Collection Truck Modifications",
           items: [
-            "HIAB and hooklift repair",
-            "Compactor, roll-off, and side-load truck welding",
-            "Hydraulic cylinder rebuilds and troubleshooting",
-            "Line boring for worn pivots and hinge points",
+            "Packer body repairs, hydraulic cylinder mounts, and tailgate restoration.",
           ],
         },
         {
-          title: "Chassis & Frame Reinforcement",
+          title: "Compactor & Baler Equipment",
           items: [
-            "Subframe repairs",
-            "Custom fabrication of bumper guards, light brackets, and steps",
-            "Weld repairs on hoist mounts, outriggers, and bin rails",
+            "Ram cylinder rebuilds, chamber welding, and safety system modifications.",
           ],
         },
         {
-          title: "Fleet Maintenance Welding",
+          title: "Transfer Station Equipment",
           items: [
-            "Scheduled servicing and fast-response field repairs",
-            "Emergency welding support for trucks and trailers",
-            "Mobile rig service available 7 days a week",
+            "Conveyors, sorting equipment, and structural platform welding.",
           ],
         },
         {
-          title: "Refinishing & Protection",
+          title: "Fleet Maintenance Services",
           items: [
-            "Touch-up painting after repair",
-            "Rust prevention coating for bins and decks",
-            "Steel guard installation for high-wear points",
+            "Mobile welding for waste collection vehicles and container delivery trucks.",
           ],
         },
         {
           title: "Custom Fabrication",
           items: [
-            "Brackets, gussets, guards, and hard-to-source parts",
-            "Retrofit solutions to extend service life of aging equipment",
-            "Bin system modifications to meet new truck specs",
+            "Specialized bins, containment systems, and waste handling equipment.",
           ],
         },
       ]}
-      tagline="Waste industry welding and repair that keeps your fleet moving."
+      tagline="Waste solutions that work. Built to handle the toughest jobs."
     />
   )
 } 

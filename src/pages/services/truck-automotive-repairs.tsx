@@ -5,6 +5,7 @@ export function TruckAutomotiveRepairsPage() {
     <ServicePage
       title="🚛 Truck & Automotive Repairs"
       description="Commercial Vehicle Welding • Custom Modifications • Fleet Repair"
+      ctaTitle="Ready to fix your Truck?"
       testimonial={{
         quote: "Clarke keeps our Trucks working",
         author: "CEO of Truck Co.",

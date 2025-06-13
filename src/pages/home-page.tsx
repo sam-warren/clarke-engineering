@@ -15,8 +15,78 @@ import {
 export function HomePage() {
   return (
     <div className="flex flex-col">
-      <div className="container mx-auto px-4 py-6 space-y-20">
+      <div className="container mx-auto px-4 py-6 space-y-10">
         {/* Service Divisions Section */}
+        <section>
+          <Card className="bg-gradient-to-br from-slate-900 to-slate-800 text-white overflow-hidden">
+            <CardContent className="p-8 md:p-12">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+                <div className="flex-1 text-center md:text-left">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                    Ready to Start Your Project?
+                  </h2>
+                  <p className="text-lg text-gray-300 mb-6">
+                    From quick repairs to custom fabrication, we're here to help
+                    24/7.
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl">
+                    <div className="flex items-center gap-2 text-gray-300">
+                      <Clock4 className="h-5 w-5 text-red-400" />
+                      <span>Fast Response Times</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-300">
+                      <Wrench className="h-5 w-5 text-red-400" />
+                      <span>Expert Solutions</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-4 w-full md:w-auto">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="bg-red-500 hover:bg-red-600 text-white py-6 text-lg w-full md:w-auto"
+                  >
+                    <Link to="/contact" className="flex items-center gap-2">
+                      Start Your Project <ArrowRight className="h-5 w-5" />
+                    </Link>
+                  </Button>
+
+                  <div className="flex gap-3">
+                    <Button
+                      asChild
+                      variant="outline"
+                      size="lg"
+                      className="flex-1 bg-transparent border-gray-600 text-white hover:bg-white/10"
+                    >
+                      <a
+                        href="tel:2504752400"
+                        className="flex items-center gap-2 justify-center"
+                      >
+                        <Phone className="h-5 w-5" />
+                        Call Now
+                      </a>
+                    </Button>
+                    <Button
+                      asChild
+                      variant="outline"
+                      size="lg"
+                      className="flex-1 bg-transparent border-gray-600 text-white hover:bg-white/10"
+                    >
+                      <a
+                        href="mailto:Clarke@islandnet.com"
+                        className="flex items-center gap-2 justify-center"
+                      >
+                        <Mail className="h-5 w-5" />
+                        Email
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
         <section>
           <div className="space-y-20">
             {/* Equipment Repairs Section */}
@@ -68,7 +138,7 @@ export function HomePage() {
                       '/images/site-assets/hero-cards/excavators-earthworks.webp',
                   },
                   {
-                    title: 'Cranes,  Lifts, and The Elevator Industry Repairs',
+                    title: 'Cranes, Lifts, and The Elevator Repair Industry',
                     description: (
                       <div className="flex flex-wrap gap-3">
                         {[
@@ -320,7 +390,6 @@ export function HomePage() {
                           'Staircases',
                           'Gates',
                           'Mobile field welding',
-                          'Boiler and pipe welding',
                         ].map((item) => (
                           <div
                             key={item}
@@ -410,78 +479,6 @@ export function HomePage() {
         {/* Testimonials Section */}
         <section>
           <GoogleReviews />
-        </section>
-
-        {/* Final CTA Section */}
-        <section>
-          <Card className="bg-gradient-to-br from-slate-900 to-slate-800 text-white overflow-hidden">
-            <CardContent className="p-8 md:p-12">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-                <div className="flex-1 text-center md:text-left">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                    Ready to Start Your Project?
-                  </h2>
-                  <p className="text-lg text-gray-300 mb-6">
-                    From quick repairs to custom fabrication, we're here to help
-                    24/7.
-                  </p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl">
-                    <div className="flex items-center gap-2 text-gray-300">
-                      <Clock4 className="h-5 w-5 text-red-400" />
-                      <span>Fast Response Times</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-300">
-                      <Wrench className="h-5 w-5 text-red-400" />
-                      <span>Expert Solutions</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-4 w-full md:w-auto">
-                  <Button
-                    asChild
-                    size="lg"
-                    className="bg-red-500 hover:bg-red-600 text-white py-6 text-lg w-full md:w-auto"
-                  >
-                    <Link to="/contact" className="flex items-center gap-2">
-                      Start Your Project <ArrowRight className="h-5 w-5" />
-                    </Link>
-                  </Button>
-
-                  <div className="flex gap-3">
-                    <Button
-                      asChild
-                      variant="outline"
-                      size="lg"
-                      className="flex-1 bg-transparent border-gray-600 text-white hover:bg-white/10"
-                    >
-                      <a
-                        href="tel:2504752400"
-                        className="flex items-center gap-2 justify-center"
-                      >
-                        <Phone className="h-5 w-5" />
-                        Call Now
-                      </a>
-                    </Button>
-                    <Button
-                      asChild
-                      variant="outline"
-                      size="lg"
-                      className="flex-1 bg-transparent border-gray-600 text-white hover:bg-white/10"
-                    >
-                      <a
-                        href="mailto:Clarke@islandnet.com"
-                        className="flex items-center gap-2 justify-center"
-                      >
-                        <Mail className="h-5 w-5" />
-                        Email
-                      </a>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </section>
       </div>
     </div>
