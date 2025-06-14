@@ -72,7 +72,7 @@ export function PageCTA({ title, subtitle = "From quick repairs to custom fabric
                   className="flex-1 bg-transparent border-gray-600 text-white hover:bg-white/10"
                 >
                   <a
-                    href="mailto:Clarke@islandnet.com"
+                    href="mailto:clarke@islandnet.com"
                     className="flex items-center gap-2 justify-center"
                   >
                     <Mail className="h-5 w-5" />

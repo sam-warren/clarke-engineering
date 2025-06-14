@@ -117,7 +117,7 @@ export function ServicePage({
                 className="bg-transparent border-white text-white hover:bg-white/10"
               >
                 <a
-                  href="mailto:Clarke@islandnet.com"
+                  href="mailto:clarke@islandnet.com"
                   className="flex items-center gap-2"
                 >
                   <Mail className="h-5 w-5" /> Email Us

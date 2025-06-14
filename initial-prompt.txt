@@ -207,7 +207,7 @@ Let’s use Google review plug-in for more trust on the reviews and Let’s use 
 
 Let’s remove the wordy sentence at the top of the landing page. 
 
-Please put call to action phone and email address and business address at the top of every page and floating.Let’s make the call to action button sticky aka floating, it should stay on the page as you scroll through the website, ‘call now: 250 475 2400’ + ‘email now: Clarke@islandnet.com’ 
+Please put call to action phone and email address and business address at the top of every page and floating.Let’s make the call to action button sticky aka floating, it should stay on the page as you scroll through the website, ‘call now: 250 475 2400’ + ‘email now: clarke@islandnet.com’ 
 
 
 Notes April 17th 2025:

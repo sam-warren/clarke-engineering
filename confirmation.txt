@@ -28,7 +28,7 @@
 - **Header:**
     - Logo: Clarke Engineering & Welding Ltd (top left)
     - Navigation Menu (right-aligned): About, Services, Shop Capabilities, Projects, Contact
-    - Sticky Call to Action (CTA): "Call Now: 250 475 2400" + "Email Now: Clarke@islandnet.com". This CTA becomes sticky/floating after scrolling past the hero section's initial CTAs.
+    - Sticky Call to Action (CTA): "Call Now: 250 475 2400" + "Email Now: clarke@islandnet.com". This CTA becomes sticky/floating after scrolling past the hero section's initial CTAs.
 - **Footer:**
     - Association Badges: Red Seal, BBB, CWB, Island Equipment Operators Association, CFIB.
     - Map: Visual showing location (Uptown/Downtown with a star).
@@ -106,7 +106,7 @@
 **F. Contact Page (`/contact`)**
    - Contact Form.
    - Phone number: (250) 475 2400
-   - Email: Clarke@islandnet.com
+   - Email: clarke@islandnet.com
    - Business Address.
    - Google Map integration (visual representation of location).
    - Store hours.

@@ -29,7 +29,7 @@ export function Footer() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-400">Email</p>
-                  <p className="font-medium">Clarke@islandnet.com</p>
+                  <p className="font-medium">clarke@islandnet.com</p>
                 </div>
               </div>
 

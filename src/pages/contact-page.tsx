@@ -67,7 +67,7 @@ export function ContactPage() {
               </div>
               <div>
                 <p className="text-sm text-gray-500">Email</p>
-                <p className="font-medium">Clarke@islandnet.com</p>
+                <p className="font-medium">clarke@islandnet.com</p>
               </div>
             </div>
 
