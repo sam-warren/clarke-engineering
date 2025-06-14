@@ -102,6 +102,7 @@ export default async function handler(req, res) {
           </div>
         </div>
       `,
+      replyTo: process.env.CONTACT_EMAIL,
     })
 
     return res.status(200).json({ 
