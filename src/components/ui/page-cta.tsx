@@ -14,7 +14,7 @@ interface PageCTAProps {
   subtitle?: string
 }
 
-export function PageCTA({ title, subtitle = "From quick repairs to custom fabrication, we're here to help 24/7." }: PageCTAProps) {
+export function PageCTA({ title, subtitle = "From quick repairs to custom fabrication, we're here to help." }: PageCTAProps) {
   return (
     <section>
       <Card className="bg-gradient-to-br from-slate-900 to-slate-800 text-white overflow-hidden">

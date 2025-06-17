@@ -26,8 +26,7 @@ export function HomePage() {
                     Ready to Start Your Project?
                   </h2>
                   <p className="text-lg text-gray-300 mb-6">
-                    From quick repairs to custom fabrication, we're here to help
-                    24/7.
+                    From quick repairs to custom fabrication, we're here to help.
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl">
                     <div className="flex items-center gap-2 text-gray-300">
